@@ -46,6 +46,10 @@
       <span aria-hidden="true">🌍</span>
       <span><strong id="stat-countries">0</strong> countries</span>
     </div>
+    <div class="stat-pill stat-pill-quality" id="stat-quality-pill" style="display:none">
+      <span aria-hidden="true">🎯</span>
+      <span id="stat-quality-label">HD+</span>
+    </div>
   </div>
 </header>
 
@@ -87,6 +91,18 @@
         <span class="label">All Channels</span>
         <span class="count" id="count-all">0</span>
       </button>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Quality</div>
+      <button class="filter-btn" data-type="quality" data-value="" aria-pressed="false">
+        <span class="flag" aria-hidden="true">✨</span>
+        <span class="label">All Qualities</span>
+        <span class="count" id="count-all-quality"></span>
+      </button>
+      <div id="qualities-list" role="list">
+        <div style="padding:6px 16px;color:var(--text3);font-size:12px;">Loading...</div>
+      </div>
     </div>
 
     <div class="sidebar-section">

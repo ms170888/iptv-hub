@@ -1210,6 +1210,35 @@ body {
 .empty-state .empty-icon { font-size: 44px; margin-bottom: 12px; display: block; }
 .empty-state p { font-size: 15px; line-height: 1.6; }
 
+/* ─── QUALITY / RESOLUTION BADGES ────────────────────── */
+.card-res-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 2;
+}
+
+.badge-res {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  line-height: 1.4;
+  pointer-events: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+.badge-res-4k  { background: #7c3aed; color: #fff; } /* purple */
+.badge-res-fhd { background: #1d4ed8; color: #fff; } /* blue */
+.badge-res-hd  { background: #15803d; color: #fff; } /* green */
+.badge-res-unk { background: #4b5563; color: #d1d5db; } /* gray */
+
+/* ensure card-logo is position:relative for badge */
+.card-logo { position: relative; }
+
 /* ─── RESPONSIVE: TABLET ──────────────────────────────── */
 @media (min-width: 480px) {
   #movies-grid {

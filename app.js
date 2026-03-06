@@ -15,14 +15,16 @@ let allChannels   = [];
 let allCategories = [];
 let allCountries  = [];
 let allLanguages  = [];
+let allQualities  = [];
 let allMovies     = [];
 let allAdult      = [];
 
-let activeSection = 'live';   // 'live' | 'sports' | 'movies' | 'adult'
-let activeFilter  = { type: 'all', value: '' };
-let searchQuery   = '';
-let hls           = null;
-let adultVerified = false;
+let activeSection       = 'live';   // 'live' | 'sports' | 'movies' | 'adult'
+let activeFilter        = { type: 'all', value: '' };
+let activeQualityFilter = '';       // '' | '4K' | '1080p' | '720p' | 'Unknown'
+let searchQuery         = '';
+let hls                 = null;
+let adultVerified       = false;
 
 // Cast state
 let castAvailable = false;
@@ -66,8 +68,9 @@ async function init() {
     allCountries  = countries;
     allLanguages  = languages;
 
-    // Try movies.json (may not exist yet)
-    try { allMovies = await fetchJSON('movies.json'); } catch { allMovies = []; }
+    // Try movies.json and qualities.json (may not exist yet)
+    try { allMovies    = await fetchJSON('movies.json');    } catch { allMovies = []; }
+    try { allQualities = await fetchJSON('qualities.json'); } catch { allQualities = []; }
 
     // Update stat counters
     updateStats();
@@ -103,15 +106,40 @@ function showGridLoading() {
 
 function updateStats() {
   const total = allChannels.length.toLocaleString();
-  countAll.textContent      = total;
-  statShowing.textContent   = total;
-  mStatShowing.textContent  = total;
+  countAll.textContent       = total;
+  statShowing.textContent    = total;
+  mStatShowing.textContent   = total;
   statCountries.textContent  = allCountries.length;
   mStatCountries.textContent = allCountries.length;
 }
 
+function updateChannelCountHeader(showing, total) {
+  const showingEl = $('stat-showing');
+  const mShowingEl = $('m-stat-showing');
+  if (showing === total) {
+    if (showingEl) showingEl.textContent = total.toLocaleString();
+    if (mShowingEl) mShowingEl.textContent = total.toLocaleString();
+  } else {
+    if (showingEl) showingEl.textContent = `${showing.toLocaleString()} of ${total.toLocaleString()}`;
+    if (mShowingEl) mShowingEl.textContent = `${showing.toLocaleString()} of ${total.toLocaleString()}`;
+  }
+}
+
 // ─── Sidebar ─────────────────────────────────────────
 function buildSidebar() {
+  // Quality filter
+  const qualList = $('qualities-list');
+  if (qualList && allQualities.length > 0) {
+    const QUAL_ICONS = { '4K': '🟣', '1080p': '🔵', '720p': '🟢', 'Unknown': '⚪' };
+    qualList.innerHTML = allQualities.map(q => `
+      <button class="filter-btn" data-type="quality" data-value="${esc(q.value)}" role="listitem" aria-pressed="false">
+        <span class="flag" aria-hidden="true">${QUAL_ICONS[q.value] || '⚪'}</span>
+        <span class="label">${esc(q.label)}</span>
+        <span class="count">${q.count.toLocaleString()}</span>
+      </button>
+    `).join('');
+  }
+
   // Categories
   const catList = $('categories-list');
   catList.innerHTML = allCategories.slice(0, 35).map((cat, i) => `
@@ -167,10 +195,11 @@ function switchSection(section) {
     adultVerified = true;
   }
 
-  activeSection = section;
-  searchQuery   = '';
-  searchEl.value = '';
-  activeFilter  = { type: 'all', value: '' };
+  activeSection       = section;
+  searchQuery         = '';
+  searchEl.value      = '';
+  activeFilter        = { type: 'all', value: '' };
+  activeQualityFilter = '';
 
   // Update nav tab active state
   document.querySelectorAll('.nav-tab').forEach(t => {
@@ -221,6 +250,10 @@ function getFiltered() {
     ch = ch.filter(c => c.language === activeFilter.value);
   }
 
+  if (activeQualityFilter) {
+    ch = ch.filter(c => c.resolution === activeQualityFilter);
+  }
+
   if (searchQuery) {
     const q = searchQuery.toLowerCase();
     ch = ch.filter(c =>
@@ -237,6 +270,7 @@ function getFiltered() {
 function renderChannels() {
   const channels = getFiltered();
   updateCountDisplay(channels.length);
+  updateChannelCountHeader(channels.length, allChannels.length);
 
   if (channels.length === 0) {
     channelsGrid.innerHTML = emptyState('No channels found matching your search.');
@@ -276,12 +310,26 @@ function renderChannels() {
   syncActiveButtons();
 }
 
+function resolutionBadge(ch) {
+  if (!ch.resolution) return '';
+  const map = {
+    '4K':     { cls: 'badge-res-4k',  label: '4K'  },
+    '1080p':  { cls: 'badge-res-fhd', label: 'FHD' },
+    '720p':   { cls: 'badge-res-hd',  label: 'HD'  },
+    'Unknown':{ cls: 'badge-res-unk', label: '?'   },
+  };
+  const b = map[ch.resolution];
+  if (!b) return '';
+  return `<span class="badge-res ${b.cls}" title="${esc(ch.resolution)}">${b.label}</span>`;
+}
+
 function channelCard(ch) {
   const logo = ch.logo
     ? `<img src="${esc(ch.logo)}" alt="" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'no-logo\\' aria-hidden=\\'true\\'>📺</span>'" />`
     : `<span class="no-logo" aria-hidden="true">📺</span>`;
 
   const premiumBadge = ch.premium ? `<span class="badge-premium">⭐ Premium</span>` : '';
+  const resBadge     = resolutionBadge(ch);
 
   return `
     <article
@@ -295,6 +343,7 @@ function channelCard(ch) {
       <div class="card-logo">
         ${logo}
         <div class="play-overlay" aria-hidden="true">▶</div>
+        ${resBadge ? `<div class="card-res-badge">${resBadge}</div>` : ''}
       </div>
       <div class="card-info">
         <div class="card-name" title="${esc(ch.name)}">${esc(ch.name)}</div>
@@ -431,7 +480,7 @@ function renderAdult() {
   updateTitleDirect('🔞 Adult', adult.length);
 
   if (adult.length === 0) {
-    channelsGrid.innerHTML = emptyState('No adult channels found. Run build.js with the nsfw source enabled.');
+    channelsGrid.innerHTML = emptyState('No adult channels available right now. Check back after the next build.');
     return;
   }
 
@@ -608,7 +657,13 @@ window._showCategory = function(name) {
 };
 
 function setFilter(type, value) {
-  activeFilter = { type, value };
+  if (type === 'quality') {
+    activeQualityFilter = value;
+    // don't touch activeFilter
+  } else {
+    activeFilter = { type, value };
+    if (type !== 'all') activeQualityFilter = '';
+  }
   syncActiveButtons();
   closeSidebar();
   renderSection();
@@ -616,7 +671,12 @@ function setFilter(type, value) {
 
 function syncActiveButtons() {
   document.querySelectorAll('.filter-btn').forEach(btn => {
-    const active = btn.dataset.type === activeFilter.type && btn.dataset.value === activeFilter.value;
+    let active;
+    if (btn.dataset.type === 'quality') {
+      active = btn.dataset.value === activeQualityFilter;
+    } else {
+      active = btn.dataset.type === activeFilter.type && btn.dataset.value === activeFilter.value;
+    }
     btn.classList.toggle('active', active);
     btn.setAttribute('aria-pressed', active ? 'true' : 'false');
   });
