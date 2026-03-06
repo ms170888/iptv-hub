@@ -39,7 +39,7 @@
   <div id="header-stats" aria-live="polite">
     <div class="stat-pill">
       <span aria-hidden="true">📡</span>
-      <span><strong id="stat-showing">0</strong> live channels</span>
+      <span><strong id="stat-showing">0</strong> channels</span>
     </div>
     <div class="stat-pill">
       <span aria-hidden="true">🌍</span>
@@ -47,6 +47,22 @@
     </div>
   </div>
 </header>
+
+<!-- NAV TABS -->
+<nav id="nav-tabs" role="tablist" aria-label="Content sections">
+  <button class="nav-tab active" data-section="live" role="tab" aria-selected="true">
+    📺 Live TV
+  </button>
+  <button class="nav-tab" data-section="sports" role="tab" aria-selected="false">
+    🏆 Sports
+  </button>
+  <button class="nav-tab" data-section="movies" role="tab" aria-selected="false">
+    🎬 Movies &amp; VOD
+  </button>
+  <button class="nav-tab" data-section="adult" role="tab" aria-selected="false">
+    🔞 Adult
+  </button>
+</nav>
 
 <!-- SIDEBAR OVERLAY (mobile tap-to-close) -->
 <div id="sidebar-overlay" role="presentation" aria-hidden="true"></div>
@@ -162,6 +178,25 @@
       <input type="text" id="stream-url" readonly aria-label="Stream URL" />
       <button class="copy-btn" id="copy-url" aria-label="Copy stream URL">📋 Copy</button>
       <button class="copy-btn" id="open-vlc" aria-label="Open in VLC">📺 VLC</button>
+    </div>
+  </div>
+</div>
+
+<!-- AGE GATE MODAL -->
+<div
+  id="age-gate-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Age Verification"
+  aria-hidden="true"
+>
+  <div id="age-gate-container">
+    <div id="age-gate-icon">🔞</div>
+    <h2 id="age-gate-title">Adult Content</h2>
+    <p id="age-gate-desc">This section contains adult content.<br>Are you 18 or older?</p>
+    <div id="age-gate-buttons">
+      <button id="age-gate-yes" class="age-btn age-btn-yes">Yes, I'm 18+</button>
+      <button id="age-gate-no" class="age-btn age-btn-no">No, Go Back</button>
     </div>
   </div>
 </div>

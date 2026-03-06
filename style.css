@@ -793,3 +793,403 @@ body {
   #channels-grid          { grid-template-columns: repeat(auto-fill, minmax(185px, 1fr)); }
   .channel-section-grid   { grid-template-columns: repeat(auto-fill, minmax(185px, 1fr)); }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   NEW STYLES v2 — Nav Tabs, Sports, Movies, Adult, Premium
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─── NAV TABS ────────────────────────────────────────── */
+#nav-tabs {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: rgba(22,22,30,0.97);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: stretch;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  z-index: 90;
+  gap: 2px;
+  padding: 0 8px;
+}
+#nav-tabs::-webkit-scrollbar { display: none; }
+
+.nav-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 100px;
+  height: 100%;
+  padding: 0 18px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--text2);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color var(--transition), border-color var(--transition), background var(--transition);
+  -webkit-tap-highlight-color: transparent;
+  gap: 6px;
+}
+.nav-tab:hover {
+  color: var(--text);
+  background: var(--bg3);
+}
+.nav-tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
+
+/* Offset main content for both header + nav tabs */
+#app {
+  padding-top: calc(var(--header-h) + 48px);
+}
+/* Fix sidebar top offset when nav bar present */
+@media (min-width: 900px) {
+  #sidebar {
+    top: calc(var(--header-h) + 48px);
+  }
+}
+
+/* ─── PREMIUM BADGE ───────────────────────────────────── */
+.badge-premium {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #1a1a00;
+  background: linear-gradient(135deg, #ffd700, #ffb300);
+  border-radius: 4px;
+  padding: 2px 6px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+/* Gold border for premium cards */
+.channel-card.premium {
+  border-color: rgba(255, 215, 0, 0.4);
+}
+.channel-card.premium:hover {
+  border-color: rgba(255, 215, 0, 0.8);
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.15);
+}
+
+/* ─── FADE-IN ANIMATION ───────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.channel-card, .movie-card {
+  animation: fadeInUp 0.3s ease both;
+}
+/* Stagger: first 20 cards get stagger, rest instant */
+.channel-card:nth-child(1)  { animation-delay: 0.02s; }
+.channel-card:nth-child(2)  { animation-delay: 0.04s; }
+.channel-card:nth-child(3)  { animation-delay: 0.06s; }
+.channel-card:nth-child(4)  { animation-delay: 0.08s; }
+.channel-card:nth-child(5)  { animation-delay: 0.10s; }
+.channel-card:nth-child(6)  { animation-delay: 0.12s; }
+.channel-card:nth-child(7)  { animation-delay: 0.14s; }
+.channel-card:nth-child(8)  { animation-delay: 0.16s; }
+
+/* ─── MOVIES / VOD SECTION ────────────────────────────── */
+#movies-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.movie-card {
+  background: var(--bg2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  animation: fadeInUp 0.3s ease both;
+}
+.movie-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: rgba(229,9,20,0.5);
+}
+.movie-card:active { transform: scale(0.97); }
+.movie-card.playing { border-color: var(--accent); box-shadow: 0 0 14px rgba(229,9,20,0.35); }
+
+.movie-poster {
+  width: 100%;
+  aspect-ratio: 2/3;
+  background: var(--bg3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.movie-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.movie-poster .no-poster {
+  font-size: 36px;
+  color: var(--text3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.movie-poster .no-poster span {
+  font-size: 11px;
+  color: var(--text3);
+}
+.movie-poster .play-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition), background var(--transition);
+  font-size: 36px;
+}
+.movie-card:hover .play-overlay {
+  opacity: 1;
+  background: rgba(0,0,0,0.5);
+}
+
+.movie-info {
+  padding: 10px 10px 12px;
+}
+.movie-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.movie-meta {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* ─── SPORTS SECTION ──────────────────────────────────── */
+#sports-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* ─── AGE GATE MODAL ──────────────────────────────────── */
+#age-gate-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  background: rgba(0,0,0,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+#age-gate-modal.open { display: flex; }
+
+#age-gate-container {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 40px 32px;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+  animation: fadeInUp 0.25s ease;
+}
+
+#age-gate-icon {
+  font-size: 56px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+#age-gate-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+#age-gate-desc {
+  font-size: 15px;
+  color: var(--text2);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+#age-gate-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.age-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 130px;
+  min-height: var(--tap);
+  padding: 0 24px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition), opacity var(--transition), box-shadow var(--transition);
+  -webkit-tap-highlight-color: transparent;
+}
+.age-btn:active { transform: scale(0.96); }
+
+.age-btn-yes {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(229,9,20,0.4);
+}
+.age-btn-yes:hover { opacity: 0.9; box-shadow: 0 6px 20px rgba(229,9,20,0.55); }
+
+.age-btn-no {
+  background: var(--bg4);
+  color: var(--text2);
+  border: 1.5px solid var(--border);
+}
+.age-btn-no:hover { background: var(--bg3); color: var(--text); }
+
+/* ─── LOADING OVERLAY (full section) ─────────────────── */
+.section-loading {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 80px 20px;
+  color: var(--text2);
+  font-size: 15px;
+}
+.section-loading .loader { margin: 0; }
+
+/* ─── SPORTS PREMIUM GROUP HEADER ─────────────────────── */
+.sport-group-header {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.sport-group-header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ─── EMPTY STATE ─────────────────────────────────────── */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text2);
+}
+.empty-state .empty-icon { font-size: 44px; margin-bottom: 12px; display: block; }
+.empty-state p { font-size: 15px; line-height: 1.6; }
+
+/* ─── RESPONSIVE: TABLET ──────────────────────────────── */
+@media (min-width: 480px) {
+  #movies-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #sports-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 600px) {
+  #movies-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  #sports-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ─── RESPONSIVE: DESKTOP ─────────────────────────────── */
+@media (min-width: 900px) {
+  #movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+  }
+  #sports-grid {
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  }
+  .nav-tab { font-size: 15px; min-width: 120px; }
+}
+
+/* ─── PHONE: single column for channel/sports cards ────── */
+@media (max-width: 479px) {
+  #channels-grid, .channel-section-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  #movies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #sports-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  /* Full-screen player on mobile */
+  #player-modal {
+    align-items: stretch;
+  }
+  #player-container {
+    border-radius: 0;
+    max-height: 100vh;
+    max-height: 100dvh;
+  }
+}
+
+/* ─── PLAYER: full screen on very small screens ─────────── */
+@media (max-width: 380px) {
+  #video-wrap video { max-height: 52vw; }
+  .nav-tab { min-width: 85px; padding: 0 12px; font-size: 13px; }
+}

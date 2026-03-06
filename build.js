@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// build.js - IPTV aggregator builder
-// No npm dependencies — uses built-in fetch (Node 18+)
+// build.js — IPTV Hub Builder v2
+// No npm deps — Node 18+ built-in fetch
 
 import { writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
@@ -9,21 +9,83 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = join(__dirname, 'data');
 
-// Sources and their type (affects how group-title is interpreted)
-const SOURCES = [
-  { url: 'https://iptv-org.github.io/iptv/index.m3u',          type: 'main' },
-  { url: 'https://iptv-org.github.io/iptv/index.country.m3u',  type: 'country' },
-  { url: 'https://iptv-org.github.io/iptv/index.language.m3u', type: 'language' },
-  { url: 'https://iptv-org.github.io/iptv/index.category.m3u', type: 'category' },
+// ─── Config ──────────────────────────────────────────
+const PROBE_TIMEOUT_MS = 5000;
+const PROBE_BATCH_SIZE = 100;
+const PROBE_ENABLED = process.env.SKIP_PROBE !== '1';
+
+// ─── Base M3U Sources ─────────────────────────────────
+const BASE_SOURCES = [
+  { url: 'https://iptv-org.github.io/iptv/index.m3u',                             type: 'main',  isAdult: false },
+  { url: 'https://iptv-org.github.io/iptv/index.nsfw.m3u',                        type: 'adult', isAdult: true  },
+  { url: 'https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8',   type: 'main',  isAdult: false },
+  { url: 'https://raw.githubusercontent.com/iptv-org/iptv/master/streams/us.m3u', type: 'main',  isAdult: false },
+  { url: 'https://raw.githubusercontent.com/iptv-org/iptv/master/streams/ca.m3u', type: 'main',  isAdult: false },
+  { url: 'https://raw.githubusercontent.com/iptv-org/iptv/master/streams/gb.m3u', type: 'main',  isAdult: false },
+  { url: 'https://raw.githubusercontent.com/iptv-org/iptv/master/streams/in.m3u', type: 'main',  isAdult: false },
 ];
 
-// Health check config
-const PROBE_TIMEOUT_MS  = 5000;   // 5s per stream
-const PROBE_BATCH_SIZE  = 75;     // concurrent probes per batch
-// Set to false to skip probing (for testing/CI speed)
-const PROBE_ENABLED     = process.env.SKIP_PROBE !== '1';
+// Common M3U file paths to try in discovered GitHub repos
+const GITHUB_M3U_PATHS = [
+  'playlist.m3u8', 'index.m3u', 'iptv.m3u', 'channels.m3u8',
+  'channels.m3u', 'list.m3u', 'tv.m3u', 'streams.m3u',
+];
 
-// ISO 3166-1 alpha-2 → country name
+// GitHub search queries to find more sources
+const GITHUB_QUERIES = [
+  'iptv m3u playlist',
+  'iptv m3u8 sport',
+  'free iptv premium',
+  'm3u movies vod playlist',
+];
+
+// ─── Category normalization ───────────────────────────
+const CATEGORY_MAP = {
+  sport: 'Sports', sports: 'Sports', football: 'Sports', soccer: 'Sports',
+  basketball: 'Sports', cricket: 'Sports', tennis: 'Sports', golf: 'Sports',
+  baseball: 'Sports', hockey: 'Sports', rugby: 'Sports', racing: 'Sports',
+  fighting: 'Sports', boxing: 'Sports', mma: 'Sports', esports: 'Sports',
+  'sport ': 'Sports', athletics: 'Sports', olympic: 'Sports',
+
+  news: 'News', information: 'News', noticias: 'News', 'breaking news': 'News',
+  actualite: 'News', nachrichten: 'News', notícias: 'News',
+
+  entertainment: 'Entertainment', variety: 'Entertainment', lifestyle: 'Entertainment',
+  comedy: 'Entertainment', drama: 'Entertainment', thriller: 'Entertainment',
+
+  movies: 'Movies', movie: 'Movies', cinema: 'Movies', film: 'Movies', films: 'Movies',
+  vod: 'Movies', series: 'Movies', 'tv shows': 'Movies', tvshows: 'Movies',
+  tv_shows: 'Movies', peliculas: 'Movies', filmes: 'Movies',
+
+  music: 'Music', musica: 'Music', música: 'Music', muzika: 'Music', musik: 'Music',
+
+  kids: 'Kids', children: 'Kids', cartoon: 'Kids', animation: 'Kids', family: 'Kids',
+  enfants: 'Kids', bambini: 'Kids', niños: 'Kids',
+
+  documentary: 'Documentary', docu: 'Documentary', nature: 'Documentary',
+  history: 'Documentary', science: 'Documentary', discovery: 'Documentary',
+
+  religious: 'Religious', religion: 'Religious', church: 'Religious',
+  islamic: 'Religious', christian: 'Religious', spiritual: 'Religious',
+  faith: 'Religious', gospel: 'Religious',
+
+  adult: 'Adult', xxx: 'Adult', erotic: 'Adult', '18+': 'Adult', nsfw: 'Adult',
+  xvideos: 'Adult', porn: 'Adult',
+
+  general: 'General', other: 'General', undefined: 'General', uncategorized: 'General',
+  misc: 'General', mixed: 'General',
+};
+
+// Premium channel name keywords (case-insensitive)
+const PREMIUM_KEYWORDS = [
+  'hbo', 'espn', 'fox sports', 'sky sports', 'bt sport', 'dazn',
+  'showtime', 'starz', 'bein', 'tnt', 'usa network',
+  'premier league', 'champions league', 'f1 tv',
+  'canal+', 'sky cinema', 'cinemax', 'nfl', 'nba', 'mlb', 'nhl',
+  'beIN', 'discovery+', 'paramount+', 'peacock',
+];
+
+// ─── Country data ─────────────────────────────────────
 const COUNTRY_NAMES = {
   AF:'Afghanistan',AL:'Albania',DZ:'Algeria',AD:'Andorra',AO:'Angola',
   AR:'Argentina',AM:'Armenia',AU:'Australia',AT:'Austria',AZ:'Azerbaijan',
@@ -57,20 +119,44 @@ const COUNTRY_NAMES = {
   XX:'International',INT:'International',
 };
 
-// Extract 2-letter country code from tvg-id like "channel.us@SD" → "US"
+// ─── Helpers ──────────────────────────────────────────
 function countryFromTvgId(tvgId) {
   if (!tvgId) return '';
   const m = tvgId.match(/\.([a-z]{2})@/i);
   return m ? m[1].toUpperCase() : '';
 }
 
-// ISO 3166-1 alpha-2 to flag emoji
 function codeToFlag(code) {
   if (!code || code.length !== 2) return '🌐';
   return String.fromCodePoint(...[...code.toUpperCase()].map(c => 127397 + c.charCodeAt(0)));
 }
 
-// Parse #EXTINF attributes
+function normalizeCategory(raw) {
+  if (!raw) return 'General';
+  const trimmed = raw.trim();
+  const key = trimmed.toLowerCase();
+  if (CATEGORY_MAP[key]) return CATEGORY_MAP[key];
+  for (const [k, v] of Object.entries(CATEGORY_MAP)) {
+    if (key.includes(k)) return v;
+  }
+  // Return original capitalized
+  return trimmed.split(/\s+/).map(w => w ? w[0].toUpperCase() + w.slice(1) : '').join(' ');
+}
+
+function isPremium(name) {
+  const lower = (name || '').toLowerCase();
+  return PREMIUM_KEYWORDS.some(kw => lower.includes(kw.toLowerCase()));
+}
+
+function isMovieEntry(ch) {
+  const cat = (ch.category || '').toLowerCase();
+  const url  = (ch.url || '').toLowerCase();
+  if (['movies', 'movie', 'vod', 'cinema', 'film', 'films', 'series'].some(k => cat.includes(k))) return true;
+  if (/\.(mp4|mkv|avi|mov|m4v)(\?|$)/i.test(url)) return true;
+  return false;
+}
+
+// ─── M3U Parsing ─────────────────────────────────────
 function parseExtInf(line) {
   const res = { name:'', tvgId:'', tvgName:'', tvgCountry:'', tvgLanguage:'', tvgLogo:'', groupTitle:'' };
   const attrRe = /([\w-]+)="([^"]*)"/g;
@@ -91,8 +177,7 @@ function parseExtInf(line) {
   return res;
 }
 
-// Parse M3U content — sourceType controls how group-title is used
-function parseM3U(content, sourceType) {
+function parseM3U(content, sourceType, isAdult = false) {
   const channels = [];
   const lines = content.split('\n')
     .map(l => l.trim())
@@ -107,40 +192,61 @@ function parseM3U(content, sourceType) {
     for (let j = i + 1; j < lines.length; j++) {
       if (!lines[j].startsWith('#')) { streamUrl = lines[j].trim(); break; }
     }
-    if (!streamUrl) continue;
+    if (!streamUrl || !streamUrl.startsWith('http')) continue;
 
-    let country = inf.tvgCountry || countryFromTvgId(inf.tvgId);
-    let category = '';
-    let language = '';
+    let country  = inf.tvgCountry || countryFromTvgId(inf.tvgId) || 'XX';
+    let language = inf.tvgLanguage || '';
+    let category = 'General';
+    let entryIsAdult = isAdult;
 
-    if (sourceType === 'country') {
-      if (!country && inf.groupTitle) {
+    if (sourceType === 'adult') {
+      category = 'Adult';
+      entryIsAdult = true;
+    } else if (sourceType === 'country') {
+      if (country === 'XX' && inf.groupTitle) {
         const found = Object.entries(COUNTRY_NAMES).find(
           ([, v]) => v.toLowerCase() === inf.groupTitle.trim().toLowerCase()
         );
         if (found) country = found[0];
       }
+      category = normalizeCategory(inf.groupTitle || '');
     } else if (sourceType === 'language') {
-      language = inf.groupTitle || inf.tvgLanguage || '';
+      language = inf.groupTitle || language;
+      category = 'General';
     } else if (sourceType === 'category') {
-      category = inf.groupTitle || '';
+      category = normalizeCategory(inf.groupTitle || '');
+      language = language || '';
     } else {
-      // main: group-title is category
-      category = inf.groupTitle || '';
-      language = inf.tvgLanguage || '';
+      // main
+      category = normalizeCategory(inf.groupTitle || '');
+      if (category === 'Adult') entryIsAdult = true;
     }
 
-    channels.push({ name: inf.name, tvgId: inf.tvgId, tvgLogo: inf.tvgLogo, country, language, category, url: streamUrl });
+    channels.push({
+      name:     inf.name,
+      tvgId:    inf.tvgId,
+      tvgLogo:  inf.tvgLogo,
+      country:  country,
+      language: language,
+      category: category,
+      url:      streamUrl,
+      isAdult:  entryIsAdult,
+      premium:  isPremium(inf.name),
+    });
   }
   return channels;
 }
 
-async function fetchWithRetry(url, retries = 3) {
+// ─── Fetch helpers ────────────────────────────────────
+async function fetchWithRetry(url, retries = 3, timeoutMs = 45000) {
   for (let i = 0; i < retries; i++) {
     try {
       const ctrl = new AbortController();
-      const t = setTimeout(() => ctrl.abort(), 45000);
-      const res = await fetch(url, { signal: ctrl.signal });
+      const t = setTimeout(() => ctrl.abort(), timeoutMs);
+      const res = await fetch(url, {
+        signal: ctrl.signal,
+        headers: { 'User-Agent': 'IPTVHub/2.0' },
+      });
       clearTimeout(t);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return await res.text();
@@ -152,185 +258,307 @@ async function fetchWithRetry(url, retries = 3) {
   return null;
 }
 
-// Probe a single stream URL — returns true if alive
+// Search GitHub for repos matching a query
+async function searchGitHubRepos(query) {
+  try {
+    const url = `https://api.github.com/search/repositories?q=${encodeURIComponent(query)}&sort=stars&order=desc&per_page=10`;
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), 15000);
+    const res = await fetch(url, {
+      signal: ctrl.signal,
+      headers: {
+        'User-Agent': 'IPTVHub/2.0',
+        'Accept': 'application/vnd.github.v3+json',
+      },
+    });
+    clearTimeout(t);
+    if (!res.ok) return [];
+    const data = await res.json();
+    return (data.items || []).map(r => ({
+      owner: r.owner.login,
+      repo:  r.name,
+      stars: r.stargazers_count,
+      defaultBranch: r.default_branch || 'master',
+    }));
+  } catch (e) {
+    console.warn(`  GitHub search failed: ${e.message}`);
+    return [];
+  }
+}
+
+// Discover additional M3U sources from GitHub
+async function discoverGitHubSources() {
+  console.log('\n🔍 Searching GitHub for additional M3U sources...');
+  const discovered = [];
+  const seenRepos = new Set();
+
+  for (const query of GITHUB_QUERIES) {
+    console.log(`  Query: "${query}"`);
+    const repos = await searchGitHubRepos(query);
+
+    // Rate limit: 2s between search calls
+    await new Promise(r => setTimeout(r, 2000));
+
+    for (const { owner, repo, defaultBranch } of repos.slice(0, 5)) {
+      const key = `${owner}/${repo}`;
+      if (seenRepos.has(key)) continue;
+      seenRepos.add(key);
+
+      for (const path of GITHUB_M3U_PATHS) {
+        const rawUrl = `https://raw.githubusercontent.com/${owner}/${repo}/${defaultBranch}/${path}`;
+        try {
+          const ctrl = new AbortController();
+          const t = setTimeout(() => ctrl.abort(), 10000);
+          const res = await fetch(rawUrl, {
+            signal: ctrl.signal,
+            headers: { 'User-Agent': 'IPTVHub/2.0' },
+          });
+          clearTimeout(t);
+          if (res.ok) {
+            const text = await res.text();
+            if (text.includes('#EXTINF') && text.length > 500) {
+              // Detect if likely adult/VOD based on query
+              const isAdultQuery = query.includes('adult') || query.includes('xxx');
+              const isVodQuery   = query.includes('movie') || query.includes('vod');
+              const srcType = isAdultQuery ? 'adult' : (isVodQuery ? 'main' : 'main');
+              const srcAdult = isAdultQuery;
+              console.log(`  ✅ Found M3U: ${rawUrl} (${text.split('#EXTINF').length - 1} entries)`);
+              discovered.push({ url: rawUrl, type: srcType, isAdult: srcAdult });
+              break; // one file per repo
+            }
+          }
+        } catch { /* skip */ }
+      }
+    }
+  }
+
+  console.log(`  Found ${discovered.length} additional GitHub sources\n`);
+  return discovered;
+}
+
+// ─── Stream Probing ───────────────────────────────────
+// Returns: 'alive' | 'dead' | 'geoblock'
 async function probeStream(url) {
   try {
     const ctrl = new AbortController();
     const t = setTimeout(() => ctrl.abort(), PROBE_TIMEOUT_MS);
-
-    // Try HEAD first (lightweight), fall back to GET with tiny range
-    let res;
+    let status;
     try {
-      res = await fetch(url, {
+      const res = await fetch(url, {
         method: 'HEAD',
         signal: ctrl.signal,
-        headers: { 'User-Agent': 'IPTVHub/1.0', 'Range': 'bytes=0-1023' },
+        headers: { 'User-Agent': 'IPTVHub/2.0', 'Range': 'bytes=0-1023' },
       });
+      status = res.status;
     } catch {
-      // HEAD failed or not supported — try GET with abort after headers
-      ctrl.abort(); // cancel the HEAD
+      // HEAD not supported — try GET
       const ctrl2 = new AbortController();
       const t2 = setTimeout(() => ctrl2.abort(), PROBE_TIMEOUT_MS);
-      res = await fetch(url, {
+      const res2 = await fetch(url, {
         method: 'GET',
         signal: ctrl2.signal,
-        headers: { 'User-Agent': 'IPTVHub/1.0', 'Range': 'bytes=0-1023' },
+        headers: { 'User-Agent': 'IPTVHub/2.0', 'Range': 'bytes=0-1023' },
       });
       clearTimeout(t2);
-      // We got headers — don't bother reading body
+      status = res2.status;
     }
     clearTimeout(t);
 
-    // Accept 200, 206 (partial), 301/302 (redirect = alive), 403 (geo-block but alive)
-    const ok = res.status < 500;
-    return ok;
+    if (status === 403 || status === 451) return 'geoblock';
+    if (status >= 200 && status < 400) return 'alive';
+    return 'dead';
   } catch {
-    return false;
+    return 'dead';
   }
 }
 
-// Run probes in batches of PROBE_BATCH_SIZE
-async function probeAll(channels) {
-  console.log(`\n🔍 Probing ${channels.length} streams (batch size: ${PROBE_BATCH_SIZE}, timeout: ${PROBE_TIMEOUT_MS}ms)...`);
+async function probeAll(channels, label = '') {
+  if (channels.length === 0) return [];
+  console.log(`\n🔍 Probing ${channels.length} ${label}streams (batch: ${PROBE_BATCH_SIZE}, timeout: ${PROBE_TIMEOUT_MS}ms)...`);
 
-  const alive = [];
-  const dead  = [];
+  const alive = [], dead = [], geoBlocked = [];
   let done = 0;
 
   for (let i = 0; i < channels.length; i += PROBE_BATCH_SIZE) {
     const batch = channels.slice(i, i + PROBE_BATCH_SIZE);
-
-    const results = await Promise.allSettled(
-      batch.map(ch => probeStream(ch.url))
-    );
+    const results = await Promise.allSettled(batch.map(ch => probeStream(ch.url)));
 
     for (let j = 0; j < batch.length; j++) {
-      const isAlive = results[j].status === 'fulfilled' && results[j].value === true;
-      if (isAlive) alive.push(batch[j]);
-      else         dead.push(batch[j]);
+      const result = results[j].status === 'fulfilled' ? results[j].value : 'dead';
+      if      (result === 'alive')    alive.push(batch[j]);
+      else if (result === 'geoblock') geoBlocked.push(batch[j]);
+      else                            dead.push(batch[j]);
     }
 
     done += batch.length;
     const pct = ((done / channels.length) * 100).toFixed(1);
-    process.stdout.write(`\r  Progress: ${done}/${channels.length} (${pct}%) — alive: ${alive.length}, dead: ${dead.length}  `);
+    process.stdout.write(`\r  Progress: ${done}/${channels.length} (${pct}%) — alive: ${alive.length}, dead: ${dead.length}, geo-blocked: ${geoBlocked.length}  `);
   }
 
-  console.log(`\n\n  ✅ Alive: ${alive.length}`);
-  console.log(`  ❌ Dead / unreachable: ${dead.length}`);
+  console.log(`\n\n  ✅ Alive:         ${alive.length}`);
+  console.log(`  🌍 Geo-blocked:   ${geoBlocked.length} (excluded)`);
+  console.log(`  ❌ Dead/timeout:  ${dead.length} (excluded)`);
   console.log(`  📊 Survival rate: ${((alive.length / channels.length) * 100).toFixed(1)}%\n`);
 
   return alive;
 }
 
+// ─── Main ─────────────────────────────────────────────
 async function main() {
-  console.log('🚀 IPTV Hub Builder Starting...\n');
+  console.log('🚀 IPTV Hub Builder v2 Starting...\n');
   mkdirSync(DATA_DIR, { recursive: true });
 
-  const channelMap = new Map(); // url → channel object (dedupe + merge)
+  // Discover additional sources from GitHub
+  let githubSources = [];
+  try {
+    githubSources = await discoverGitHubSources();
+  } catch (e) {
+    console.warn('GitHub discovery failed, continuing without extra sources:', e.message);
+  }
+
+  const SOURCES = [...BASE_SOURCES, ...githubSources];
+
+  const channelMap = new Map(); // url → channel
+  const adultMap   = new Map(); // url → adult channel
 
   for (const src of SOURCES) {
-    console.log(`⬇️  Fetching [${src.type}]: ${src.url}`);
-    const content = await fetchWithRetry(src.url);
-    if (!content) { console.warn('  ⚠️  Skipped\n'); continue; }
+    console.log(`⬇️  Fetching [${src.type}${src.isAdult ? '/adult' : ''}]: ${src.url}`);
+    let content;
+    try {
+      content = await fetchWithRetry(src.url);
+    } catch (e) {
+      console.warn(`  ⚠️  Error fetching: ${e.message}\n`);
+      continue;
+    }
+    if (!content) { console.warn('  ⚠️  Skipped (no content)\n'); continue; }
 
-    const parsed = parseM3U(content, src.type);
-    let added = 0, updated = 0;
+    let parsed;
+    try {
+      parsed = parseM3U(content, src.type, src.isAdult);
+    } catch (e) {
+      console.warn(`  ⚠️  Parse error: ${e.message}\n`);
+      continue;
+    }
+
+    let addedMain = 0, addedAdult = 0, updated = 0;
 
     for (const ch of parsed) {
-      if (!channelMap.has(ch.url)) {
-        channelMap.set(ch.url, {
+      const targetMap = ch.isAdult ? adultMap : channelMap;
+      if (!targetMap.has(ch.url)) {
+        targetMap.set(ch.url, {
           name:     ch.name,
           tvgId:    ch.tvgId,
           logo:     ch.tvgLogo,
-          country:  ch.country || 'XX',
+          country:  ch.country  || 'XX',
           language: ch.language || '',
-          category: ch.category || '',
+          category: ch.category || 'General',
           url:      ch.url,
+          premium:  ch.premium  || false,
+          isAdult:  ch.isAdult  || false,
         });
-        added++;
+        ch.isAdult ? addedAdult++ : addedMain++;
       } else {
-        const e = channelMap.get(ch.url);
-        if (!e.country  || e.country === 'XX') e.country  = ch.country  || e.country;
-        if (!e.language && ch.language)         e.language = ch.language;
-        if (!e.category && ch.category)         e.category = ch.category;
-        if (!e.logo     && ch.tvgLogo)          e.logo     = ch.tvgLogo;
+        const e = targetMap.get(ch.url);
+        if (!e.country  || e.country === 'XX')          e.country  = ch.country  || e.country;
+        if (!e.language && ch.language)                  e.language = ch.language;
+        if (!e.category || e.category === 'General')     e.category = ch.category || e.category;
+        if (!e.logo     && ch.tvgLogo)                   e.logo     = ch.tvgLogo;
+        if (!e.premium  && ch.premium)                   e.premium  = true;
         updated++;
       }
     }
-    console.log(`  ✅ ${parsed.length} parsed → +${added} new, ~${updated} merged (total: ${channelMap.size})\n`);
+
+    console.log(`  ✅ ${parsed.length} parsed → +${addedMain} main, +${addedAdult} adult, ~${updated} merged (total: ${channelMap.size} main, ${adultMap.size} adult)\n`);
   }
 
-  let channels = [...channelMap.values()];
+  let channels      = [...channelMap.values()];
+  let adultChannels = [...adultMap.values()];
 
-  // Health check: probe streams and filter dead ones
+  console.log(`\n📦 Before probing: ${channels.length} main + ${adultChannels.length} adult channels`);
+
+  // Probe streams
   if (PROBE_ENABLED) {
-    channels = await probeAll(channels);
+    channels      = await probeAll(channels, '');
+    adultChannels = await probeAll(adultChannels, 'adult ');
   } else {
     console.log('\n⚡ Stream probing skipped (SKIP_PROBE=1)\n');
   }
 
-  // Finalize with IDs + flag emojis
-  const finalChannels = channels.map((ch, id) => {
-    const country = ch.country || 'XX';
-    const flag    = codeToFlag(country);
-    return {
-      id,
-      name:        ch.name,
-      logo:        ch.logo || '',
-      country,
-      countryName: COUNTRY_NAMES[country] || country,
-      flag,
-      language:    ch.language || 'Unknown',
-      category:    ch.category || 'Uncategorized',
-      url:         ch.url,
-    };
-  });
+  // Separate VOD/movies from live channels
+  const movieChannels = channels.filter(ch => isMovieEntry(ch));
+  const liveChannels  = channels.filter(ch => !isMovieEntry(ch));
 
-  // Build filter lists
+  // Finalize with IDs and flag emoji
+  function finalizeChannels(arr, idOffset = 0) {
+    return arr.map((ch, i) => {
+      const country = ch.country || 'XX';
+      return {
+        id:          idOffset + i,
+        name:        ch.name,
+        logo:        ch.logo || '',
+        country,
+        countryName: COUNTRY_NAMES[country] || country,
+        flag:        codeToFlag(country),
+        language:    ch.language || 'Unknown',
+        category:    ch.category || 'General',
+        url:         ch.url,
+        premium:     ch.premium || false,
+      };
+    });
+  }
+
+  const finalChannels = finalizeChannels(liveChannels);
+  const finalMovies   = finalizeChannels(movieChannels,  finalChannels.length);
+  const finalAdult    = finalizeChannels(adultChannels,  finalChannels.length + finalMovies.length);
+
+  // Build filter metadata for main channels
   const catMap     = new Map();
   const countryMap = new Map();
   const langMap    = new Map();
 
   for (const ch of finalChannels) {
     catMap.set(ch.category, (catMap.get(ch.category) || 0) + 1);
-
     if (ch.country !== 'XX') {
       if (!countryMap.has(ch.country)) {
         countryMap.set(ch.country, { code: ch.country, name: ch.countryName, flag: ch.flag, count: 0 });
       }
       countryMap.get(ch.country).count++;
     }
-
     if (ch.language && ch.language !== 'Unknown') {
       langMap.set(ch.language, (langMap.get(ch.language) || 0) + 1);
     }
   }
 
   const categories = [...catMap.entries()]
-    .sort((a, b) => a[0].localeCompare(b[0]))
+    .sort((a, b) => b[1] - a[1]) // sort by count desc
     .map(([name, count]) => ({ name, count }));
 
   const countries = [...countryMap.values()]
-    .sort((a, b) => a.code.localeCompare(b.code));
+    .sort((a, b) => b.count - a.count); // most channels first
 
   const languages = [...langMap.entries()]
-    .sort((a, b) => a[0].localeCompare(b[0]))
+    .sort((a, b) => b[1] - a[1])
     .map(([name, count]) => ({ name, count }));
 
-  // Write JSON
+  // Write data files
   writeFileSync(join(DATA_DIR, 'channels.json'),   JSON.stringify(finalChannels, null, 2));
+  writeFileSync(join(DATA_DIR, 'movies.json'),     JSON.stringify(finalMovies,   null, 2));
+  writeFileSync(join(DATA_DIR, 'adult.json'),      JSON.stringify(finalAdult,    null, 2));
   writeFileSync(join(DATA_DIR, 'categories.json'), JSON.stringify(categories,    null, 2));
   writeFileSync(join(DATA_DIR, 'countries.json'),  JSON.stringify(countries,     null, 2));
   writeFileSync(join(DATA_DIR, 'languages.json'),  JSON.stringify(languages,     null, 2));
 
-  const mb = (JSON.stringify(finalChannels).length / 1024 / 1024).toFixed(2);
-  console.log('📊 Final Summary:');
-  console.log(`  Live channels:  ${finalChannels.length}`);
-  console.log(`  Categories:     ${categories.length}`);
-  console.log(`  Countries:      ${countries.length}`);
-  console.log(`  Languages:      ${languages.length}`);
-  console.log(`  Data size:      ${mb} MB`);
+  const mb = (Buffer.byteLength(JSON.stringify(finalChannels)) / 1024 / 1024).toFixed(2);
+
+  console.log('\n📊 Final Summary:');
+  console.log(`  Live channels:   ${finalChannels.length}`);
+  console.log(`  Movies / VOD:    ${finalMovies.length}`);
+  console.log(`  Adult:           ${finalAdult.length}`);
+  console.log(`  Categories:      ${categories.length}`);
+  console.log(`  Countries:       ${countries.length}`);
+  console.log(`  Languages:       ${languages.length}`);
+  console.log(`  channels.json:   ${mb} MB`);
   console.log('\n✅ Done! Data written to ./data/');
 }
 
-main().catch(e => { console.error('❌', e); process.exit(1); });
+main().catch(e => { console.error('❌ Build failed:', e); process.exit(1); });

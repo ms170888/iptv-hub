@@ -1,574 +1,414 @@
 [
   {
-    "name": "Animation",
-    "count": 21
+    "name": "General",
+    "count": 4875
   },
   {
-    "name": "Animation;Classic",
-    "count": 1
-  },
-  {
-    "name": "Animation;Classic;Entertainment;Family;Movies",
-    "count": 1
-  },
-  {
-    "name": "Animation;Entertainment",
-    "count": 1
-  },
-  {
-    "name": "Animation;Family;Kids",
-    "count": 1
-  },
-  {
-    "name": "Animation;General",
-    "count": 1
-  },
-  {
-    "name": "Animation;General;Kids",
-    "count": 1
-  },
-  {
-    "name": "Animation;Kids",
-    "count": 21
-  },
-  {
-    "name": "Animation;Kids;Music",
-    "count": 1
-  },
-  {
-    "name": "Animation;Kids;Public",
-    "count": 1
-  },
-  {
-    "name": "Animation;Kids;Religious",
-    "count": 2
-  },
-  {
-    "name": "Animation;Movies",
-    "count": 1
-  },
-  {
-    "name": "Auto",
-    "count": 11
-  },
-  {
-    "name": "Auto;Entertainment",
-    "count": 1
-  },
-  {
-    "name": "Auto;Outdoor;Sports",
-    "count": 1
-  },
-  {
-    "name": "Auto;Series",
-    "count": 1
-  },
-  {
-    "name": "Auto;Travel",
-    "count": 1
-  },
-  {
-    "name": "Business",
-    "count": 60
-  },
-  {
-    "name": "Business;Culture;Lifestyle",
-    "count": 1
-  },
-  {
-    "name": "Business;Documentary",
-    "count": 3
-  },
-  {
-    "name": "Business;News",
-    "count": 6
-  },
-  {
-    "name": "Business;Series",
-    "count": 1
-  },
-  {
-    "name": "Classic",
-    "count": 28
-  },
-  {
-    "name": "Classic;Comedy;Public;Series",
-    "count": 1
-  },
-  {
-    "name": "Classic;Kids",
-    "count": 2
-  },
-  {
-    "name": "Classic;Movies",
-    "count": 5
-  },
-  {
-    "name": "Classic;Music",
-    "count": 2
-  },
-  {
-    "name": "Classic;News",
-    "count": 1
-  },
-  {
-    "name": "Classic;Series",
-    "count": 1
-  },
-  {
-    "name": "Comedy",
-    "count": 41
-  },
-  {
-    "name": "Comedy;Family;Movies",
-    "count": 1
-  },
-  {
-    "name": "Comedy;Kids",
-    "count": 2
-  },
-  {
-    "name": "Comedy;Movies",
-    "count": 1
-  },
-  {
-    "name": "Comedy;Movies;Series",
-    "count": 1
-  },
-  {
-    "name": "Comedy;Movies;Series;Sports",
-    "count": 1
-  },
-  {
-    "name": "Comedy;Public",
-    "count": 1
-  },
-  {
-    "name": "Comedy;Series",
-    "count": 1
-  },
-  {
-    "name": "Cooking",
-    "count": 29
-  },
-  {
-    "name": "Cooking;Lifestyle",
-    "count": 1
-  },
-  {
-    "name": "Cooking;Shop",
-    "count": 1
-  },
-  {
-    "name": "Culture",
-    "count": 106
-  },
-  {
-    "name": "Culture;Documentary",
-    "count": 4
-  },
-  {
-    "name": "Culture;Documentary;Entertainment;General;Movies;Music",
-    "count": 1
-  },
-  {
-    "name": "Culture;Education",
-    "count": 9
-  },
-  {
-    "name": "Culture;Education;Entertainment",
-    "count": 1
-  },
-  {
-    "name": "Culture;Education;Lifestyle",
-    "count": 1
-  },
-  {
-    "name": "Culture;Education;News",
-    "count": 1
-  },
-  {
-    "name": "Culture;Entertainment",
-    "count": 4
-  },
-  {
-    "name": "Culture;Entertainment;Music",
-    "count": 1
-  },
-  {
-    "name": "Culture;Entertainment;Music;News",
-    "count": 1
-  },
-  {
-    "name": "Culture;Entertainment;News",
-    "count": 1
-  },
-  {
-    "name": "Culture;Family",
-    "count": 1
-  },
-  {
-    "name": "Culture;General",
-    "count": 3
-  },
-  {
-    "name": "Culture;General;Music;News",
-    "count": 1
-  },
-  {
-    "name": "Culture;Kids",
-    "count": 1
-  },
-  {
-    "name": "Culture;Lifestyle",
-    "count": 1
-  },
-  {
-    "name": "Culture;Music",
-    "count": 3
-  },
-  {
-    "name": "Culture;News",
-    "count": 8
-  },
-  {
-    "name": "Culture;Public",
-    "count": 3
-  },
-  {
-    "name": "Culture;Religious",
-    "count": 4
-  },
-  {
-    "name": "Culture;Sports",
-    "count": 1
-  },
-  {
-    "name": "Culture;Travel",
-    "count": 1
-  },
-  {
-    "name": "Documentary",
-    "count": 79
-  },
-  {
-    "name": "Documentary;Education",
-    "count": 1
-  },
-  {
-    "name": "Documentary;Education;Outdoor;Relax",
-    "count": 1
-  },
-  {
-    "name": "Documentary;Education;Science",
-    "count": 1
-  },
-  {
-    "name": "Documentary;Entertainment",
-    "count": 1
-  },
-  {
-    "name": "Documentary;News",
-    "count": 3
-  },
-  {
-    "name": "Documentary;Series",
-    "count": 2
-  },
-  {
-    "name": "Education",
-    "count": 134
-  },
-  {
-    "name": "Education;Entertainment",
-    "count": 2
-  },
-  {
-    "name": "Education;Entertainment;News",
-    "count": 1
-  },
-  {
-    "name": "Education;General",
-    "count": 1
-  },
-  {
-    "name": "Education;Kids",
-    "count": 9
-  },
-  {
-    "name": "Education;Lifestyle",
-    "count": 2
-  },
-  {
-    "name": "Education;Lifestyle;Science",
-    "count": 1
-  },
-  {
-    "name": "Education;News",
-    "count": 1
-  },
-  {
-    "name": "Education;Outdoor",
-    "count": 2
-  },
-  {
-    "name": "Education;Religious",
-    "count": 1
-  },
-  {
-    "name": "Education;Science",
-    "count": 4
+    "name": "News",
+    "count": 917
   },
   {
     "name": "Entertainment",
-    "count": 542
+    "count": 710
   },
   {
-    "name": "Entertainment;Family",
-    "count": 2
+    "name": "Religious",
+    "count": 669
   },
   {
-    "name": "Entertainment;Family;General",
-    "count": 3
+    "name": "Music",
+    "count": 580
   },
   {
-    "name": "Entertainment;Family;General;News",
-    "count": 1
+    "name": "Italy",
+    "count": 353
   },
   {
-    "name": "Entertainment;General",
-    "count": 2
-  },
-  {
-    "name": "Entertainment;General;News",
-    "count": 2
-  },
-  {
-    "name": "Entertainment;General;Series",
-    "count": 1
-  },
-  {
-    "name": "Entertainment;Interactive",
-    "count": 1
-  },
-  {
-    "name": "Entertainment;Kids",
-    "count": 2
-  },
-  {
-    "name": "Entertainment;Lifestyle;Music",
-    "count": 1
-  },
-  {
-    "name": "Entertainment;Movies",
-    "count": 1
-  },
-  {
-    "name": "Entertainment;Music",
-    "count": 6
-  },
-  {
-    "name": "Entertainment;News",
-    "count": 6
-  },
-  {
-    "name": "Entertainment;Series",
-    "count": 1
-  },
-  {
-    "name": "Entertainment;Sports",
-    "count": 3
-  },
-  {
-    "name": "Entertainment;Travel",
-    "count": 1
-  },
-  {
-    "name": "Family",
-    "count": 27
-  },
-  {
-    "name": "Family;General",
-    "count": 2
-  },
-  {
-    "name": "Family;General;Movies",
-    "count": 1
-  },
-  {
-    "name": "Family;Kids",
-    "count": 1
-  },
-  {
-    "name": "Family;Movies",
-    "count": 7
-  },
-  {
-    "name": "Family;Religious",
-    "count": 1
-  },
-  {
-    "name": "General",
-    "count": 2262
-  },
-  {
-    "name": "General;Legislative",
-    "count": 1
-  },
-  {
-    "name": "General;Lifestyle;Music;News",
-    "count": 1
-  },
-  {
-    "name": "General;Music",
-    "count": 2
-  },
-  {
-    "name": "General;Music;Public",
-    "count": 1
-  },
-  {
-    "name": "General;News",
-    "count": 17
-  },
-  {
-    "name": "General;Public",
-    "count": 17
-  },
-  {
-    "name": "General;Religious",
-    "count": 5
-  },
-  {
-    "name": "General;Series",
-    "count": 1
-  },
-  {
-    "name": "General;Sports",
-    "count": 1
+    "name": "Sports",
+    "count": 283
   },
   {
     "name": "Kids",
-    "count": 145
-  },
-  {
-    "name": "Kids;Lifestyle",
-    "count": 1
-  },
-  {
-    "name": "Kids;Movies",
-    "count": 1
-  },
-  {
-    "name": "Kids;Public",
-    "count": 2
-  },
-  {
-    "name": "Kids;Religious",
-    "count": 5
-  },
-  {
-    "name": "Kids;Science",
-    "count": 1
-  },
-  {
-    "name": "Kids;Sports",
-    "count": 1
+    "count": 246
   },
   {
     "name": "Legislative",
     "count": 174
   },
   {
-    "name": "Legislative;News",
-    "count": 1
+    "name": "Education",
+    "count": 134
   },
   {
-    "name": "Lifestyle",
+    "name": "Culture",
+    "count": 106
+  },
+  {
+    "name": "Documentary",
+    "count": 101
+  },
+  {
+    "name": "Shop",
     "count": 76
   },
   {
-    "name": "Lifestyle;Relax",
-    "count": 1
+    "name": "Business",
+    "count": 64
   },
   {
-    "name": "Lifestyle;Shop",
-    "count": 1
+    "name": "Greece",
+    "count": 56
   },
   {
-    "name": "Movies",
-    "count": 293
+    "name": "UK",
+    "count": 55
   },
   {
-    "name": "Movies;Music",
-    "count": 1
+    "name": "Russia",
+    "count": 52
   },
   {
-    "name": "Movies;News",
-    "count": 1
+    "name": "日本 / Japan",
+    "count": 50
   },
   {
-    "name": "Movies;Religious",
-    "count": 1
+    "name": "Hungary",
+    "count": 49
   },
   {
-    "name": "Movies;Series",
-    "count": 7
+    "name": "Spain",
+    "count": 49
   },
   {
-    "name": "Music",
-    "count": 567
+    "name": "Ukraine",
+    "count": 48
   },
   {
-    "name": "Music;News",
-    "count": 2
+    "name": "Travel",
+    "count": 35
   },
   {
-    "name": "Music;News;Religious",
-    "count": 1
-  },
-  {
-    "name": "Music;Religious",
-    "count": 5
-  },
-  {
-    "name": "Music;Sports",
-    "count": 1
-  },
-  {
-    "name": "News",
-    "count": 802
-  },
-  {
-    "name": "News;Public",
-    "count": 9
-  },
-  {
-    "name": "News;Science",
-    "count": 1
-  },
-  {
-    "name": "News;Sports",
-    "count": 1
-  },
-  {
-    "name": "News;Weather",
-    "count": 2
+    "name": "United Arab Emirates",
+    "count": 33
   },
   {
     "name": "Outdoor",
     "count": 32
   },
   {
-    "name": "Outdoor;Shop",
-    "count": 1
+    "name": "Germany",
+    "count": 30
+  },
+  {
+    "name": "Canada",
+    "count": 30
+  },
+  {
+    "name": "Cooking",
+    "count": 29
+  },
+  {
+    "name": "Classic",
+    "count": 28
+  },
+  {
+    "name": "Czech Republic",
+    "count": 27
+  },
+  {
+    "name": "Argentina",
+    "count": 25
+  },
+  {
+    "name": "Finland",
+    "count": 25
+  },
+  {
+    "name": "Korea",
+    "count": 22
+  },
+  {
+    "name": "Azerbaijan",
+    "count": 20
+  },
+  {
+    "name": "USA",
+    "count": 19
+  },
+  {
+    "name": "China",
+    "count": 17
+  },
+  {
+    "name": "North Macedonia",
+    "count": 17
+  },
+  {
+    "name": "Weather",
+    "count": 16
+  },
+  {
+    "name": "Netherlands",
+    "count": 16
+  },
+  {
+    "name": "France",
+    "count": 15
+  },
+  {
+    "name": "Sweden",
+    "count": 14
+  },
+  {
+    "name": "Croatia",
+    "count": 14
+  },
+  {
+    "name": "Romania",
+    "count": 14
+  },
+  {
+    "name": "Slovakia",
+    "count": 14
+  },
+  {
+    "name": "Chile",
+    "count": 14
+  },
+  {
+    "name": "Belgium",
+    "count": 13
+  },
+  {
+    "name": "Bosnia And Herzegovina",
+    "count": 13
+  },
+  {
+    "name": "Belarus",
+    "count": 13
+  },
+  {
+    "name": "Albania",
+    "count": 13
+  },
+  {
+    "name": "Iraq",
+    "count": 12
+  },
+  {
+    "name": "Denmark",
+    "count": 12
+  },
+  {
+    "name": "Austria",
+    "count": 12
+  },
+  {
+    "name": "Poland",
+    "count": 12
+  },
+  {
+    "name": "Auto",
+    "count": 11
+  },
+  {
+    "name": "Cyprus",
+    "count": 10
+  },
+  {
+    "name": "Taiwan",
+    "count": 10
+  },
+  {
+    "name": "Portugal",
+    "count": 10
+  },
+  {
+    "name": "Moldova",
+    "count": 10
+  },
+  {
+    "name": "India",
+    "count": 10
+  },
+  {
+    "name": "Ireland",
+    "count": 10
+  },
+  {
+    "name": "Qatar",
+    "count": 9
+  },
+  {
+    "name": "Culture;Education",
+    "count": 9
+  },
+  {
+    "name": "Brazil",
+    "count": 8
+  },
+  {
+    "name": "Norway",
+    "count": 8
+  },
+  {
+    "name": "Georgia",
+    "count": 7
+  },
+  {
+    "name": "Venezuela",
+    "count": 7
+  },
+  {
+    "name": "Somalia",
+    "count": 7
+  },
+  {
+    "name": "Mexico",
+    "count": 7
+  },
+  {
+    "name": "Australia",
+    "count": 7
+  },
+  {
+    "name": "Estonia",
+    "count": 7
+  },
+  {
+    "name": "Slovenia",
+    "count": 7
+  },
+  {
+    "name": "Switzerland",
+    "count": 7
+  },
+  {
+    "name": "Saudi Arabia",
+    "count": 6
+  },
+  {
+    "name": "Israel",
+    "count": 6
+  },
+  {
+    "name": "Egypt",
+    "count": 6
+  },
+  {
+    "name": "Macau",
+    "count": 6
+  },
+  {
+    "name": "Trinidad",
+    "count": 6
+  },
+  {
+    "name": "Relax",
+    "count": 5
+  },
+  {
+    "name": "Hong Kong",
+    "count": 5
+  },
+  {
+    "name": "Turkey",
+    "count": 5
+  },
+  {
+    "name": "Latvia",
+    "count": 5
+  },
+  {
+    "name": "Armenia",
+    "count": 4
+  },
+  {
+    "name": "Kosovo",
+    "count": 4
+  },
+  {
+    "name": "Montenegro",
+    "count": 4
+  },
+  {
+    "name": "Peru",
+    "count": 4
+  },
+  {
+    "name": "Lithuania",
+    "count": 3
+  },
+  {
+    "name": "Culture;Public",
+    "count": 3
   },
   {
     "name": "Outdoor;Travel",
     "count": 3
   },
   {
-    "name": "Public;Sports",
+    "name": "Luxembourg",
+    "count": 3
+  },
+  {
+    "name": "Serbia",
+    "count": 3
+  },
+  {
+    "name": "Costa Rica",
+    "count": 3
+  },
+  {
+    "name": "Indonesia",
+    "count": 3
+  },
+  {
+    "name": "Iran",
+    "count": 3
+  },
+  {
+    "name": "Paraguay",
+    "count": 3
+  },
+  {
+    "name": "Education;Outdoor",
+    "count": 2
+  },
+  {
+    "name": "Relax;Travel",
+    "count": 2
+  },
+  {
+    "name": "Iceland",
+    "count": 2
+  },
+  {
+    "name": "Chad",
+    "count": 2
+  },
+  {
+    "name": "Bulgaria",
+    "count": 2
+  },
+  {
+    "name": "Faroe Islands",
+    "count": 2
+  },
+  {
+    "name": "Greenland",
+    "count": 2
+  },
+  {
+    "name": "Malta",
+    "count": 2
+  },
+  {
+    "name": "Monaco",
+    "count": 2
+  },
+  {
+    "name": "San Marino",
     "count": 2
   },
   {
@@ -576,43 +416,31 @@
     "count": 1
   },
   {
-    "name": "Relax",
-    "count": 5
+    "name": "Dominican Republic",
+    "count": 1
   },
   {
-    "name": "Relax;Travel",
-    "count": 2
+    "name": "Culture;Travel",
+    "count": 1
   },
   {
-    "name": "Religious",
-    "count": 659
+    "name": "Auto;Travel",
+    "count": 1
   },
   {
-    "name": "Science",
-    "count": 6
+    "name": "Cooking;Shop",
+    "count": 1
   },
   {
-    "name": "Series",
-    "count": 98
+    "name": "Outdoor;Shop",
+    "count": 1
   },
   {
-    "name": "Shop",
-    "count": 76
+    "name": "Andorra",
+    "count": 1
   },
   {
-    "name": "Sports",
-    "count": 271
-  },
-  {
-    "name": "Travel",
-    "count": 35
-  },
-  {
-    "name": "Undefined",
-    "count": 2669
-  },
-  {
-    "name": "Weather",
-    "count": 12
+    "name": "North Korea",
+    "count": 1
   }
 ]

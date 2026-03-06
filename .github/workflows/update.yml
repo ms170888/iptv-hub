@@ -14,7 +14,8 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 60  # stream probing can take 20-30 min for 9k channels
+    # Increased timeout: geo-block probing 10K+ streams + GitHub discovery takes time
+    timeout-minutes: 180
 
     environment:
       name: github-pages
@@ -30,11 +31,18 @@ jobs:
           node-version: '20'
 
       - name: Fetch, Probe & Build IPTV Data
+        # If build fails partially (e.g. one source 404s), the script handles it
+        # and still writes output. Only a hard crash exits non-zero.
         run: node build.js
         # To skip stream probing (faster but includes dead streams):
         # run: SKIP_PROBE=1 node build.js
+        env:
+          # Increase Node's default fetch timeout tolerance
+          NODE_OPTIONS: "--max-old-space-size=4096"
 
       - name: Commit updated data
+        # continue-on-error so a git "nothing to commit" doesn't fail the deploy step
+        continue-on-error: true
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

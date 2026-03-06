@@ -1,4 +1,4 @@
-// app.js - IPTV Hub Frontend
+// app.js — IPTV Hub Frontend v2
 // Mobile-first: loads JSON data, renders channel cards, handles filtering and HLS playback
 
 const DATA_BASE = './data/';
@@ -10,17 +10,23 @@ const CATEGORY_COLORS = [
   '#009432','#0652dd','#833471','#12cbc4','#c0392b',
 ];
 
-// ─── State ──────────────────────────────────────────
-let allChannels  = [];
+// ─── State ───────────────────────────────────────────
+let allChannels   = [];
 let allCategories = [];
 let allCountries  = [];
 let allLanguages  = [];
+let allMovies     = [];
+let allAdult      = [];
+
+let activeSection = 'live';   // 'live' | 'sports' | 'movies' | 'adult'
 let activeFilter  = { type: 'all', value: '' };
 let searchQuery   = '';
 let hls           = null;
+let adultVerified = false;
 
-// ─── DOM refs ───────────────────────────────────────
-const $  = id => document.getElementById(id);
+// ─── DOM refs ────────────────────────────────────────
+const $ = id => document.getElementById(id);
+
 const searchEl        = $('search');
 const sidebarSearchEl = $('sidebar-search');
 const channelsGrid    = $('channels-grid');
@@ -42,6 +48,8 @@ const countAll        = $('count-all');
 // ─── Init ────────────────────────────────────────────
 async function init() {
   try {
+    showGridLoading();
+
     const [channels, categories, countries, languages] = await Promise.all([
       fetchJSON('channels.json'),
       fetchJSON('categories.json'),
@@ -54,21 +62,21 @@ async function init() {
     allCountries  = countries;
     allLanguages  = languages;
 
-    const total = channels.length.toLocaleString();
-    countAll.textContent      = total;
-    statShowing.textContent   = total;
-    mStatShowing.textContent  = total;
-    statCountries.textContent  = countries.length;
-    mStatCountries.textContent = countries.length;
+    // Try movies.json (may not exist yet)
+    try { allMovies = await fetchJSON('movies.json'); } catch { allMovies = []; }
+
+    // Update stat counters
+    updateStats();
 
     buildSidebar();
-    renderChannels();
+    renderSection();
     setupEvents();
+
   } catch (err) {
     console.error('Failed to load data:', err);
     channelsGrid.innerHTML = `
-      <div id="empty" role="alert">
-        <div class="empty-icon">⚠️</div>
+      <div class="empty-state" role="alert">
+        <span class="empty-icon">⚠️</span>
         <p>Failed to load channel data.<br>Run <code>node build.js</code> to generate data files.</p>
       </div>`;
   }
@@ -78,6 +86,23 @@ async function fetchJSON(file) {
   const res = await fetch(DATA_BASE + file);
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${file}`);
   return res.json();
+}
+
+function showGridLoading() {
+  channelsGrid.innerHTML = `
+    <div class="section-loading" role="status">
+      <div class="loader" aria-hidden="true"></div>
+      <p>Loading channels...</p>
+    </div>`;
+}
+
+function updateStats() {
+  const total = allChannels.length.toLocaleString();
+  countAll.textContent      = total;
+  statShowing.textContent   = total;
+  mStatShowing.textContent  = total;
+  statCountries.textContent  = allCountries.length;
+  mStatCountries.textContent = allCountries.length;
 }
 
 // ─── Sidebar ─────────────────────────────────────────
@@ -123,11 +148,63 @@ function renderCountriesList(filter) {
     </button>
   `).join('');
 
-  // Re-apply active state if needed
   syncActiveButtons();
 }
 
-// ─── Filter & Render ──────────────────────────────────
+// ─── Section Routing ─────────────────────────────────
+function switchSection(section) {
+  if (section === 'adult') {
+    // Check session-based age verification
+    if (!adultVerified && !sessionStorage.getItem('iptv_adult_ok')) {
+      showAgeGate();
+      return;
+    }
+    adultVerified = true;
+  }
+
+  activeSection = section;
+  searchQuery   = '';
+  searchEl.value = '';
+  activeFilter  = { type: 'all', value: '' };
+
+  // Update nav tab active state
+  document.querySelectorAll('.nav-tab').forEach(t => {
+    const active = t.dataset.section === section;
+    t.classList.toggle('active', active);
+    t.setAttribute('aria-selected', active ? 'true' : 'false');
+  });
+
+  // Sidebar only relevant for Live TV + Sports
+  const sidebar = $('sidebar');
+  const hasSidebar = section === 'live' || section === 'sports';
+  sidebar.classList.toggle('sidebar-hidden-section', !hasSidebar);
+
+  // Load adult data if needed and not loaded yet
+  if (section === 'adult' && allAdult.length === 0) {
+    fetchJSON('adult.json')
+      .then(data => { allAdult = data; renderSection(); })
+      .catch(() => { allAdult = []; renderSection(); });
+    channelsGrid.innerHTML = `
+      <div class="section-loading" role="status">
+        <div class="loader" aria-hidden="true"></div>
+        <p>Loading adult content...</p>
+      </div>`;
+    return;
+  }
+
+  renderSection();
+}
+
+function renderSection() {
+  syncActiveButtons();
+
+  if (activeSection === 'live')    { renderChannels(); return; }
+  if (activeSection === 'sports')  { renderSports();   return; }
+  if (activeSection === 'movies')  { renderMovies();   return; }
+  if (activeSection === 'adult')   { renderAdult();    return; }
+}
+
+// ─── LIVE TV ─────────────────────────────────────────
 function getFiltered() {
   let ch = allChannels;
 
@@ -154,22 +231,14 @@ function getFiltered() {
 
 function renderChannels() {
   const channels = getFiltered();
-  const countStr = channels.length.toLocaleString();
-
-  statShowing.textContent  = countStr;
-  mStatShowing.textContent = countStr;
+  updateCountDisplay(channels.length);
 
   if (channels.length === 0) {
-    channelsGrid.innerHTML = `
-      <div id="empty">
-        <div class="empty-icon">📭</div>
-        <p>No channels found.<br>Try a different filter or search term.</p>
-      </div>`;
+    channelsGrid.innerHTML = emptyState('No channels found matching your search.');
     updateTitle(0);
     return;
   }
 
-  // Group by category for "All Channels" view; flat list for filtered views
   const grouped = (activeFilter.type === 'all' && !searchQuery)
     ? groupBy(channels, 'category')
     : { [getViewLabel()]: channels };
@@ -199,6 +268,7 @@ function renderChannels() {
 
   channelsGrid.innerHTML = html;
   updateTitle(channels.length);
+  syncActiveButtons();
 }
 
 function channelCard(ch) {
@@ -206,10 +276,13 @@ function channelCard(ch) {
     ? `<img src="${esc(ch.logo)}" alt="" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'no-logo\\' aria-hidden=\\'true\\'>📺</span>'" />`
     : `<span class="no-logo" aria-hidden="true">📺</span>`;
 
+  const premiumBadge = ch.premium ? `<span class="badge-premium">⭐ Premium</span>` : '';
+
   return `
     <article
-      class="channel-card"
+      class="channel-card${ch.premium ? ' premium' : ''}"
       data-id="${ch.id}"
+      data-source="live"
       role="listitem button"
       tabindex="0"
       aria-label="Play ${esc(ch.name)}"
@@ -221,8 +294,9 @@ function channelCard(ch) {
       <div class="card-info">
         <div class="card-name" title="${esc(ch.name)}">${esc(ch.name)}</div>
         <div class="card-meta">
+          ${premiumBadge}
           <span class="card-tag country" aria-label="${esc(ch.countryName || ch.country)}">${ch.flag} ${esc(ch.country)}</span>
-          ${ch.category && ch.category !== 'Uncategorized'
+          ${ch.category && ch.category !== 'General'
             ? `<span class="card-tag">${esc(ch.category)}</span>`
             : ''}
         </div>
@@ -230,55 +304,157 @@ function channelCard(ch) {
     </article>`;
 }
 
-function updateTitle(count) {
-  const label = getViewLabel();
-  // Replace first text node only (keep the #view-subtitle span)
-  viewTitle.firstChild.textContent = label + ' ';
-  viewSubtitle.textContent = count === 0 ? '' : `${count.toLocaleString()} channels`;
-}
+// ─── SPORTS ──────────────────────────────────────────
+function renderSports() {
+  const q = searchQuery.toLowerCase();
 
-function getViewLabel() {
-  if (activeFilter.type === 'all')      return 'All Channels';
-  if (activeFilter.type === 'category') return activeFilter.value;
-  if (activeFilter.type === 'language') return `🗣️ ${activeFilter.value}`;
-  if (activeFilter.type === 'country') {
-    const c = allCountries.find(x => x.code === activeFilter.value);
-    return c ? `${c.flag} ${c.name || c.code}` : activeFilter.value;
-  }
-  return 'Channels';
-}
-
-function groupBy(arr, key) {
-  const map = {};
-  for (const item of arr) {
-    const k = item[key] || 'Uncategorized';
-    (map[k] = map[k] || []).push(item);
-  }
-  return map;
-}
-
-// Exposed for show-more buttons rendered in innerHTML
-window._showCategory = function(name) { setFilter('category', name); };
-
-function setFilter(type, value) {
-  activeFilter = { type, value };
-  syncActiveButtons();
-  closeSidebar();
-  renderChannels();
-}
-
-function syncActiveButtons() {
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    const active = btn.dataset.type === activeFilter.type && btn.dataset.value === activeFilter.value;
-    btn.classList.toggle('active', active);
-    btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+  let sports = allChannels.filter(ch => {
+    const cat = (ch.category || '').toLowerCase();
+    return cat === 'sports' || cat.includes('sport');
   });
+
+  if (q) {
+    sports = sports.filter(ch =>
+      ch.name.toLowerCase().includes(q) ||
+      (ch.countryName && ch.countryName.toLowerCase().includes(q))
+    );
+  }
+
+  updateCountDisplay(sports.length);
+  updateTitleDirect('🏆 Sports', sports.length);
+
+  if (sports.length === 0) {
+    channelsGrid.innerHTML = emptyState('No sports channels found.');
+    return;
+  }
+
+  // Premium first, then sort alphabetically
+  const premium = sports.filter(ch => ch.premium).sort((a, b) => a.name.localeCompare(b.name));
+  const regular = sports.filter(ch => !ch.premium).sort((a, b) => a.name.localeCompare(b.name));
+
+  let html = '<div class="channel-section-grid" style="grid-column:1/-1">';
+
+  if (premium.length > 0) {
+    html += `<div class="sport-group-header">⭐ Premium Sports (${premium.length})</div>`;
+    html += premium.map(ch => channelCard(ch)).join('');
+  }
+
+  if (regular.length > 0) {
+    html += `<div class="sport-group-header">All Sports (${regular.length})</div>`;
+    html += regular.map(ch => channelCard(ch)).join('');
+  }
+
+  html += '</div>';
+  channelsGrid.innerHTML = html;
+}
+
+// ─── MOVIES & VOD ────────────────────────────────────
+function renderMovies() {
+  const q = searchQuery.toLowerCase();
+
+  let movies = allMovies.length > 0
+    ? allMovies
+    : allChannels.filter(ch => {
+        const cat = (ch.category || '').toLowerCase();
+        return ['movies', 'movie', 'vod', 'cinema', 'film', 'films', 'series'].some(k => cat.includes(k));
+      });
+
+  if (q) {
+    movies = movies.filter(m =>
+      m.name.toLowerCase().includes(q) ||
+      (m.countryName && m.countryName.toLowerCase().includes(q))
+    );
+  }
+
+  updateCountDisplay(movies.length);
+  updateTitleDirect('🎬 Movies & VOD', movies.length);
+
+  if (movies.length === 0) {
+    channelsGrid.innerHTML = emptyState('No movies or VOD content found.');
+    return;
+  }
+
+  channelsGrid.innerHTML = `
+    <div id="movies-grid" style="grid-column:1/-1">
+      ${movies.slice(0, 200).map(m => movieCard(m)).join('')}
+    </div>`;
+}
+
+function movieCard(m) {
+  const poster = m.logo
+    ? `<img src="${esc(m.logo)}" alt="${esc(m.name)}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'no-poster\\'><span>🎬</span><span>No Image</span></div>'" />`
+    : `<div class="no-poster"><span>🎬</span><span>${esc(m.category || 'VOD')}</span></div>`;
+
+  const premiumBadge = m.premium ? `<span class="badge-premium">⭐ Premium</span>` : '';
+
+  return `
+    <article
+      class="movie-card${m.premium ? ' premium' : ''}"
+      data-id="${m.id}"
+      data-source="movies"
+      role="listitem button"
+      tabindex="0"
+      aria-label="Play ${esc(m.name)}"
+    >
+      <div class="movie-poster">
+        ${poster}
+        <div class="play-overlay" aria-hidden="true">▶</div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-title" title="${esc(m.name)}">${esc(m.name)}</div>
+        <div class="movie-meta">
+          ${premiumBadge}
+          <span class="card-tag country">${m.flag} ${esc(m.country)}</span>
+        </div>
+      </div>
+    </article>`;
+}
+
+// ─── ADULT ───────────────────────────────────────────
+function renderAdult() {
+  const q = searchQuery.toLowerCase();
+
+  let adult = allAdult;
+  if (q) {
+    adult = adult.filter(ch =>
+      ch.name.toLowerCase().includes(q) ||
+      (ch.countryName && ch.countryName.toLowerCase().includes(q))
+    );
+  }
+
+  updateCountDisplay(adult.length);
+  updateTitleDirect('🔞 Adult', adult.length);
+
+  if (adult.length === 0) {
+    channelsGrid.innerHTML = emptyState('No adult channels found. Run build.js with the nsfw source enabled.');
+    return;
+  }
+
+  channelsGrid.innerHTML = `
+    <div class="channel-section-grid" style="grid-column:1/-1">
+      ${adult.slice(0, 300).map(ch => channelCard(ch)).join('')}
+    </div>`;
+}
+
+// ─── Age Gate ─────────────────────────────────────────
+function showAgeGate() {
+  const modal = $('age-gate-modal');
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeAgeGate() {
+  const modal = $('age-gate-modal');
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
 }
 
 // ─── Player ───────────────────────────────────────────
 function openPlayer(channel) {
   playerName.textContent = channel.name;
-  playerMeta.textContent = `${channel.flag} ${channel.countryName || channel.country} • ${channel.language} • ${channel.category}`;
+  playerMeta.textContent = `${channel.flag || '🌐'} ${channel.countryName || channel.country || ''} • ${channel.language || ''} • ${channel.category || ''}`;
 
   if (channel.logo) {
     playerLogo.src = channel.logo;
@@ -289,12 +465,13 @@ function openPlayer(channel) {
 
   streamUrlEl.value = channel.url;
   playerStatus.style.display = 'flex';
+  playerStatus.innerHTML = '<div class="loader" aria-hidden="true"></div><p>Loading stream...</p>';
   playerModal.classList.add('open');
   playerModal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
 
   // Mark playing card
-  document.querySelectorAll('.channel-card').forEach(card => {
+  document.querySelectorAll('.channel-card, .movie-card').forEach(card => {
     card.classList.toggle('playing', +card.dataset.id === channel.id);
   });
 
@@ -315,19 +492,18 @@ function loadStream(url) {
     });
     hls.on(Hls.Events.ERROR, (_, data) => {
       if (data.fatal) {
-        playerStatus.innerHTML = '<div class="empty-icon">⚠️</div><p>Stream unavailable or geo-blocked</p>';
+        playerStatus.innerHTML = '<div class="empty-icon" style="font-size:32px">⚠️</div><p>Stream unavailable or geo-blocked</p>';
         playerStatus.style.display = 'flex';
       }
     });
   } else if (playerVideo.canPlayType('application/vnd.apple.mpegurl')) {
-    // Safari native HLS
     playerVideo.src = url;
     playerVideo.play().catch(() => {});
     playerVideo.addEventListener('loadedmetadata', () => {
       playerStatus.style.display = 'none';
     }, { once: true });
   } else {
-    playerStatus.innerHTML = '<div class="empty-icon">⚠️</div><p>HLS not supported in this browser</p>';
+    playerStatus.innerHTML = '<div class="empty-icon" style="font-size:32px">⚠️</div><p>HLS not supported in this browser</p>';
   }
 }
 
@@ -338,7 +514,7 @@ function closePlayer() {
   playerModal.classList.remove('open');
   playerModal.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
-  document.querySelectorAll('.channel-card.playing').forEach(c => c.classList.remove('playing'));
+  document.querySelectorAll('.channel-card.playing, .movie-card.playing').forEach(c => c.classList.remove('playing'));
 }
 
 // ─── Sidebar open/close ──────────────────────────────
@@ -375,15 +551,88 @@ function showToast(msg) {
   toast._t = setTimeout(() => toast.classList.remove('show'), 2500);
 }
 
+// ─── UI helpers ──────────────────────────────────────
+function emptyState(msg) {
+  return `
+    <div class="empty-state" role="status" style="grid-column:1/-1">
+      <span class="empty-icon">📭</span>
+      <p>${msg}</p>
+    </div>`;
+}
+
+function updateCountDisplay(count) {
+  const str = count.toLocaleString();
+  statShowing.textContent  = str;
+  mStatShowing.textContent = str;
+}
+
+function updateTitle(count) {
+  const label = getViewLabel();
+  viewTitle.firstChild.textContent = label + ' ';
+  viewSubtitle.textContent = count === 0 ? '' : `${count.toLocaleString()} channels`;
+}
+
+function updateTitleDirect(label, count) {
+  viewTitle.firstChild.textContent = label + ' ';
+  viewSubtitle.textContent = count === 0 ? '' : `${count.toLocaleString()} channels`;
+}
+
+function getViewLabel() {
+  if (activeFilter.type === 'all')      return 'All Channels';
+  if (activeFilter.type === 'category') return activeFilter.value;
+  if (activeFilter.type === 'language') return `🗣️ ${activeFilter.value}`;
+  if (activeFilter.type === 'country') {
+    const c = allCountries.find(x => x.code === activeFilter.value);
+    return c ? `${c.flag} ${c.name || c.code}` : activeFilter.value;
+  }
+  return 'Channels';
+}
+
+function groupBy(arr, key) {
+  const map = {};
+  for (const item of arr) {
+    const k = item[key] || 'General';
+    (map[k] = map[k] || []).push(item);
+  }
+  return map;
+}
+
+// Exposed for show-more buttons rendered in innerHTML
+window._showCategory = function(name) {
+  setFilter('category', name);
+};
+
+function setFilter(type, value) {
+  activeFilter = { type, value };
+  syncActiveButtons();
+  closeSidebar();
+  renderSection();
+}
+
+function syncActiveButtons() {
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    const active = btn.dataset.type === activeFilter.type && btn.dataset.value === activeFilter.value;
+    btn.classList.toggle('active', active);
+    btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+  });
+}
+
 // ─── Events ───────────────────────────────────────────
 function setupEvents() {
+  // Nav tab clicks
+  $('nav-tabs').addEventListener('click', e => {
+    const tab = e.target.closest('.nav-tab');
+    if (!tab) return;
+    switchSection(tab.dataset.section);
+  });
+
   // Main search
   searchEl.addEventListener('input', () => {
     searchQuery = searchEl.value.trim();
-    renderChannels();
+    renderSection();
   });
 
-  // Sidebar country filter input
+  // Sidebar country filter
   sidebarSearchEl.addEventListener('input', () => {
     renderCountriesList(sidebarSearchEl.value.trim());
   });
@@ -395,27 +644,32 @@ function setupEvents() {
     setFilter(btn.dataset.type, btn.dataset.value);
   });
 
-  // Channel card clicks (delegated on grid)
+  // Channel card / movie card clicks (delegated)
   channelsGrid.addEventListener('click', e => {
-    const card = e.target.closest('.channel-card');
+    const card = e.target.closest('.channel-card, .movie-card');
     if (!card) return;
-    const ch = allChannels.find(c => c.id === +card.dataset.id);
-    if (ch) openPlayer(ch);
+    handleCardClick(card);
   });
 
   // Keyboard: Enter/Space activates card
   channelsGrid.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      const card = e.target.closest('.channel-card');
-      if (card) card.click();
+      const card = e.target.closest('.channel-card, .movie-card');
+      if (card) handleCardClick(card);
     }
   });
 
   // Player controls
   $('player-close').addEventListener('click', closePlayer);
   playerModal.addEventListener('click', e => { if (e.target === playerModal) closePlayer(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePlayer(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      closePlayer();
+      closeAgeGate();
+      closeSidebar();
+    }
+  });
 
   // Copy stream URL
   $('copy-url').addEventListener('click', async () => {
@@ -439,15 +693,53 @@ function setupEvents() {
   $('sidebar-close').addEventListener('click', closeSidebar);
   $('sidebar-overlay').addEventListener('click', closeSidebar);
 
-  // Swipe-left to close sidebar on mobile
+  // Swipe-left to close sidebar
   let touchStartX = 0;
   $('sidebar').addEventListener('touchstart', e => {
     touchStartX = e.changedTouches[0].clientX;
   }, { passive: true });
   $('sidebar').addEventListener('touchend', e => {
     const dx = e.changedTouches[0].clientX - touchStartX;
-    if (dx < -60) closeSidebar(); // swipe left
+    if (dx < -60) closeSidebar();
   }, { passive: true });
+
+  // Age gate buttons
+  $('age-gate-yes').addEventListener('click', () => {
+    sessionStorage.setItem('iptv_adult_ok', '1');
+    adultVerified = true;
+    closeAgeGate();
+    switchSection('adult');
+  });
+
+  $('age-gate-no').addEventListener('click', () => {
+    closeAgeGate();
+    // Switch back to live tab
+    switchSection('live');
+    document.querySelectorAll('.nav-tab').forEach(t => {
+      const active = t.dataset.section === 'live';
+      t.classList.toggle('active', active);
+      t.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+  });
+}
+
+function handleCardClick(card) {
+  const id  = +card.dataset.id;
+  const src = card.dataset.source;
+
+  let channel = null;
+  if (src === 'movies') {
+    channel = allMovies.find(c => c.id === id);
+  } else if (src === 'adult') {
+    channel = allAdult.find(c => c.id === id);
+  } else {
+    // live and sports both use allChannels
+    channel = allChannels.find(c => c.id === id);
+    if (!channel) channel = allMovies.find(c => c.id === id);
+    if (!channel) channel = allAdult.find(c => c.id === id);
+  }
+
+  if (channel) openPlayer(channel);
 }
 
 // ─── Utility ──────────────────────────────────────────
