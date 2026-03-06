@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IPTV Hub — Free Live TV Channels</title>
+  <meta name="description" content="Free IPTV aggregator. Browse thousands of live TV channels from around the world. Stream directly in your browser." />
+  <link rel="stylesheet" href="style.css" />
+  <!-- HLS.js for stream playback -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest" defer></script>
+  <script src="app.js" type="module" defer></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <button id="menu-toggle" aria-label="Toggle menu">☰</button>
+
+  <a href="#" id="logo">
+    <div id="logo-icon">📺</div>
+    <span id="logo-text">IPTV<span>Hub</span></span>
+  </a>
+
+  <div id="search-wrap">
+    <span id="search-icon">🔍</span>
+    <input
+      type="search"
+      id="search"
+      placeholder="Search channels..."
+      autocomplete="off"
+      spellcheck="false"
+    />
+  </div>
+
+  <div id="header-stats">
+    <div class="stat-pill">
+      <span>📡</span>
+      <span><strong id="stat-showing">0</strong> channels</span>
+    </div>
+    <div class="stat-pill">
+      <span>🌍</span>
+      <span><strong id="stat-countries">0</strong> countries</span>
+    </div>
+  </div>
+</header>
+
+<!-- SIDEBAR OVERLAY (mobile) -->
+<div id="sidebar-overlay"></div>
+
+<!-- APP WRAPPER -->
+<div id="app">
+
+  <!-- SIDEBAR -->
+  <nav id="sidebar">
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Browse</div>
+      <button class="filter-btn active" data-type="all" data-value="">
+        <span class="flag">🌐</span>
+        All Channels
+        <span class="count" id="count-all">0</span>
+      </button>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Categories</div>
+      <div id="categories-list">
+        <div style="padding: 8px 16px; color: var(--text3); font-size: 13px;">Loading...</div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Countries</div>
+      <input type="search" id="sidebar-search" placeholder="Filter countries..." />
+      <div id="countries-list">
+        <div style="padding: 8px 16px; color: var(--text3); font-size: 13px;">Loading...</div>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Languages</div>
+      <div id="languages-list">
+        <div style="padding: 8px 16px; color: var(--text3); font-size: 13px;">Loading...</div>
+      </div>
+    </div>
+
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main id="main">
+    <div id="view-title">All Channels <span id="view-subtitle"></span></div>
+    <div id="channels-grid">
+      <div id="loading">
+        <div class="loader"></div>
+        <p>Loading channels...</p>
+      </div>
+    </div>
+  </main>
+
+</div>
+
+<!-- PLAYER MODAL -->
+<div id="player-modal" role="dialog" aria-modal="true" aria-label="Channel Player">
+  <div id="player-container">
+    <div id="player-header">
+      <img id="player-logo" src="" alt="" onerror="this.style.display='none'" />
+      <div id="player-info">
+        <div id="player-name">Channel Name</div>
+        <div id="player-meta"></div>
+      </div>
+      <button id="player-close" aria-label="Close player">✕</button>
+    </div>
+    <div id="video-wrap">
+      <video id="video" controls playsinline></video>
+      <div id="player-status">
+        <div class="loader"></div>
+        <p>Loading stream...</p>
+      </div>
+    </div>
+    <div id="player-url">
+      <input type="text" id="stream-url" readonly />
+      <button class="copy-btn" id="copy-url">📋 Copy URL</button>
+      <button class="copy-btn" id="open-vlc">📺 Open in VLC</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+</body>
+</html>

@@ -1,0 +1,618 @@
+[
+  {
+    "name": "Animation",
+    "count": 21
+  },
+  {
+    "name": "Animation;Classic",
+    "count": 1
+  },
+  {
+    "name": "Animation;Classic;Entertainment;Family;Movies",
+    "count": 1
+  },
+  {
+    "name": "Animation;Entertainment",
+    "count": 1
+  },
+  {
+    "name": "Animation;Family;Kids",
+    "count": 1
+  },
+  {
+    "name": "Animation;General",
+    "count": 1
+  },
+  {
+    "name": "Animation;General;Kids",
+    "count": 1
+  },
+  {
+    "name": "Animation;Kids",
+    "count": 21
+  },
+  {
+    "name": "Animation;Kids;Music",
+    "count": 1
+  },
+  {
+    "name": "Animation;Kids;Public",
+    "count": 1
+  },
+  {
+    "name": "Animation;Kids;Religious",
+    "count": 2
+  },
+  {
+    "name": "Animation;Movies",
+    "count": 1
+  },
+  {
+    "name": "Auto",
+    "count": 11
+  },
+  {
+    "name": "Auto;Entertainment",
+    "count": 1
+  },
+  {
+    "name": "Auto;Outdoor;Sports",
+    "count": 1
+  },
+  {
+    "name": "Auto;Series",
+    "count": 1
+  },
+  {
+    "name": "Auto;Travel",
+    "count": 1
+  },
+  {
+    "name": "Business",
+    "count": 60
+  },
+  {
+    "name": "Business;Culture;Lifestyle",
+    "count": 1
+  },
+  {
+    "name": "Business;Documentary",
+    "count": 3
+  },
+  {
+    "name": "Business;News",
+    "count": 6
+  },
+  {
+    "name": "Business;Series",
+    "count": 1
+  },
+  {
+    "name": "Classic",
+    "count": 28
+  },
+  {
+    "name": "Classic;Comedy;Public;Series",
+    "count": 1
+  },
+  {
+    "name": "Classic;Kids",
+    "count": 2
+  },
+  {
+    "name": "Classic;Movies",
+    "count": 5
+  },
+  {
+    "name": "Classic;Music",
+    "count": 2
+  },
+  {
+    "name": "Classic;News",
+    "count": 1
+  },
+  {
+    "name": "Classic;Series",
+    "count": 1
+  },
+  {
+    "name": "Comedy",
+    "count": 41
+  },
+  {
+    "name": "Comedy;Family;Movies",
+    "count": 1
+  },
+  {
+    "name": "Comedy;Kids",
+    "count": 2
+  },
+  {
+    "name": "Comedy;Movies",
+    "count": 1
+  },
+  {
+    "name": "Comedy;Movies;Series",
+    "count": 1
+  },
+  {
+    "name": "Comedy;Movies;Series;Sports",
+    "count": 1
+  },
+  {
+    "name": "Comedy;Public",
+    "count": 1
+  },
+  {
+    "name": "Comedy;Series",
+    "count": 1
+  },
+  {
+    "name": "Cooking",
+    "count": 29
+  },
+  {
+    "name": "Cooking;Lifestyle",
+    "count": 1
+  },
+  {
+    "name": "Cooking;Shop",
+    "count": 1
+  },
+  {
+    "name": "Culture",
+    "count": 106
+  },
+  {
+    "name": "Culture;Documentary",
+    "count": 4
+  },
+  {
+    "name": "Culture;Documentary;Entertainment;General;Movies;Music",
+    "count": 1
+  },
+  {
+    "name": "Culture;Education",
+    "count": 9
+  },
+  {
+    "name": "Culture;Education;Entertainment",
+    "count": 1
+  },
+  {
+    "name": "Culture;Education;Lifestyle",
+    "count": 1
+  },
+  {
+    "name": "Culture;Education;News",
+    "count": 1
+  },
+  {
+    "name": "Culture;Entertainment",
+    "count": 4
+  },
+  {
+    "name": "Culture;Entertainment;Music",
+    "count": 1
+  },
+  {
+    "name": "Culture;Entertainment;Music;News",
+    "count": 1
+  },
+  {
+    "name": "Culture;Entertainment;News",
+    "count": 1
+  },
+  {
+    "name": "Culture;Family",
+    "count": 1
+  },
+  {
+    "name": "Culture;General",
+    "count": 3
+  },
+  {
+    "name": "Culture;General;Music;News",
+    "count": 1
+  },
+  {
+    "name": "Culture;Kids",
+    "count": 1
+  },
+  {
+    "name": "Culture;Lifestyle",
+    "count": 1
+  },
+  {
+    "name": "Culture;Music",
+    "count": 3
+  },
+  {
+    "name": "Culture;News",
+    "count": 8
+  },
+  {
+    "name": "Culture;Public",
+    "count": 3
+  },
+  {
+    "name": "Culture;Religious",
+    "count": 4
+  },
+  {
+    "name": "Culture;Sports",
+    "count": 1
+  },
+  {
+    "name": "Culture;Travel",
+    "count": 1
+  },
+  {
+    "name": "Documentary",
+    "count": 79
+  },
+  {
+    "name": "Documentary;Education",
+    "count": 1
+  },
+  {
+    "name": "Documentary;Education;Outdoor;Relax",
+    "count": 1
+  },
+  {
+    "name": "Documentary;Education;Science",
+    "count": 1
+  },
+  {
+    "name": "Documentary;Entertainment",
+    "count": 1
+  },
+  {
+    "name": "Documentary;News",
+    "count": 3
+  },
+  {
+    "name": "Documentary;Series",
+    "count": 2
+  },
+  {
+    "name": "Education",
+    "count": 134
+  },
+  {
+    "name": "Education;Entertainment",
+    "count": 2
+  },
+  {
+    "name": "Education;Entertainment;News",
+    "count": 1
+  },
+  {
+    "name": "Education;General",
+    "count": 1
+  },
+  {
+    "name": "Education;Kids",
+    "count": 9
+  },
+  {
+    "name": "Education;Lifestyle",
+    "count": 2
+  },
+  {
+    "name": "Education;Lifestyle;Science",
+    "count": 1
+  },
+  {
+    "name": "Education;News",
+    "count": 1
+  },
+  {
+    "name": "Education;Outdoor",
+    "count": 2
+  },
+  {
+    "name": "Education;Religious",
+    "count": 1
+  },
+  {
+    "name": "Education;Science",
+    "count": 4
+  },
+  {
+    "name": "Entertainment",
+    "count": 542
+  },
+  {
+    "name": "Entertainment;Family",
+    "count": 2
+  },
+  {
+    "name": "Entertainment;Family;General",
+    "count": 3
+  },
+  {
+    "name": "Entertainment;Family;General;News",
+    "count": 1
+  },
+  {
+    "name": "Entertainment;General",
+    "count": 2
+  },
+  {
+    "name": "Entertainment;General;News",
+    "count": 2
+  },
+  {
+    "name": "Entertainment;General;Series",
+    "count": 1
+  },
+  {
+    "name": "Entertainment;Interactive",
+    "count": 1
+  },
+  {
+    "name": "Entertainment;Kids",
+    "count": 2
+  },
+  {
+    "name": "Entertainment;Lifestyle;Music",
+    "count": 1
+  },
+  {
+    "name": "Entertainment;Movies",
+    "count": 1
+  },
+  {
+    "name": "Entertainment;Music",
+    "count": 6
+  },
+  {
+    "name": "Entertainment;News",
+    "count": 6
+  },
+  {
+    "name": "Entertainment;Series",
+    "count": 1
+  },
+  {
+    "name": "Entertainment;Sports",
+    "count": 3
+  },
+  {
+    "name": "Entertainment;Travel",
+    "count": 1
+  },
+  {
+    "name": "Family",
+    "count": 27
+  },
+  {
+    "name": "Family;General",
+    "count": 2
+  },
+  {
+    "name": "Family;General;Movies",
+    "count": 1
+  },
+  {
+    "name": "Family;Kids",
+    "count": 1
+  },
+  {
+    "name": "Family;Movies",
+    "count": 7
+  },
+  {
+    "name": "Family;Religious",
+    "count": 1
+  },
+  {
+    "name": "General",
+    "count": 2262
+  },
+  {
+    "name": "General;Legislative",
+    "count": 1
+  },
+  {
+    "name": "General;Lifestyle;Music;News",
+    "count": 1
+  },
+  {
+    "name": "General;Music",
+    "count": 2
+  },
+  {
+    "name": "General;Music;Public",
+    "count": 1
+  },
+  {
+    "name": "General;News",
+    "count": 17
+  },
+  {
+    "name": "General;Public",
+    "count": 17
+  },
+  {
+    "name": "General;Religious",
+    "count": 5
+  },
+  {
+    "name": "General;Series",
+    "count": 1
+  },
+  {
+    "name": "General;Sports",
+    "count": 1
+  },
+  {
+    "name": "Kids",
+    "count": 145
+  },
+  {
+    "name": "Kids;Lifestyle",
+    "count": 1
+  },
+  {
+    "name": "Kids;Movies",
+    "count": 1
+  },
+  {
+    "name": "Kids;Public",
+    "count": 2
+  },
+  {
+    "name": "Kids;Religious",
+    "count": 5
+  },
+  {
+    "name": "Kids;Science",
+    "count": 1
+  },
+  {
+    "name": "Kids;Sports",
+    "count": 1
+  },
+  {
+    "name": "Legislative",
+    "count": 174
+  },
+  {
+    "name": "Legislative;News",
+    "count": 1
+  },
+  {
+    "name": "Lifestyle",
+    "count": 76
+  },
+  {
+    "name": "Lifestyle;Relax",
+    "count": 1
+  },
+  {
+    "name": "Lifestyle;Shop",
+    "count": 1
+  },
+  {
+    "name": "Movies",
+    "count": 293
+  },
+  {
+    "name": "Movies;Music",
+    "count": 1
+  },
+  {
+    "name": "Movies;News",
+    "count": 1
+  },
+  {
+    "name": "Movies;Religious",
+    "count": 1
+  },
+  {
+    "name": "Movies;Series",
+    "count": 7
+  },
+  {
+    "name": "Music",
+    "count": 567
+  },
+  {
+    "name": "Music;News",
+    "count": 2
+  },
+  {
+    "name": "Music;News;Religious",
+    "count": 1
+  },
+  {
+    "name": "Music;Religious",
+    "count": 5
+  },
+  {
+    "name": "Music;Sports",
+    "count": 1
+  },
+  {
+    "name": "News",
+    "count": 802
+  },
+  {
+    "name": "News;Public",
+    "count": 9
+  },
+  {
+    "name": "News;Science",
+    "count": 1
+  },
+  {
+    "name": "News;Sports",
+    "count": 1
+  },
+  {
+    "name": "News;Weather",
+    "count": 2
+  },
+  {
+    "name": "Outdoor",
+    "count": 32
+  },
+  {
+    "name": "Outdoor;Shop",
+    "count": 1
+  },
+  {
+    "name": "Outdoor;Travel",
+    "count": 3
+  },
+  {
+    "name": "Public;Sports",
+    "count": 2
+  },
+  {
+    "name": "Public;Weather",
+    "count": 1
+  },
+  {
+    "name": "Relax",
+    "count": 5
+  },
+  {
+    "name": "Relax;Travel",
+    "count": 2
+  },
+  {
+    "name": "Religious",
+    "count": 659
+  },
+  {
+    "name": "Science",
+    "count": 6
+  },
+  {
+    "name": "Series",
+    "count": 98
+  },
+  {
+    "name": "Shop",
+    "count": 76
+  },
+  {
+    "name": "Sports",
+    "count": 271
+  },
+  {
+    "name": "Travel",
+    "count": 35
+  },
+  {
+    "name": "Undefined",
+    "count": 2669
+  },
+  {
+    "name": "Weather",
+    "count": 12
+  }
+]
