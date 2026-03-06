@@ -665,6 +665,82 @@ body {
 .copy-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 .copy-btn:active { opacity: 0.8; }
 
+/* ─── CAST STATUS BAR ─────────────────────────────── */
+#cast-status {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: linear-gradient(90deg, rgba(26,115,232,0.15), rgba(26,115,232,0.05));
+  border-top: 1px solid rgba(26,115,232,0.3);
+  color: #4a9eff;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+#cast-status.active { display: flex; }
+#cast-device-name { flex: 1; }
+#stop-cast-btn {
+  padding: 4px 10px;
+  background: rgba(26,115,232,0.15);
+  border: 1px solid rgba(26,115,232,0.4);
+  border-radius: var(--radius-sm);
+  color: #4a9eff;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--transition);
+  -webkit-tap-highlight-color: transparent;
+}
+#stop-cast-btn:hover { background: rgba(26,115,232,0.3); }
+
+/* ─── PLAYER ACTIONS (pill row) ───────────────────── */
+#player-actions {
+  padding: 10px 12px;
+  background: var(--bg3);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  flex-shrink: 0;
+}
+#player-actions::-webkit-scrollbar { display: none; }
+
+.action-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 14px;
+  height: 36px;
+  min-height: var(--tap);
+  background: var(--bg4);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  color: var(--text2);
+  font-size: 13px;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+  white-space: nowrap;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.action-pill:hover { border-color: var(--text3); color: var(--text); }
+.action-pill:active { opacity: 0.7; }
+
+/* Cast button states */
+#cast-btn.cast-available { color: var(--text); border-color: var(--text3); }
+#cast-btn.cast-active {
+  background: rgba(26,115,232,0.15);
+  border-color: rgba(26,115,232,0.5);
+  color: #4a9eff;
+}
+#cast-btn.cast-unavailable { opacity: 0.4; cursor: default; }
+
+/* PiP button state */
+#pip-btn.pip-unavailable { opacity: 0.4; cursor: default; }
+
 /* ─── LOADING / EMPTY ─────────────────────────────── */
 #loading, #empty {
   grid-column: 1 / -1;

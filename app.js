@@ -24,6 +24,10 @@ let searchQuery   = '';
 let hls           = null;
 let adultVerified = false;
 
+// Cast state
+let castAvailable = false;
+let castSession   = null;
+
 // ─── DOM refs ────────────────────────────────────────
 const $ = id => document.getElementById(id);
 
@@ -71,6 +75,7 @@ async function init() {
     buildSidebar();
     renderSection();
     setupEvents();
+    initPipButton();
 
   } catch (err) {
     console.error('Failed to load data:', err);
@@ -688,6 +693,47 @@ function setupEvents() {
     window.open(`vlc://${streamUrlEl.value}`, '_blank');
   });
 
+  // Cast button
+  $('cast-btn').addEventListener('click', () => {
+    const url = streamUrlEl.value;
+    if (!url) return;
+    startCasting(url);
+  });
+
+  // Stop casting
+  $('stop-cast-btn').addEventListener('click', stopCasting);
+
+  // Picture-in-Picture
+  $('pip-btn').addEventListener('click', async () => {
+    if (!document.pictureInPictureEnabled) {
+      showToast('PiP not supported in this browser');
+      return;
+    }
+    try {
+      if (document.pictureInPictureElement) {
+        await document.exitPictureInPicture();
+      } else {
+        if (playerVideo.readyState === 0) {
+          showToast('Start playback first to use PiP');
+          return;
+        }
+        await playerVideo.requestPictureInPicture();
+      }
+    } catch (e) {
+      showToast('PiP failed: ' + e.message);
+    }
+  });
+
+  // External player (Android intent URL)
+  $('ext-btn').addEventListener('click', () => {
+    const url = streamUrlEl.value;
+    if (!url) return;
+    const encoded = encodeURIComponent(url);
+    const intentUrl = `intent://${url.replace(/^https?:\/\//, '')}#Intent;scheme=${url.startsWith('https') ? 'https' : 'http'};type=application/x-mpegURL;end`;
+    window.open(intentUrl, '_blank');
+    showToast('Opening in external player...');
+  });
+
   // Mobile menu toggle
   $('menu-toggle').addEventListener('click', openSidebar);
   $('sidebar-close').addEventListener('click', closeSidebar);
@@ -751,6 +797,128 @@ function esc(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#39;');
+}
+
+// ─── Cast (Chromecast) ────────────────────────────────
+
+// Cast SDK calls this when the Cast framework is ready
+window['__onGCastApiAvailable'] = function(isAvailable) {
+  if (isAvailable) initCast();
+  else updateCastButtonUnavailable();
+};
+
+function initCast() {
+  try {
+    const castContext = cast.framework.CastContext.getInstance();
+    castContext.setOptions({
+      receiverApplicationId: chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID,
+      autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED,
+    });
+    castContext.addEventListener(
+      cast.framework.CastContextEventType.SESSION_STATE_CHANGED,
+      onCastSessionStateChanged
+    );
+    castAvailable = true;
+    updateCastButtonAvailable();
+  } catch (e) {
+    console.warn('Cast init failed:', e);
+    updateCastButtonUnavailable();
+  }
+}
+
+function onCastSessionStateChanged() {
+  castSession = cast.framework.CastContext.getInstance().getCurrentSession();
+  updateCastUI();
+}
+
+function updateCastButtonAvailable() {
+  const btn = $('cast-btn');
+  if (!btn) return;
+  btn.classList.remove('cast-unavailable', 'cast-active');
+  btn.classList.add('cast-available');
+  btn.title = 'Cast to Chromecast';
+}
+
+function updateCastButtonUnavailable() {
+  const btn = $('cast-btn');
+  if (!btn) return;
+  btn.classList.remove('cast-available', 'cast-active');
+  btn.classList.add('cast-unavailable');
+  btn.title = 'Chromecast not available — use Chrome browser';
+}
+
+function updateCastUI() {
+  const castStatusEl  = $('cast-status');
+  const castBtn       = $('cast-btn');
+  const deviceNameEl  = $('cast-device-name');
+  if (!castStatusEl || !castBtn) return;
+
+  const session = cast.framework.CastContext.getInstance().getCurrentSession();
+  if (session) {
+    const name = session.getCastDevice().friendlyName || 'TV';
+    deviceNameEl.textContent = `Casting to ${name}`;
+    castStatusEl.classList.add('active');
+    castBtn.classList.add('cast-active');
+    castBtn.classList.remove('cast-available');
+    // Pause local playback — Cast device handles it
+    if (!playerVideo.paused) playerVideo.pause();
+  } else {
+    castStatusEl.classList.remove('active');
+    castBtn.classList.remove('cast-active');
+    castBtn.classList.add('cast-available');
+    castSession = null;
+  }
+}
+
+async function startCasting(url) {
+  if (!castAvailable) {
+    showToast('Chromecast requires Chrome browser with Cast support');
+    return;
+  }
+  try {
+    const castContext = cast.framework.CastContext.getInstance();
+    if (!castContext.getCurrentSession()) {
+      await castContext.requestSession();
+    }
+    const session = castContext.getCurrentSession();
+    if (!session) return;
+
+    const mediaInfo = new chrome.cast.media.MediaInfo(url, 'application/x-mpegURL');
+    mediaInfo.streamType = chrome.cast.media.StreamType.LIVE;
+    const request = new chrome.cast.media.LoadRequest(mediaInfo);
+    await session.loadMedia(request);
+    showToast('📺 Casting started!');
+  } catch (e) {
+    if (e && e.code !== chrome.cast.ErrorCode.CANCEL) {
+      console.error('Cast error:', e);
+      showToast('Cast failed: ' + (e.description || e.code || 'Unknown'));
+    }
+  }
+}
+
+function stopCasting() {
+  if (!castAvailable) return;
+  try {
+    const session = cast.framework.CastContext.getInstance().getCurrentSession();
+    if (session) {
+      session.endSession(true);
+      showToast('Casting stopped');
+    }
+  } catch (e) {
+    console.warn('Stop cast error:', e);
+  }
+}
+
+// ─── PiP ─────────────────────────────────────────────
+function initPipButton() {
+  const btn = $('pip-btn');
+  if (!btn) return;
+  if (!document.pictureInPictureEnabled) {
+    btn.classList.add('pip-unavailable');
+    btn.title = 'Picture-in-Picture not supported in this browser';
+  } else {
+    btn.title = 'Picture-in-Picture';
+  }
 }
 
 // ─── Boot ─────────────────────────────────────────────
