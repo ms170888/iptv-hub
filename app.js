@@ -666,6 +666,7 @@ function loadStream(url) {
       if (data.fatal) {
         playerStatus.innerHTML = '<div class="empty-icon" style="font-size:32px">⚠️</div><p>Stream unavailable or geo-blocked</p>';
         playerStatus.style.display = 'flex';
+        showVpnBanner();
       }
     });
   } else if (playerVideo.canPlayType('application/vnd.apple.mpegurl')) {
@@ -687,6 +688,7 @@ function closePlayer() {
   playerModal.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
   document.querySelectorAll('.channel-card.playing, .movie-card.playing').forEach(c => c.classList.remove('playing'));
+  hideVpnBanner();
 }
 
 // ─── Sidebar open/close ──────────────────────────────
@@ -1071,6 +1073,32 @@ function initPipButton() {
     btn.title = 'Picture-in-Picture';
   }
 }
+
+// ─── VPN Banner ──────────────────────────────────────
+function showVpnBanner() {
+  const banner = $('vpn-banner');
+  if (!banner || sessionStorage.getItem('vpn_dismissed')) return;
+  banner.classList.add('open');
+  banner.setAttribute('aria-hidden', 'false');
+}
+
+function hideVpnBanner() {
+  const banner = $('vpn-banner');
+  if (!banner) return;
+  banner.classList.remove('open');
+  banner.setAttribute('aria-hidden', 'true');
+}
+
+// Init VPN banner close button
+(function initVpnBanner() {
+  const closeBtn = $('vpn-banner-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      hideVpnBanner();
+      sessionStorage.setItem('vpn_dismissed', '1');
+    });
+  }
+})();
 
 // ─── Boot ─────────────────────────────────────────────
 init();
