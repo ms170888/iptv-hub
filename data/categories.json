@@ -1,27 +1,27 @@
 [
   {
     "name": "General",
-    "count": 2781
+    "count": 2848
   },
   {
     "name": "News",
-    "count": 521
+    "count": 534
   },
   {
     "name": "Entertainment",
-    "count": 426
+    "count": 422
   },
   {
     "name": "Religious",
-    "count": 414
+    "count": 409
   },
   {
     "name": "Music",
-    "count": 379
+    "count": 387
   },
   {
     "name": "Italy",
-    "count": 184
+    "count": 185
   },
   {
     "name": "Sports",
@@ -29,23 +29,23 @@
   },
   {
     "name": "Kids",
-    "count": 144
+    "count": 147
   },
   {
     "name": "Legislative",
-    "count": 101
+    "count": 102
   },
   {
     "name": "Education",
-    "count": 85
+    "count": 83
   },
   {
     "name": "Culture",
-    "count": 62
+    "count": 59
   },
   {
     "name": "Documentary",
-    "count": 56
+    "count": 57
   },
   {
     "name": "Shop",
@@ -60,40 +60,36 @@
     "count": 35
   },
   {
-    "name": "Outdoor",
-    "count": 25
-  },
-  {
     "name": "Travel",
     "count": 25
   },
   {
+    "name": "Outdoor",
+    "count": 23
+  },
+  {
     "name": "Cooking",
-    "count": 21
+    "count": 22
   },
   {
     "name": "Hungary",
     "count": 17
   },
   {
-    "name": "Classic",
-    "count": 13
+    "name": "Finland",
+    "count": 16
   },
   {
     "name": "Russia",
     "count": 13
   },
   {
-    "name": "Netherlands",
+    "name": "Classic",
     "count": 12
   },
   {
-    "name": "Germany",
-    "count": 11
-  },
-  {
-    "name": "Weather",
-    "count": 9
+    "name": "Netherlands",
+    "count": 12
   },
   {
     "name": "Ireland",
@@ -101,6 +97,10 @@
   },
   {
     "name": "Auto",
+    "count": 8
+  },
+  {
+    "name": "Weather",
     "count": 8
   },
   {
@@ -112,7 +112,7 @@
     "count": 6
   },
   {
-    "name": "Culture;Education",
+    "name": "North Macedonia",
     "count": 6
   },
   {
@@ -124,7 +124,11 @@
     "count": 6
   },
   {
-    "name": "North Macedonia",
+    "name": "Culture;Education",
+    "count": 5
+  },
+  {
+    "name": "Germany",
     "count": 5
   },
   {
@@ -188,10 +192,6 @@
     "count": 3
   },
   {
-    "name": "Finland",
-    "count": 3
-  },
-  {
     "name": "UK",
     "count": 3
   },
@@ -221,6 +221,10 @@
   },
   {
     "name": "Latvia",
+    "count": 2
+  },
+  {
+    "name": "Egypt",
     "count": 2
   },
   {
@@ -304,6 +308,10 @@
     "count": 1
   },
   {
+    "name": "Hong Kong",
+    "count": 1
+  },
+  {
     "name": "Serbia",
     "count": 1
   },
@@ -325,14 +333,6 @@
   },
   {
     "name": "Costa Rica",
-    "count": 1
-  },
-  {
-    "name": "Egypt",
-    "count": 1
-  },
-  {
-    "name": "Faroe Islands",
     "count": 1
   },
   {
