@@ -17,14 +17,23 @@ let allCountries  = [];
 let allLanguages  = [];
 let allQualities  = [];
 let allMovies     = [];
-let allAdult      = [];
-
-let activeSection       = 'live';   // 'live' | 'sports' | 'movies' | 'adult'
+let activeSection       = 'live';   // 'live' | 'sports' | 'movies'
 let activeFilter        = { type: 'all', value: '' };
 let activeQualityFilter = '';       // '' | '4K' | '1080p' | '720p' | 'Unknown'
 let searchQuery         = '';
 let hls                 = null;
-let adultVerified       = false;
+
+// Infinite scroll state
+const BATCH_SIZE = 40;
+let currentViewItems  = [];  // flat list for current view
+let renderedCount     = 0;
+let sentinelObserver  = null;
+
+// Live preview pool
+const MAX_PREVIEW_HLS = 12;
+const PREVIEW_TIMEOUT = 8000;
+const previewPool     = new Map();  // card element -> { hls, timeout }
+let previewObserver   = null;
 
 // Cast state
 let castAvailable = false;
@@ -186,15 +195,6 @@ function renderCountriesList(filter) {
 
 // ─── Section Routing ─────────────────────────────────
 function switchSection(section) {
-  if (section === 'adult') {
-    // Check session-based age verification
-    if (!adultVerified && !sessionStorage.getItem('iptv_adult_ok')) {
-      showAgeGate();
-      return;
-    }
-    adultVerified = true;
-  }
-
   activeSection       = section;
   searchQuery         = '';
   searchEl.value      = '';
@@ -213,19 +213,6 @@ function switchSection(section) {
   const hasSidebar = section === 'live' || section === 'sports';
   sidebar.classList.toggle('sidebar-hidden-section', !hasSidebar);
 
-  // Load adult data if needed and not loaded yet
-  if (section === 'adult' && allAdult.length === 0) {
-    fetchJSON('adult.json')
-      .then(data => { allAdult = data; renderSection(); })
-      .catch(() => { allAdult = []; renderSection(); });
-    channelsGrid.innerHTML = `
-      <div class="section-loading" role="status">
-        <div class="loader" aria-hidden="true"></div>
-        <p>Loading adult content...</p>
-      </div>`;
-    return;
-  }
-
   renderSection();
 }
 
@@ -235,7 +222,215 @@ function renderSection() {
   if (activeSection === 'live')    { renderChannels(); return; }
   if (activeSection === 'sports')  { renderSports();   return; }
   if (activeSection === 'movies')  { renderMovies();   return; }
-  if (activeSection === 'adult')   { renderAdult();    return; }
+}
+
+// ─── Infinite Scroll Infrastructure ──────────────────
+function resetInfiniteScroll(items) {
+  destroyAllPreviews();
+  currentViewItems = items;
+  renderedCount = 0;
+  channelsGrid.innerHTML = '';
+  channelsGrid.classList.toggle('movies-view', activeSection === 'movies');
+  loadNextBatch();
+  setupSentinel();
+}
+
+function loadNextBatch() {
+  if (renderedCount >= currentViewItems.length) return;
+
+  const isMovies = activeSection === 'movies';
+  const batch = currentViewItems.slice(renderedCount, renderedCount + BATCH_SIZE);
+  const fragment = document.createDocumentFragment();
+
+  for (const item of batch) {
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = isMovies ? movieCard(item) : channelCard(item);
+    const card = wrapper.firstElementChild;
+    fragment.appendChild(card);
+  }
+
+  // Insert before sentinel if it exists
+  const sentinel = channelsGrid.querySelector('.scroll-sentinel');
+  if (sentinel) {
+    channelsGrid.insertBefore(fragment, sentinel);
+  } else {
+    channelsGrid.appendChild(fragment);
+  }
+
+  renderedCount += batch.length;
+
+  // Update "Showing X of Y" display
+  const total = currentViewItems.length;
+  updateChannelCountHeader(renderedCount, total);
+
+  // Observe new cards for live preview
+  if (!isMovies) {
+    const cards = channelsGrid.querySelectorAll('.channel-card[data-url]');
+    cards.forEach(card => {
+      if (card.dataset.url && !card._previewObserved) {
+        card._previewObserved = true;
+        previewObserver.observe(card);
+      }
+    });
+  }
+}
+
+function setupSentinel() {
+  // Remove old sentinel
+  const old = channelsGrid.querySelector('.scroll-sentinel');
+  if (old) old.remove();
+  if (sentinelObserver) sentinelObserver.disconnect();
+
+  // Create sentinel element at bottom
+  const sentinel = document.createElement('div');
+  sentinel.className = 'scroll-sentinel';
+  sentinel.setAttribute('aria-hidden', 'true');
+  sentinel.innerHTML = '<div class="loader scroll-loader" aria-hidden="true"></div>';
+  channelsGrid.appendChild(sentinel);
+
+  sentinelObserver = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (entry.isIntersecting && renderedCount < currentViewItems.length) {
+        loadNextBatch();
+        // Hide sentinel when all loaded
+        if (renderedCount >= currentViewItems.length) {
+          sentinel.style.display = 'none';
+        }
+      }
+    }
+  }, { rootMargin: '300px' });
+
+  sentinelObserver.observe(sentinel);
+
+  // Hide sentinel if already all loaded
+  if (renderedCount >= currentViewItems.length) {
+    sentinel.style.display = 'none';
+  }
+}
+
+// ─── Live Preview Pool ───────────────────────────────
+function initPreviewObserver() {
+  if (previewObserver) previewObserver.disconnect();
+
+  previewObserver = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      const card = entry.target;
+      if (entry.isIntersecting) {
+        startPreview(card);
+      } else {
+        stopPreview(card);
+      }
+    }
+  }, { rootMargin: '100px' });
+}
+
+function startPreview(card) {
+  const url = card.dataset.url;
+  if (!url || previewPool.has(card)) return;
+  if (typeof Hls === 'undefined' || !Hls.isSupported()) return;
+
+  // Enforce pool limit — evict oldest if full
+  if (previewPool.size >= MAX_PREVIEW_HLS) {
+    const oldest = previewPool.keys().next().value;
+    stopPreview(oldest);
+  }
+
+  const cardLogo = card.querySelector('.card-logo');
+  if (!cardLogo) return;
+
+  // Create video element
+  const video = document.createElement('video');
+  video.className = 'preview-video';
+  video.muted = true;
+  video.autoplay = true;
+  video.playsInline = true;
+  video.setAttribute('playsinline', '');
+  video.loop = true;
+
+  const previewHls = new Hls({
+    enableWorker: false,
+    lowLatencyMode: false,
+    maxBufferLength: 5,
+    maxMaxBufferLength: 10,
+    maxBufferSize: 0.5 * 1024 * 1024,
+    startLevel: 0,
+  });
+
+  const entry = { hls: previewHls, video, timeout: null, started: false };
+  previewPool.set(card, entry);
+
+  // Timeout fallback — if no video in 8s, give up
+  entry.timeout = setTimeout(() => {
+    if (!entry.started) {
+      stopPreview(card);
+    }
+  }, PREVIEW_TIMEOUT);
+
+  previewHls.loadSource(url);
+  previewHls.attachMedia(video);
+
+  previewHls.on(Hls.Events.MANIFEST_PARSED, () => {
+    entry.started = true;
+    clearTimeout(entry.timeout);
+
+    // Insert video and LIVE badge
+    cardLogo.classList.add('has-preview');
+    cardLogo.insertBefore(video, cardLogo.firstChild);
+
+    // Add LIVE badge
+    if (!cardLogo.querySelector('.live-badge')) {
+      const badge = document.createElement('span');
+      badge.className = 'live-badge';
+      badge.textContent = 'LIVE';
+      badge.setAttribute('aria-hidden', 'true');
+      cardLogo.appendChild(badge);
+    }
+
+    // Add small logo overlay
+    const logoSrc = card.querySelector('.card-logo > img');
+    if (logoSrc && !cardLogo.querySelector('.preview-logo-overlay')) {
+      const overlay = document.createElement('img');
+      overlay.className = 'preview-logo-overlay';
+      overlay.src = logoSrc.src;
+      overlay.alt = '';
+      overlay.onerror = function() { this.style.display = 'none'; };
+      cardLogo.appendChild(overlay);
+    }
+
+    video.play().catch(() => {});
+  });
+
+  previewHls.on(Hls.Events.ERROR, (_, data) => {
+    if (data.fatal) {
+      stopPreview(card);
+    }
+  });
+}
+
+function stopPreview(card) {
+  const entry = previewPool.get(card);
+  if (!entry) return;
+
+  clearTimeout(entry.timeout);
+  entry.hls.destroy();
+  if (entry.video.parentNode) entry.video.parentNode.removeChild(entry.video);
+
+  const cardLogo = card.querySelector('.card-logo');
+  if (cardLogo) {
+    cardLogo.classList.remove('has-preview');
+    const badge = cardLogo.querySelector('.live-badge');
+    if (badge) badge.remove();
+    const overlay = cardLogo.querySelector('.preview-logo-overlay');
+    if (overlay) overlay.remove();
+  }
+
+  previewPool.delete(card);
+}
+
+function destroyAllPreviews() {
+  for (const [card] of previewPool) {
+    stopPreview(card);
+  }
 }
 
 // ─── LIVE TV ─────────────────────────────────────────
@@ -268,45 +463,19 @@ function getFiltered() {
 }
 
 function renderChannels() {
+  initPreviewObserver();
   const channels = getFiltered();
   updateCountDisplay(channels.length);
-  updateChannelCountHeader(channels.length, allChannels.length);
 
   if (channels.length === 0) {
+    destroyAllPreviews();
     channelsGrid.innerHTML = emptyState('No channels found matching your search.');
     updateTitle(0);
     return;
   }
 
-  const grouped = (activeFilter.type === 'all' && !searchQuery)
-    ? groupBy(channels, 'category')
-    : { [getViewLabel()]: channels };
-
-  let html = '';
-  for (const [group, items] of Object.entries(grouped)) {
-    const preview = (activeFilter.type === 'all' && !searchQuery) ? 16 : items.length;
-    const hasMore = items.length > preview;
-
-    html += `
-      <div class="section-group">
-        <div class="section-header">
-          <h2>${esc(group)}</h2>
-          <span class="section-count">${items.length.toLocaleString()}</span>
-        </div>
-        <div class="channel-section-grid">
-          ${items.slice(0, preview).map(ch => channelCard(ch)).join('')}
-          ${hasMore ? `
-            <div class="show-more-row" style="grid-column:1/-1;text-align:center;padding:8px 0;">
-              <button class="show-more-btn" onclick="window._showCategory('${esc(group)}')">
-                Show all ${items.length.toLocaleString()} channels →
-              </button>
-            </div>` : ''}
-        </div>
-      </div>`;
-  }
-
-  channelsGrid.innerHTML = html;
   updateTitle(channels.length);
+  resetInfiniteScroll(channels);
   syncActiveButtons();
 }
 
@@ -336,6 +505,7 @@ function channelCard(ch) {
       class="channel-card${ch.premium ? ' premium' : ''}"
       data-id="${ch.id}"
       data-source="live"
+      data-url="${esc(ch.url || '')}"
       role="listitem button"
       tabindex="0"
       aria-label="Play ${esc(ch.name)}"
@@ -360,6 +530,7 @@ function channelCard(ch) {
 
 // ─── SPORTS ──────────────────────────────────────────
 function renderSports() {
+  initPreviewObserver();
   const q = searchQuery.toLowerCase();
 
   let sports = allChannels.filter(ch => {
@@ -378,32 +549,22 @@ function renderSports() {
   updateTitleDirect('🏆 Sports', sports.length);
 
   if (sports.length === 0) {
+    destroyAllPreviews();
     channelsGrid.innerHTML = emptyState('No sports channels found.');
     return;
   }
 
-  // Premium first, then sort alphabetically
+  // Premium first, then regular alphabetically
   const premium = sports.filter(ch => ch.premium).sort((a, b) => a.name.localeCompare(b.name));
   const regular = sports.filter(ch => !ch.premium).sort((a, b) => a.name.localeCompare(b.name));
+  const sorted  = [...premium, ...regular];
 
-  let html = '<div class="channel-section-grid" style="grid-column:1/-1">';
-
-  if (premium.length > 0) {
-    html += `<div class="sport-group-header">⭐ Premium Sports (${premium.length})</div>`;
-    html += premium.map(ch => channelCard(ch)).join('');
-  }
-
-  if (regular.length > 0) {
-    html += `<div class="sport-group-header">All Sports (${regular.length})</div>`;
-    html += regular.map(ch => channelCard(ch)).join('');
-  }
-
-  html += '</div>';
-  channelsGrid.innerHTML = html;
+  resetInfiniteScroll(sorted);
 }
 
 // ─── MOVIES & VOD ────────────────────────────────────
 function renderMovies() {
+  destroyAllPreviews();
   const q = searchQuery.toLowerCase();
 
   let movies = allMovies.length > 0
@@ -428,10 +589,7 @@ function renderMovies() {
     return;
   }
 
-  channelsGrid.innerHTML = `
-    <div id="movies-grid" style="grid-column:1/-1">
-      ${movies.slice(0, 200).map(m => movieCard(m)).join('')}
-    </div>`;
+  resetInfiniteScroll(movies);
 }
 
 function movieCard(m) {
@@ -464,46 +622,6 @@ function movieCard(m) {
     </article>`;
 }
 
-// ─── ADULT ───────────────────────────────────────────
-function renderAdult() {
-  const q = searchQuery.toLowerCase();
-
-  let adult = allAdult;
-  if (q) {
-    adult = adult.filter(ch =>
-      ch.name.toLowerCase().includes(q) ||
-      (ch.countryName && ch.countryName.toLowerCase().includes(q))
-    );
-  }
-
-  updateCountDisplay(adult.length);
-  updateTitleDirect('🔞 Adult', adult.length);
-
-  if (adult.length === 0) {
-    channelsGrid.innerHTML = emptyState('No adult channels available right now. Check back after the next build.');
-    return;
-  }
-
-  channelsGrid.innerHTML = `
-    <div class="channel-section-grid" style="grid-column:1/-1">
-      ${adult.slice(0, 300).map(ch => channelCard(ch)).join('')}
-    </div>`;
-}
-
-// ─── Age Gate ─────────────────────────────────────────
-function showAgeGate() {
-  const modal = $('age-gate-modal');
-  modal.classList.add('open');
-  modal.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeAgeGate() {
-  const modal = $('age-gate-modal');
-  modal.classList.remove('open');
-  modal.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
-}
 
 // ─── Player ───────────────────────────────────────────
 function openPlayer(channel) {
@@ -651,11 +769,6 @@ function groupBy(arr, key) {
   return map;
 }
 
-// Exposed for show-more buttons rendered in innerHTML
-window._showCategory = function(name) {
-  setFilter('category', name);
-};
-
 function setFilter(type, value) {
   if (type === 'quality') {
     activeQualityFilter = value;
@@ -731,7 +844,6 @@ function setupEvents() {
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       closePlayer();
-      closeAgeGate();
       closeSidebar();
     }
   });
@@ -809,24 +921,6 @@ function setupEvents() {
     if (dx < -60) closeSidebar();
   }, { passive: true });
 
-  // Age gate buttons
-  $('age-gate-yes').addEventListener('click', () => {
-    sessionStorage.setItem('iptv_adult_ok', '1');
-    adultVerified = true;
-    closeAgeGate();
-    switchSection('adult');
-  });
-
-  $('age-gate-no').addEventListener('click', () => {
-    closeAgeGate();
-    // Switch back to live tab
-    switchSection('live');
-    document.querySelectorAll('.nav-tab').forEach(t => {
-      const active = t.dataset.section === 'live';
-      t.classList.toggle('active', active);
-      t.setAttribute('aria-selected', active ? 'true' : 'false');
-    });
-  });
 }
 
 function handleCardClick(card) {
@@ -836,13 +930,10 @@ function handleCardClick(card) {
   let channel = null;
   if (src === 'movies') {
     channel = allMovies.find(c => c.id === id);
-  } else if (src === 'adult') {
-    channel = allAdult.find(c => c.id === id);
   } else {
     // live and sports both use allChannels
     channel = allChannels.find(c => c.id === id);
     if (!channel) channel = allMovies.find(c => c.id === id);
-    if (!channel) channel = allAdult.find(c => c.id === id);
   }
 
   if (channel) openPlayer(channel);

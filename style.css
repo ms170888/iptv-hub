@@ -784,23 +784,80 @@ body {
   opacity: 1;
 }
 
-/* ─── SHOW-MORE BUTTON ────────────────────────────── */
-.show-more-btn {
+/* ─── SCROLL SENTINEL (infinite scroll) ──────────── */
+.scroll-sentinel {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+}
+.scroll-loader {
+  width: 32px; height: 32px;
+  border-width: 2.5px;
+}
+
+/* ─── LIVE PREVIEW VIDEO ─────────────────────────── */
+.preview-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.card-logo.has-preview > img,
+.card-logo.has-preview > .no-logo {
+  opacity: 0;
+}
+
+.live-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  z-index: 3;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  min-height: var(--tap);
-  padding: 0 20px;
-  background: var(--bg3);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  color: var(--text2);
-  font-size: 13px;
-  cursor: pointer;
-  transition: background var(--transition), border-color var(--transition), color var(--transition);
-  -webkit-tap-highlight-color: transparent;
+  gap: 4px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+  line-height: 1.4;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
-.show-more-btn:hover { background: var(--bg4); border-color: var(--accent); color: var(--text); }
+.live-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  animation: livePulse 1.5s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.preview-logo-overlay {
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 4px;
+  background: rgba(0,0,0,0.5);
+  padding: 2px;
+  z-index: 3;
+  opacity: 0.8;
+}
 
 /* ─── RESPONSIVE: TABLET ──────────────────────────── */
 @media (min-width: 600px) {
@@ -985,8 +1042,7 @@ body {
 .channel-card:nth-child(8)  { animation-delay: 0.16s; }
 
 /* ─── MOVIES / VOD SECTION ────────────────────────────── */
-#movies-grid {
-  display: grid;
+#channels-grid.movies-view {
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
 }
@@ -1081,90 +1137,6 @@ body {
   gap: 10px;
 }
 
-/* ─── AGE GATE MODAL ──────────────────────────────────── */
-#age-gate-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 400;
-  background: rgba(0,0,0,0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-#age-gate-modal.open { display: flex; }
-
-#age-gate-container {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 40px 32px;
-  max-width: 380px;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
-  animation: fadeInUp 0.25s ease;
-}
-
-#age-gate-icon {
-  font-size: 56px;
-  margin-bottom: 16px;
-  display: block;
-}
-
-#age-gate-title {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 12px;
-}
-
-#age-gate-desc {
-  font-size: 15px;
-  color: var(--text2);
-  line-height: 1.6;
-  margin-bottom: 28px;
-}
-
-#age-gate-buttons {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.age-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 130px;
-  min-height: var(--tap);
-  padding: 0 24px;
-  border-radius: 10px;
-  border: none;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform var(--transition), opacity var(--transition), box-shadow var(--transition);
-  -webkit-tap-highlight-color: transparent;
-}
-.age-btn:active { transform: scale(0.96); }
-
-.age-btn-yes {
-  background: var(--accent);
-  color: #fff;
-  box-shadow: 0 4px 14px rgba(229,9,20,0.4);
-}
-.age-btn-yes:hover { opacity: 0.9; box-shadow: 0 6px 20px rgba(229,9,20,0.55); }
-
-.age-btn-no {
-  background: var(--bg4);
-  color: var(--text2);
-  border: 1.5px solid var(--border);
-}
-.age-btn-no:hover { background: var(--bg3); color: var(--text); }
 
 /* ─── LOADING OVERLAY (full section) ─────────────────── */
 .section-loading {
@@ -1241,7 +1213,7 @@ body {
 
 /* ─── RESPONSIVE: TABLET ──────────────────────────────── */
 @media (min-width: 480px) {
-  #movies-grid {
+  #channels-grid.movies-view {
     grid-template-columns: repeat(3, 1fr);
   }
   #sports-grid {
@@ -1250,7 +1222,7 @@ body {
 }
 
 @media (min-width: 600px) {
-  #movies-grid {
+  #channels-grid.movies-view {
     grid-template-columns: repeat(4, 1fr);
     gap: 14px;
   }
@@ -1261,7 +1233,7 @@ body {
 
 /* ─── RESPONSIVE: DESKTOP ─────────────────────────────── */
 @media (min-width: 900px) {
-  #movies-grid {
+  #channels-grid.movies-view {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 16px;
   }
@@ -1276,7 +1248,7 @@ body {
   #channels-grid, .channel-section-grid {
     grid-template-columns: 1fr 1fr;
   }
-  #movies-grid {
+  #channels-grid.movies-view {
     grid-template-columns: repeat(2, 1fr);
   }
   #sports-grid {
