@@ -1,6 +1,6 @@
 [
   {
-    "id": 5521,
+    "id": 5910,
     "name": "13 Teleseries (720p)",
     "logo": "https://i.imgur.com/csBNi2L.png",
     "country": "CL",
@@ -11,10 +11,10 @@
     "url": "https://origin.dpsgo.com/ssai/event/f4TrySe8SoiGF8Lu3EIq1g/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 1199515
+    "bandwidth": 4861403
   },
   {
-    "id": 5522,
+    "id": 5911,
     "name": "24 Hour Free Movies (720p)",
     "logo": "https://i.imgur.com/iSVnzR1.png",
     "country": "US",
@@ -28,7 +28,7 @@
     "bandwidth": 2400000
   },
   {
-    "id": 5523,
+    "id": 5912,
     "name": "30A TV Classic Movies",
     "logo": "https://babaktv.com/wp-content/uploads/2023/09/30A-Classi-Movies.jpeg",
     "country": "US",
@@ -42,7 +42,7 @@
     "bandwidth": 210000
   },
   {
-    "id": 5524,
+    "id": 5913,
     "name": "&pictures HD (1080p)",
     "logo": "https://dtil.tmsimg.com/assets/GNLZZGG0022J67R.png?lock=720x540",
     "country": "IN",
@@ -53,10 +53,10 @@
     "url": "http://103.229.254.25:7001/play/a033/index.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 3597000
+    "bandwidth": 3815000
   },
   {
-    "id": 5525,
+    "id": 5914,
     "name": "&prive HD (1080p)",
     "logo": "https://dtil.tmsimg.com/assets/GNLZZGG0022J69M.png?lock=720x540",
     "country": "IN",
@@ -67,10 +67,10 @@
     "url": "http://103.229.254.25:7001/play/a03f/index.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4732000
+    "bandwidth": 3982000
   },
   {
-    "id": 5526,
+    "id": 5915,
     "name": "&TV (576p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SYMANDTV/images/LOGO_HD/LOGO_HD_image.png",
     "country": "IN",
@@ -81,10 +81,10 @@
     "url": "http://103.229.254.25:7001/play/a09v/index.m3u8",
     "premium": false,
     "resolution": "Unknown",
-    "bandwidth": 2249000
+    "bandwidth": 2064000
   },
   {
-    "id": 5527,
+    "id": 5916,
     "name": "&TV HD (1080p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SYMANDTV/images/LOGO_HD/LOGO_HD_image.png",
     "country": "IN",
@@ -95,10 +95,10 @@
     "url": "http://103.229.254.25:7001/play/a034/index.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 5047000
+    "bandwidth": 4960000
   },
   {
-    "id": 5528,
+    "id": 5917,
     "name": "&TV International (1080p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_SYMANDTV/images/LOGO_HD/LOGO_HD_image.png",
     "country": "IN",
@@ -112,21 +112,7 @@
     "bandwidth": 4945600
   },
   {
-    "id": 5529,
-    "name": "A3Series (1080p)",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Atreseries_2020_logo.svg/960px-Atreseries_2020_logo.svg.png",
-    "country": "ES",
-    "countryName": "Spain",
-    "flag": "🇪🇸",
-    "language": "Unknown",
-    "category": "Movies",
-    "url": "http://45.95.78.232:8001/udp/239.106.85.4:5000",
-    "premium": false,
-    "resolution": "1080p",
-    "bandwidth": null
-  },
-  {
-    "id": 5530,
+    "id": 5918,
     "name": "ABN Bible Movies (720p)",
     "logo": "https://i.imgur.com/NCqZdaL.png",
     "country": "US",
@@ -140,7 +126,7 @@
     "bandwidth": null
   },
   {
-    "id": 5531,
+    "id": 5919,
     "name": "Action 24 (1080p)",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/8/88/Action24-logo-small.png",
     "country": "GR",
@@ -151,10 +137,10 @@
     "url": "http://actionlive.siliconweb.com/actionabr/actiontv/playlist.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 5277037
+    "bandwidth": 5301181
   },
   {
-    "id": 5532,
+    "id": 5920,
     "name": "Afra Film",
     "logo": "",
     "country": "IR",
@@ -168,7 +154,7 @@
     "bandwidth": null
   },
   {
-    "id": 5533,
+    "id": 5921,
     "name": "Afra Series",
     "logo": "",
     "country": "IR",
@@ -182,7 +168,7 @@
     "bandwidth": null
   },
   {
-    "id": 5534,
+    "id": 5922,
     "name": "Afriwood Blockbuster (720p)",
     "logo": "https://i.imgur.com/aESdqiB.png",
     "country": "ZA",
@@ -193,10 +179,10 @@
     "url": "https://streamdot.broadpeak.io/cff02a74da64d145c102a2d012758398/afxpstr/AfriwoodBlockbuster/index.m3u8",
     "premium": false,
     "resolution": "720p",
-    "bandwidth": 4600000
+    "bandwidth": 4530000
   },
   {
-    "id": 5535,
+    "id": 5923,
     "name": "Alankar TV (720p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_ALANKAR/images/LOGO_HD/image.png",
     "country": "IN",
@@ -207,10 +193,10 @@
     "url": "https://livetv.tarangplus.in/alankar-origin/live/playlist.m3u8",
     "premium": false,
     "resolution": "720p",
-    "bandwidth": 2124354
+    "bandwidth": 1069494
   },
   {
-    "id": 5536,
+    "id": 5924,
     "name": "Alien Nation by DUST (1080p)",
     "logo": "https://i.imgur.com/FxYhME9.png",
     "country": "US",
@@ -224,7 +210,7 @@
     "bandwidth": 4909291
   },
   {
-    "id": 5537,
+    "id": 5925,
     "name": "All Reality We TV (720p) [Geo-blocked]",
     "logo": "https://i.imgur.com/HZTz5HJ.png",
     "country": "US",
@@ -238,7 +224,7 @@
     "bandwidth": 3072000
   },
   {
-    "id": 5538,
+    "id": 5926,
     "name": "All Weddings We TV (720p) [Geo-blocked]",
     "logo": "https://i.imgur.com/OjLCew5.png",
     "country": "US",
@@ -252,7 +238,7 @@
     "bandwidth": 3072000
   },
   {
-    "id": 5539,
+    "id": 5927,
     "name": "Always Funny Videos (720p)",
     "logo": "https://i.imgur.com/vfdN5Xl.png",
     "country": "US",
@@ -266,7 +252,21 @@
     "bandwidth": 3193687
   },
   {
-    "id": 5540,
+    "id": 5928,
+    "name": "Amedia Hit",
+    "logo": "https://i.imgur.com/a8ZBGBw.png",
+    "country": "RU",
+    "countryName": "Russia",
+    "flag": "🇷🇺",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "http://31.148.48.15/Amedia_HIT_HD/index.m3u8",
+    "premium": false,
+    "resolution": "720p",
+    "bandwidth": 5550000
+  },
+  {
+    "id": 5929,
     "name": "Amedia Premium",
     "logo": "https://i.imgur.com/UUjehw9.png",
     "country": "RU",
@@ -277,10 +277,10 @@
     "url": "http://31.148.48.15/Amedia_Premium_HD/index.m3u8",
     "premium": false,
     "resolution": "720p",
-    "bandwidth": 5580000
+    "bandwidth": 5520000
   },
   {
-    "id": 5541,
+    "id": 5930,
     "name": "Antiques Roadshow UK (1080p)",
     "logo": "https://i.imgur.com/rKWLv48.png",
     "country": "US",
@@ -294,7 +294,7 @@
     "bandwidth": 4403200
   },
   {
-    "id": 5542,
+    "id": 5931,
     "name": "Are We There Yet? (720p)",
     "logo": "https://i.imgur.com/3BJQiHP.png",
     "country": "US",
@@ -308,7 +308,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5543,
+    "id": 5932,
     "name": "Artflix Movie Classics (720p)",
     "logo": "https://i.imgur.com/5pOZQB4.png",
     "country": "US",
@@ -322,7 +322,21 @@
     "bandwidth": 3072000
   },
   {
-    "id": 5544,
+    "id": 5933,
+    "name": "At Home with Family Handyman (720p)",
+    "logo": "https://i.imgur.com/WfKlGbX.png",
+    "country": "US",
+    "countryName": "United States",
+    "flag": "🇺🇸",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "https://d1ik2p49apxqjf.cloudfront.net/playlist.m3u8",
+    "premium": false,
+    "resolution": "720p",
+    "bandwidth": 3193687
+  },
+  {
+    "id": 5934,
     "name": "Atrescine (1080p)",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Atrescine_logo.svg/960px-Atrescine_logo.svg.png",
     "country": "ES",
@@ -333,10 +347,10 @@
     "url": "http://181.114.57.246:4000/play/KgkA9tT2SpLYm86J/index.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4840000
+    "bandwidth": 5882000
   },
   {
-    "id": 5545,
+    "id": 5935,
     "name": "Aurora Media Films (720p)",
     "logo": "https://i.imgur.com/DVC5w6H.png",
     "country": "GT",
@@ -350,7 +364,7 @@
     "bandwidth": null
   },
   {
-    "id": 5546,
+    "id": 5936,
     "name": "AVA Series",
     "logo": "https://i.imgur.com/8AfAfZE.png",
     "country": "IR",
@@ -364,7 +378,7 @@
     "bandwidth": null
   },
   {
-    "id": 5547,
+    "id": 5937,
     "name": "AWTV (1080p) [Geo-blocked]",
     "logo": "https://i.imgur.com/2tdMyef.png",
     "country": "BR",
@@ -378,7 +392,7 @@
     "bandwidth": null
   },
   {
-    "id": 5548,
+    "id": 5938,
     "name": "B4U Bhojpuri (1080p)",
     "logo": "https://i.imgur.com/NwOQUDp.png",
     "country": "IN",
@@ -392,7 +406,7 @@
     "bandwidth": 4000000
   },
   {
-    "id": 5549,
+    "id": 5939,
     "name": "B4U Kadak (1080p) [Not 24/7]",
     "logo": "https://dtil.tmsimg.com/assets/s142695_ld_h15_aa.png?lock=720x540",
     "country": "IN",
@@ -406,7 +420,7 @@
     "bandwidth": 4000000
   },
   {
-    "id": 5550,
+    "id": 5940,
     "name": "B4U Movies India (1080p)",
     "logo": "https://i.imgur.com/M9kMFJl.png",
     "country": "IN",
@@ -420,7 +434,7 @@
     "bandwidth": 4000000
   },
   {
-    "id": 5551,
+    "id": 5941,
     "name": "Bab Al Hara (1080p)",
     "logo": "https://i.imgur.com/QtlnZbq.png",
     "country": "SA",
@@ -434,7 +448,7 @@
     "bandwidth": 8912934
   },
   {
-    "id": 5552,
+    "id": 5942,
     "name": "Baywatch (1080p)",
     "logo": "https://i.imgur.com/c2esKHg.png",
     "country": "US",
@@ -448,7 +462,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5553,
+    "id": 5943,
     "name": "BBC Doctor Who Classic (1080p)",
     "logo": "https://i.imgur.com/JIqJQQM.png",
     "country": "US",
@@ -462,7 +476,7 @@
     "bandwidth": 4403200
   },
   {
-    "id": 5554,
+    "id": 5944,
     "name": "BBC Drama (1080p)",
     "logo": "https://i.imgur.com/HctHhLL.png",
     "country": "UK",
@@ -476,7 +490,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5555,
+    "id": 5945,
     "name": "Bhojpuri Cinema (720p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_BHOJPURI_CINEMA/images/LOGO_HD/image.png",
     "country": "IN",
@@ -490,7 +504,7 @@
     "bandwidth": 3072000
   },
   {
-    "id": 5556,
+    "id": 5946,
     "name": "BIZ Cinema (1080p)",
     "logo": "https://biztv.uz/static/media/biz-cinema.286b83dc.png",
     "country": "UZ",
@@ -501,10 +515,10 @@
     "url": "https://fl.biztv.media/cinema_720_EMfSyXgoRdiIHgldXTZICucKTIeCKO/index.m3u8",
     "premium": false,
     "resolution": "720p",
-    "bandwidth": 1920000
+    "bandwidth": 1870000
   },
   {
-    "id": 5557,
+    "id": 5947,
     "name": "Bollywood Classic (1080p)",
     "logo": "https://i.imgur.com/ugPo6ca.png",
     "country": "RO",
@@ -515,10 +529,10 @@
     "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/bollywood-classic/manifest.m3u8?ads.vf=QzgeokcHKvy",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 3773564
+    "bandwidth": 3772418
   },
   {
-    "id": 5558,
+    "id": 5948,
     "name": "Bollywood HD (1080p)",
     "logo": "https://i.imgur.com/scDKOLS.png",
     "country": "RO",
@@ -529,10 +543,10 @@
     "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/bollywood-hd/manifest.m3u8?ads.vf=lWu9a-np_Vi",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 3772848
+    "bandwidth": 3772676
   },
   {
-    "id": 5559,
+    "id": 5949,
     "name": "Boreal (720p) [Not 24/7]",
     "logo": "https://i.imgur.com/KSquHTG.png",
     "country": "DO",
@@ -546,7 +560,7 @@
     "bandwidth": null
   },
   {
-    "id": 5560,
+    "id": 5950,
     "name": "Cafe Film",
     "logo": "",
     "country": "IR",
@@ -560,7 +574,7 @@
     "bandwidth": null
   },
   {
-    "id": 5561,
+    "id": 5951,
     "name": "Charge! (1080p)",
     "logo": "https://i.imgur.com/1rxmu2u.png",
     "country": "US",
@@ -574,7 +588,7 @@
     "bandwidth": 6074349
   },
   {
-    "id": 5562,
+    "id": 5952,
     "name": "Choppertown (720p)",
     "logo": "https://i.imgur.com/U6cu5Ms.png",
     "country": "US",
@@ -588,7 +602,7 @@
     "bandwidth": 3193687
   },
   {
-    "id": 5563,
+    "id": 5953,
     "name": "Cine Romantico (720p)",
     "logo": "https://i.imgur.com/FUrrDrb.png",
     "country": "US",
@@ -602,7 +616,7 @@
     "bandwidth": 5000000
   },
   {
-    "id": 5564,
+    "id": 5954,
     "name": "Cine Sony (720p)",
     "logo": "https://i.imgur.com/bZWoDTg.png",
     "country": "US",
@@ -613,10 +627,10 @@
     "url": "https://a-cdn.klowdtv.com/live1/cine_720p/playlist.m3u8",
     "premium": false,
     "resolution": "720p",
-    "bandwidth": 3910561
+    "bandwidth": 3881841
   },
   {
-    "id": 5565,
+    "id": 5955,
     "name": "Cine Western (720p)",
     "logo": "https://i.imgur.com/tteOFkL.png",
     "country": "FR",
@@ -630,7 +644,7 @@
     "bandwidth": 3046884
   },
   {
-    "id": 5566,
+    "id": 5956,
     "name": "Cinema (1080p)",
     "logo": "https://i.imgur.com/yib6dM2.png",
     "country": "MN",
@@ -644,7 +658,7 @@
     "bandwidth": null
   },
   {
-    "id": 5567,
+    "id": 5957,
     "name": "Cinema Hausa (720p)",
     "logo": "https://i.imgur.com/uV5cHDW.png",
     "country": "ZA",
@@ -655,10 +669,10 @@
     "url": "https://streamdot.broadpeak.io/cff02a74da64d1459eeb779df71f0511/afxpstr/CinemaHausa/index.m3u8",
     "premium": false,
     "resolution": "720p",
-    "bandwidth": 4480000
+    "bandwidth": 4170000
   },
   {
-    "id": 5568,
+    "id": 5958,
     "name": "Cinema One (1080p)",
     "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/Cinema_One_2013_logo.svg/960px-Cinema_One_2013_logo.svg.png",
     "country": "PH",
@@ -672,7 +686,7 @@
     "bandwidth": null
   },
   {
-    "id": 5569,
+    "id": 5959,
     "name": "CineMo (1080p)",
     "logo": "https://i.imgur.com/rGAOD3f.png",
     "country": "PH",
@@ -686,7 +700,7 @@
     "bandwidth": null
   },
   {
-    "id": 5570,
+    "id": 5960,
     "name": "Cinevault 80s (720p)",
     "logo": "https://i.imgur.com/xaCyyDd.png",
     "country": "US",
@@ -700,7 +714,7 @@
     "bandwidth": 10999998
   },
   {
-    "id": 5571,
+    "id": 5961,
     "name": "Classique TV (360p)",
     "logo": "https://i.imgur.com/rHxcraT.png",
     "country": "BR",
@@ -714,7 +728,7 @@
     "bandwidth": null
   },
   {
-    "id": 5572,
+    "id": 5962,
     "name": "CNBC-e",
     "logo": "https://www.digiturkburada.com.tr/kanal3/kanal-buyuk/cnbc-e-buyuk.png?rkt=DfS6Tgv6Hjr93k3",
     "country": "TR",
@@ -728,7 +742,7 @@
     "bandwidth": 2000000
   },
   {
-    "id": 5573,
+    "id": 5963,
     "name": "Cold Case Files (1080p)",
     "logo": "https://i.imgur.com/mowSfj6.png",
     "country": "US",
@@ -742,7 +756,7 @@
     "bandwidth": 5252412
   },
   {
-    "id": 5574,
+    "id": 5964,
     "name": "Colors Cineplex Bollywood (576p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_COLORS_CINEPLEX_BOLLYWOOD/images/LOGO_HD/image.png",
     "country": "IN",
@@ -756,7 +770,7 @@
     "bandwidth": null
   },
   {
-    "id": 5575,
+    "id": 5965,
     "name": "COPS",
     "logo": "https://i.imgur.com/J3XO6V2.png",
     "country": "US",
@@ -770,7 +784,7 @@
     "bandwidth": 3072000
   },
   {
-    "id": 5576,
+    "id": 5966,
     "name": "Cops (720p)",
     "logo": "https://i.imgur.com/J3XO6V2.png",
     "country": "US",
@@ -784,7 +798,7 @@
     "bandwidth": 3072000
   },
   {
-    "id": 5577,
+    "id": 5967,
     "name": "Dark Matter TV (720p)",
     "logo": "https://i.imgur.com/9K8T3ND.png",
     "country": "US",
@@ -798,7 +812,7 @@
     "bandwidth": 3072000
   },
   {
-    "id": 5578,
+    "id": 5968,
     "name": "Deal or No Deal (1080p)",
     "logo": "https://i.imgur.com/lZvNXA1.png",
     "country": "US",
@@ -812,7 +826,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5579,
+    "id": 5969,
     "name": "Degrassi (720p)",
     "logo": "https://i.imgur.com/vhSzfDC.png",
     "country": "US",
@@ -826,7 +840,7 @@
     "bandwidth": 3072000
   },
   {
-    "id": 5580,
+    "id": 5970,
     "name": "DiscoverFilm",
     "logo": "https://i.imgur.com/oMnpsQ5.png",
     "country": "UK",
@@ -840,7 +854,7 @@
     "bandwidth": 3072000
   },
   {
-    "id": 5581,
+    "id": 5971,
     "name": "Dog the Bounty Hunter (1080p)",
     "logo": "https://i.imgur.com/lMICupK.png",
     "country": "US",
@@ -854,7 +868,7 @@
     "bandwidth": 5701132
   },
   {
-    "id": 5582,
+    "id": 5972,
     "name": "Dog The Bounty Hunter [Geo-blocked] (1080p)",
     "logo": "https://i.imgur.com/lMICupK.png",
     "country": "US",
@@ -868,7 +882,7 @@
     "bandwidth": 5701132
   },
   {
-    "id": 5583,
+    "id": 5973,
     "name": "Dog Whisperer (1080p) [Geo-blocked]",
     "logo": "https://i.imgur.com/tgWypVJ.png",
     "country": "US",
@@ -882,7 +896,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5584,
+    "id": 5974,
     "name": "Don't Tell The Bride (1080p)",
     "logo": "https://i.imgur.com/h0bc3Fa.png",
     "country": "US",
@@ -896,7 +910,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5585,
+    "id": 5975,
     "name": "Duck Dynasty (1080p)",
     "logo": "https://i.imgur.com/vMcSlwm.png",
     "country": "US",
@@ -910,7 +924,7 @@
     "bandwidth": 5701132
   },
   {
-    "id": 5586,
+    "id": 5976,
     "name": "Duck Dynasty (1080p)",
     "logo": "https://i.imgur.com/vMcSlwm.png",
     "country": "US",
@@ -924,7 +938,7 @@
     "bandwidth": 5701132
   },
   {
-    "id": 5587,
+    "id": 5977,
     "name": "EBS Cinema (720p)",
     "logo": "https://i.imgur.com/fewPTFE.png",
     "country": "US",
@@ -935,10 +949,10 @@
     "url": "https://rpn.bozztv.com/ebstv/ebscinema/index.m3u8",
     "premium": false,
     "resolution": "720p",
-    "bandwidth": 1390000
+    "bandwidth": 1480000
   },
   {
-    "id": 5588,
+    "id": 5978,
     "name": "Eisei Gekijo (544p)",
     "logo": "https://yt3.googleusercontent.com/d5yMuTHpdKEjTqXDEnS-iYo_AaKwuwYtHRs3gbLB9Hg8j_XtXyUXOeKxetptLhz85SciuA5i=s512-c-k-c0x00ffffff-no-rj",
     "country": "JP",
@@ -949,10 +963,10 @@
     "url": "http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=cs22",
     "premium": false,
     "resolution": "Unknown",
-    "bandwidth": 1301571
+    "bandwidth": 1271107
   },
   {
-    "id": 5589,
+    "id": 5979,
     "name": "ETV Cinema HD (1080p)",
     "logo": "https://dtil.tmsimg.com/assets/s143026_ld_h15_aa.png?lock=720x540",
     "country": "IN",
@@ -966,7 +980,21 @@
     "bandwidth": 2890862
   },
   {
-    "id": 5590,
+    "id": 5980,
+    "name": "FAN",
+    "logo": "https://i.imgur.com/mDeTbaF.png",
+    "country": "RU",
+    "countryName": "Russia",
+    "flag": "🇷🇺",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "http://31.148.48.15/Fan/index.m3u8",
+    "premium": false,
+    "resolution": "1080p",
+    "bandwidth": 5320000
+  },
+  {
+    "id": 5981,
     "name": "Fear Factor (1080p)",
     "logo": "https://i.imgur.com/CIYnLWz.png",
     "country": "US",
@@ -980,7 +1008,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5591,
+    "id": 5982,
     "name": "Filamchi Bhojpuri (1080p)",
     "logo": "https://dtil.tmsimg.com/assets/s157803_ld_h15_aa.png?lock=720x540",
     "country": "IN",
@@ -994,7 +1022,7 @@
     "bandwidth": 4000128
   },
   {
-    "id": 5592,
+    "id": 5983,
     "name": "Filmex (Xumo) (1080p) [Geo-blocked]",
     "logo": "https://i.imgur.com/Hiz2OyC.png",
     "country": "MX",
@@ -1008,7 +1036,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5593,
+    "id": 5984,
     "name": "Filmex Clásico (1080p) [Geo-blocked]",
     "logo": "https://i.imgur.com/D3dj4mv.png",
     "country": "MX",
@@ -1022,7 +1050,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5594,
+    "id": 5985,
     "name": "FilmRise Westerns (720p)",
     "logo": "https://i.imgur.com/8j2npVc.png",
     "country": "US",
@@ -1036,7 +1064,7 @@
     "bandwidth": 5000000
   },
   {
-    "id": 5595,
+    "id": 5986,
     "name": "Forensic Files (720p) [Geo-blocked]",
     "logo": "https://i.imgur.com/8j2npVc.png",
     "country": "US",
@@ -1050,7 +1078,21 @@
     "bandwidth": 5000000
   },
   {
-    "id": 5596,
+    "id": 5987,
+    "name": "FX Movie Channel (720p) [Not 24/7]",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/FXM_Logo.svg/960px-FXM_Logo.svg.png",
+    "country": "US",
+    "countryName": "United States",
+    "flag": "🇺🇸",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "https://tvpass.org/live/FXMovieChannel/hd",
+    "premium": false,
+    "resolution": "720p",
+    "bandwidth": null
+  },
+  {
+    "id": 5988,
     "name": "GEM Pixel",
     "logo": "https://i.ibb.co/Q3tkbPrn/icon-27.png",
     "country": "TR",
@@ -1064,7 +1106,7 @@
     "bandwidth": null
   },
   {
-    "id": 5597,
+    "id": 5989,
     "name": "Ghost Hunters (1080p)",
     "logo": "https://i.imgur.com/KdBr6rG.png",
     "country": "US",
@@ -1078,7 +1120,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5598,
+    "id": 5990,
     "name": "Gold Star",
     "logo": "",
     "country": "IR",
@@ -1092,7 +1134,7 @@
     "bandwidth": null
   },
   {
-    "id": 5599,
+    "id": 5991,
     "name": "Grand Cinema",
     "logo": "https://www.lyngsat.com/logo/tv/gg/grand-cinema.png",
     "country": "TR",
@@ -1106,7 +1148,7 @@
     "bandwidth": null
   },
   {
-    "id": 5600,
+    "id": 5992,
     "name": "Gravitas Movies (1080p)",
     "logo": "https://i.imgur.com/H2hD4vT.png",
     "country": "US",
@@ -1120,7 +1162,7 @@
     "bandwidth": 4715744
   },
   {
-    "id": 5601,
+    "id": 5993,
     "name": "GREAT! movies (1080p)",
     "logo": "https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb3709.png",
     "country": "UK",
@@ -1134,7 +1176,7 @@
     "bandwidth": 5903040
   },
   {
-    "id": 5602,
+    "id": 5994,
     "name": "GREAT! romance (1080p)",
     "logo": "https://d2n0069hmnqmmx.cloudfront.net/epgdata/1.0/newchanlogos/512/512/skychb3643.png",
     "country": "UK",
@@ -1148,7 +1190,7 @@
     "bandwidth": 5903040
   },
   {
-    "id": 5603,
+    "id": 5995,
     "name": "Grjngo Western Movies (720p)",
     "logo": "https://i.imgur.com/wFqhK3p.png",
     "country": "DE",
@@ -1162,7 +1204,7 @@
     "bandwidth": 3072000
   },
   {
-    "id": 5604,
+    "id": 5996,
     "name": "GZT (1080p)",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/GZT_logo.svg/960px-GZT_logo.svg.png",
     "country": "TR",
@@ -1173,10 +1215,10 @@
     "url": "https://mn-nl.mncdn.com/gzttv/gzttv/playlist.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 3525827
+    "bandwidth": 3581174
   },
   {
-    "id": 5605,
+    "id": 5997,
     "name": "Hallmark Drama (720p) [Not 24/7]",
     "logo": "",
     "country": "US",
@@ -1190,7 +1232,7 @@
     "bandwidth": null
   },
   {
-    "id": 5606,
+    "id": 5998,
     "name": "Hallmark Movies & More (1080p) [Geo-blocked]",
     "logo": "",
     "country": "US",
@@ -1204,7 +1246,7 @@
     "bandwidth": 6431348
   },
   {
-    "id": 5607,
+    "id": 5999,
     "name": "Hallmark Movies & Mysteries East (1080p) [Not 24/7]",
     "logo": "https://i.imgur.com/GPRGA9C.png",
     "country": "US",
@@ -1218,7 +1260,7 @@
     "bandwidth": null
   },
   {
-    "id": 5608,
+    "id": 6000,
     "name": "Harbin Movie Channel",
     "logo": "https://www.tvchinese.net/uploads/tv/haerbin.jpg",
     "country": "CN",
@@ -1232,7 +1274,7 @@
     "bandwidth": 700000
   },
   {
-    "id": 5609,
+    "id": 6001,
     "name": "Hell's Kitchen (1080p)",
     "logo": "https://i.imgur.com/P9eT0O9.png",
     "country": "US",
@@ -1246,7 +1288,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5610,
+    "id": 6002,
     "name": "Hero (720p) [Not 24/7]",
     "logo": "https://i.imgur.com/4t5JQLY.png",
     "country": "FI",
@@ -1260,7 +1302,7 @@
     "bandwidth": null
   },
   {
-    "id": 5611,
+    "id": 6003,
     "name": "Home Plus",
     "logo": "https://www.lyngsat.com/logo/tv/hh/homeplus.png",
     "country": "IR",
@@ -1274,7 +1316,7 @@
     "bandwidth": null
   },
   {
-    "id": 5612,
+    "id": 6004,
     "name": "Homes Under The Hammer (720p)",
     "logo": "https://i.imgur.com/P5Haaln.png",
     "country": "US",
@@ -1288,7 +1330,7 @@
     "bandwidth": 3072000
   },
   {
-    "id": 5613,
+    "id": 6005,
     "name": "ICC Plus (1080p)",
     "logo": "https://www.lyngsat.com/logo/tv/ii/iccplus-us.png",
     "country": "US",
@@ -1302,7 +1344,7 @@
     "bandwidth": null
   },
   {
-    "id": 5614,
+    "id": 6006,
     "name": "IFC East (720p) [Not 24/7]",
     "logo": "https://i.imgur.com/bQdkyF9.png",
     "country": "US",
@@ -1316,7 +1358,7 @@
     "bandwidth": null
   },
   {
-    "id": 5615,
+    "id": 6007,
     "name": "Impossible Quiz Show (1080p)",
     "logo": "https://i.imgur.com/9EWffqx.png",
     "country": "US",
@@ -1330,7 +1372,7 @@
     "bandwidth": 4403200
   },
   {
-    "id": 5616,
+    "id": 6008,
     "name": "Inside Crime (1080p)",
     "logo": "https://i.imgur.com/wvQYWsj.png",
     "country": "US",
@@ -1344,7 +1386,7 @@
     "bandwidth": 5903040
   },
   {
-    "id": 5617,
+    "id": 6009,
     "name": "Jalsha Movies HD (1080p)",
     "logo": "https://i.imgur.com/25eWjX2.png",
     "country": "IN",
@@ -1355,10 +1397,10 @@
     "url": "http://103.229.254.25:7001/play/a0dt/index.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 3308000
+    "bandwidth": 3183000
   },
   {
-    "id": 5618,
+    "id": 6010,
     "name": "Judge Nosey",
     "logo": "https://i.imgur.com/S4r98AB.png",
     "country": "US",
@@ -1372,7 +1414,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5619,
+    "id": 6011,
     "name": "KidsFlix (1080p) [Not 24/7]",
     "logo": "https://i.imgur.com/4Pn0ADQ.png",
     "country": "US",
@@ -1386,7 +1428,7 @@
     "bandwidth": 2300000
   },
   {
-    "id": 5620,
+    "id": 6012,
     "name": "Kino 24",
     "logo": "https://i.imgur.com/QAdDARF.png",
     "country": "RU",
@@ -1397,10 +1439,10 @@
     "url": "http://sirius.greenhosting.ru/Kino24Ru/video.m3u8",
     "premium": false,
     "resolution": "720p",
-    "bandwidth": 2160000
+    "bandwidth": 2150000
   },
   {
-    "id": 5621,
+    "id": 6013,
     "name": "Kino Barrandov (720p)",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Kino_Barrandov_logo.png/960px-Kino_Barrandov_logo.png",
     "country": "CZ",
@@ -1414,7 +1456,7 @@
     "bandwidth": null
   },
   {
-    "id": 5622,
+    "id": 6014,
     "name": "Kinoteatr (1080p)",
     "logo": "https://i.imgur.com/emH1BgC.png",
     "country": "UZ",
@@ -1428,7 +1470,7 @@
     "bandwidth": null
   },
   {
-    "id": 5623,
+    "id": 6015,
     "name": "Komsan TV [Not 24/7]",
     "logo": "https://i.imgur.com/SNTf2r3.png",
     "country": "KH",
@@ -1442,7 +1484,7 @@
     "bandwidth": null
   },
   {
-    "id": 5624,
+    "id": 6016,
     "name": "KTV HD (1080p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_KTV_HD/images/LOGO_HD/image.png",
     "country": "IN",
@@ -1453,10 +1495,10 @@
     "url": "http://103.121.6.5:8000/play/a05i/index.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4037000
+    "bandwidth": 4074000
   },
   {
-    "id": 5625,
+    "id": 6017,
     "name": "Kuriakos Cine (1080p)",
     "logo": "https://i.imgur.com/CZViCwB.jpg",
     "country": "PT",
@@ -1470,7 +1512,7 @@
     "bandwidth": 30048000
   },
   {
-    "id": 5626,
+    "id": 6018,
     "name": "Latina Clasicos",
     "logo": "https://i.imgur.com/q0dAWyj.png",
     "country": "PE",
@@ -1481,10 +1523,10 @@
     "url": "https://redirector.rudo.video/hls-video/plus226/latina2/latina2.smil/playlist.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 1960754
+    "bandwidth": 3279321
   },
   {
-    "id": 5627,
+    "id": 6019,
     "name": "Lifetime Movies East (720p) [Not 24/7]",
     "logo": "https://i.imgur.com/BWmqYTO.png",
     "country": "US",
@@ -1498,7 +1540,7 @@
     "bandwidth": null
   },
   {
-    "id": 5628,
+    "id": 6020,
     "name": "Maah TV (720p)",
     "logo": "https://i.imgur.com/FkyueH6.png",
     "country": "MY",
@@ -1512,7 +1554,7 @@
     "bandwidth": null
   },
   {
-    "id": 5629,
+    "id": 6021,
     "name": "Made in Hollywood",
     "logo": "https://i.imgur.com/p16HNIM.png",
     "country": "US",
@@ -1526,7 +1568,7 @@
     "bandwidth": 3072000
   },
   {
-    "id": 5630,
+    "id": 6022,
     "name": "Maraya (1080p)",
     "logo": "https://shahid.mbc.net/mediaObject/d089a559-4f41-4def-a786-f98fcfbf0464?height=auto&width=288&croppingPoint=&version=1&type=png",
     "country": "SA",
@@ -1540,7 +1582,7 @@
     "bandwidth": 9029218
   },
   {
-    "id": 5631,
+    "id": 6023,
     "name": "Maverick Black Cinema (1080p)",
     "logo": "https://images.fubo.tv/station_logos/maverick_black_cinema_c.png",
     "country": "US",
@@ -1554,7 +1596,7 @@
     "bandwidth": 4403200
   },
   {
-    "id": 5632,
+    "id": 6024,
     "name": "Max Movies (1080p)",
     "logo": "https://livetv.ashokadigital.net/upload/logo/1732168422_WhatsApp%20Image%202024-11-21%20at%2010.18.47%20AM.jpeg",
     "country": "IN",
@@ -1565,10 +1607,10 @@
     "url": "https://live.maxtn.in/maxmovies/maxmovies/index.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 2460000
+    "bandwidth": 2370000
   },
   {
-    "id": 5633,
+    "id": 6025,
     "name": "MBC Bollywood (1080p) [Geo-blocked]",
     "logo": "https://i.imgur.com/TTAGFHG.png",
     "country": "AE",
@@ -1582,7 +1624,7 @@
     "bandwidth": 2592000
   },
   {
-    "id": 5634,
+    "id": 6026,
     "name": "MBC Drama USA (1080p)",
     "logo": "https://i.imgur.com/g5PWnqp.png",
     "country": "US",
@@ -1596,7 +1638,7 @@
     "bandwidth": 2496000
   },
   {
-    "id": 5635,
+    "id": 6027,
     "name": "MBC Masr Drama (1080p)",
     "logo": "https://media0070.elcinema.com/tvguide/1399_1.png",
     "country": "SA",
@@ -1610,7 +1652,7 @@
     "bandwidth": 2592000
   },
   {
-    "id": 5636,
+    "id": 6028,
     "name": "MBC+ Drama (1080p)",
     "logo": "https://i.imgur.com/lxWdjXG.png",
     "country": "SA",
@@ -1624,7 +1666,7 @@
     "bandwidth": 2592000
   },
   {
-    "id": 5637,
+    "id": 6029,
     "name": "MCI Televisión (1080p)",
     "logo": "https://pbs.twimg.com/profile_images/1836009952420274177/FfYonU6r_400x400.jpg",
     "country": "CO",
@@ -1638,7 +1680,7 @@
     "bandwidth": null
   },
   {
-    "id": 5638,
+    "id": 6030,
     "name": "Mcleod's Daughters (1080p)",
     "logo": "https://i.imgur.com/q4BBDzw.png",
     "country": "US",
@@ -1652,7 +1694,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5639,
+    "id": 6031,
     "name": "Memorias TV Film (720p) [Geo-blocked]",
     "logo": "https://i.imgur.com/vNfjW6Y.png",
     "country": "CO",
@@ -1666,7 +1708,7 @@
     "bandwidth": null
   },
   {
-    "id": 5640,
+    "id": 6032,
     "name": "Memorias TV Series (720p) [Geo-blocked]",
     "logo": "https://i.imgur.com/ohCSMhY.png",
     "country": "CO",
@@ -1680,7 +1722,7 @@
     "bandwidth": null
   },
   {
-    "id": 5641,
+    "id": 6033,
     "name": "Meta Film TV",
     "logo": "https://www.lyngsat.com/logo/tv/mm/meta-film-tv.png",
     "country": "IR",
@@ -1694,7 +1736,7 @@
     "bandwidth": null
   },
   {
-    "id": 5642,
+    "id": 6034,
     "name": "Midsomer Murders (1080p)",
     "logo": "https://i.imgur.com/VFqfyfY.png",
     "country": "US",
@@ -1708,7 +1750,7 @@
     "bandwidth": 4403200
   },
   {
-    "id": 5643,
+    "id": 6035,
     "name": "Mix Hollywood (1080p)",
     "logo": "https://i.imgur.com/1ENdbZn.png",
     "country": "EG",
@@ -1722,7 +1764,7 @@
     "bandwidth": 3500000
   },
   {
-    "id": 5644,
+    "id": 6036,
     "name": "MovieBox (1080p)",
     "logo": "https://i.imgur.com/xeO1Zb4.png",
     "country": "MN",
@@ -1736,7 +1778,7 @@
     "bandwidth": null
   },
   {
-    "id": 5645,
+    "id": 6037,
     "name": "Movies Action (1080p)",
     "logo": "https://i.imgur.com/NIVhISa.png",
     "country": "SA",
@@ -1750,7 +1792,7 @@
     "bandwidth": 8913973
   },
   {
-    "id": 5646,
+    "id": 6038,
     "name": "Movies Thriller (1080p)",
     "logo": "https://i.imgur.com/JWihdcl.png",
     "country": "SA",
@@ -1764,7 +1806,7 @@
     "bandwidth": 8913207
   },
   {
-    "id": 5647,
+    "id": 6039,
     "name": "MovieSphere (1080p) [Geo-blocked]",
     "logo": "https://i.imgur.com/h1ejU90.png",
     "country": "US",
@@ -1778,7 +1820,7 @@
     "bandwidth": 8048040
   },
   {
-    "id": 5648,
+    "id": 6040,
     "name": "MovieSphere AU (1080p)",
     "logo": "https://i.imgur.com/h1ejU90.png",
     "country": "US",
@@ -1792,7 +1834,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5649,
+    "id": 6041,
     "name": "MovieSphere UK (1080p)",
     "logo": "https://i.imgur.com/h1ejU90.png",
     "country": "US",
@@ -1806,7 +1848,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5650,
+    "id": 6042,
     "name": "MST3K (1080p)",
     "logo": "https://i.imgur.com/2LSdcga.png",
     "country": "US",
@@ -1820,7 +1862,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5651,
+    "id": 6043,
     "name": "Mythbusters (1080p)",
     "logo": "https://i.imgur.com/wzzjvcH.png",
     "country": "US",
@@ -1834,7 +1876,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5652,
+    "id": 6044,
     "name": "MyTime Movie Network (1080p)",
     "logo": "https://i.imgur.com/pw4NZK1.png",
     "country": "UK",
@@ -1848,7 +1890,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5653,
+    "id": 6045,
     "name": "MyTime Movie Network (1080p)",
     "logo": "https://i.imgur.com/HYgxPVQ.png",
     "country": "US",
@@ -1862,7 +1904,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5654,
+    "id": 6046,
     "name": "MyTime Movie Network Brazil (720p)",
     "logo": "https://i.imgur.com/aiGQtzI.png",
     "country": "BR",
@@ -1876,7 +1918,7 @@
     "bandwidth": 3572800
   },
   {
-    "id": 5655,
+    "id": 6047,
     "name": "MyTime Movie Network Mexico (720p)",
     "logo": "https://i.imgur.com/pw4NZK1.png",
     "country": "MX",
@@ -1890,7 +1932,7 @@
     "bandwidth": 3572800
   },
   {
-    "id": 5656,
+    "id": 6048,
     "name": "MyTime movie network Spain (1080p)",
     "logo": "https://i.imgur.com/pw4NZK1.png",
     "country": "ES",
@@ -1904,7 +1946,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5657,
+    "id": 6049,
     "name": "Next HD (480p)",
     "logo": "https://i.imgur.com/c2rF3SS.png",
     "country": "PY",
@@ -1918,7 +1960,7 @@
     "bandwidth": null
   },
   {
-    "id": 5658,
+    "id": 6050,
     "name": "Nihon Eiga Senmon (544p)",
     "logo": "https://i.imgur.com/B2wzA67.png",
     "country": "JP",
@@ -1929,10 +1971,10 @@
     "url": "http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=bs23",
     "premium": false,
     "resolution": "Unknown",
-    "bandwidth": 1061024
+    "bandwidth": 1180915
   },
   {
-    "id": 5659,
+    "id": 6051,
     "name": "Nolly Africa HD (1080p) [Geo-blocked]",
     "logo": "https://i.imgur.com/IxtGpti.png",
     "country": "UK",
@@ -1946,7 +1988,7 @@
     "bandwidth": 4894400
   },
   {
-    "id": 5660,
+    "id": 6052,
     "name": "Nosey (1080p)",
     "logo": "https://i.imgur.com/i5doCQK.png",
     "country": "US",
@@ -1960,35 +2002,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5661,
-    "name": "One TV Cinema 2 (1080p)",
-    "logo": "https://i.imgur.com/H8PiAbA.png",
-    "country": "KH",
-    "countryName": "Cambodia",
-    "flag": "🇰🇭",
-    "language": "Unknown",
-    "category": "Movies",
-    "url": "http://43.252.18.195:5080/live/streams/ChineseDrama.playlist.m3u8",
-    "premium": false,
-    "resolution": "1080p",
-    "bandwidth": null
-  },
-  {
-    "id": 5662,
-    "name": "One TV Drama 3 (1080p)",
-    "logo": "https://i.imgur.com/wHtqMqB.png",
-    "country": "KH",
-    "countryName": "Cambodia",
-    "flag": "🇰🇭",
-    "language": "Unknown",
-    "category": "Movies",
-    "url": "http://43.252.18.195:5080/live/streams/KoreanDrama.playlist.m3u8",
-    "premium": false,
-    "resolution": "1080p",
-    "bandwidth": null
-  },
-  {
-    "id": 5663,
+    "id": 6053,
     "name": "PBS Antiques Roadshow (1080p) [Geo-blocked]",
     "logo": "https://i.imgur.com/U9CYaok.png",
     "country": "US",
@@ -2002,7 +2016,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5664,
+    "id": 6054,
     "name": "PBS Nature (1080p)",
     "logo": "https://i.imgur.com/Brry7cZ.png",
     "country": "US",
@@ -2016,7 +2030,7 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5665,
+    "id": 6055,
     "name": "Persiana Cinema",
     "logo": "https://i.imgur.com/hgIro9r.png",
     "country": "FR",
@@ -2030,7 +2044,7 @@
     "bandwidth": null
   },
   {
-    "id": 5666,
+    "id": 6056,
     "name": "Persiana Family",
     "logo": "https://i.imgur.com/lMZsuWi.png",
     "country": "FR",
@@ -2044,7 +2058,7 @@
     "bandwidth": null
   },
   {
-    "id": 5667,
+    "id": 6057,
     "name": "Persiana Iranian",
     "logo": "https://i.imgur.com/vqrrpBi.png",
     "country": "FR",
@@ -2058,7 +2072,7 @@
     "bandwidth": null
   },
   {
-    "id": 5668,
+    "id": 6058,
     "name": "Persiana Korea",
     "logo": "https://i.imgur.com/si2ZnIA.png",
     "country": "FR",
@@ -2072,7 +2086,7 @@
     "bandwidth": null
   },
   {
-    "id": 5669,
+    "id": 6059,
     "name": "Persiana Plus",
     "logo": "https://i.imgur.com/0xttibX.png",
     "country": "FR",
@@ -2086,7 +2100,7 @@
     "bandwidth": null
   },
   {
-    "id": 5670,
+    "id": 6060,
     "name": "Persiana Series",
     "logo": "https://www.lyngsat.com/logo/tv/pp/persiana-series-fr.png",
     "country": "FR",
@@ -2100,7 +2114,7 @@
     "bandwidth": null
   },
   {
-    "id": 5671,
+    "id": 6061,
     "name": "Pitaara (720p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_PITAARA/images/LOGO_HD/image.png",
     "country": "IN",
@@ -2114,7 +2128,7 @@
     "bandwidth": 3000000
   },
   {
-    "id": 5672,
+    "id": 6062,
     "name": "PNC Drama (1080p)",
     "logo": "https://i.imgur.com/Hg34mg3.png",
     "country": "EG",
@@ -2125,10 +2139,10 @@
     "url": "https://d35j504z0x2vu2.cloudfront.net/v1/master/0bc8e8376bd8417a1b6761138aa41c26c7309312/pnc-drama/master.m3u8?ads.vf=S1kySuSK58S",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 2088164
+    "bandwidth": 2276560
   },
   {
-    "id": 5673,
+    "id": 6063,
     "name": "QTV-3",
     "logo": "https://www.tvchinese.net/uploads/tv/qdtv3.jpg",
     "country": "CN",
@@ -2142,7 +2156,7 @@
     "bandwidth": null
   },
   {
-    "id": 5674,
+    "id": 6064,
     "name": "Rai Movie (576p) [Geo-blocked]",
     "logo": "https://i.imgur.com/0FjxXU9.png",
     "country": "IT",
@@ -2156,7 +2170,7 @@
     "bandwidth": null
   },
   {
-    "id": 5675,
+    "id": 6065,
     "name": "Rakuten Top Movies UK (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2167,10 +2181,10 @@
     "url": "https://0145451975a64b35866170fd2e8fa486.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-5987/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4601890
+    "bandwidth": 4557498
   },
   {
-    "id": 5676,
+    "id": 6066,
     "name": "Rakuten TV Action Movies Finland (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2181,10 +2195,10 @@
     "url": "https://bca5a421a70c46ad911efd0a4767c4bf.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6075/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4584237
+    "bandwidth": 4609921
   },
   {
-    "id": 5677,
+    "id": 6067,
     "name": "Rakuten TV Action Movies Germany (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2195,10 +2209,10 @@
     "url": "https://284824cf70404fdfb6ddf9349009c710.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6066/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4537149
+    "bandwidth": 4365488
   },
   {
-    "id": 5678,
+    "id": 6068,
     "name": "Rakuten TV Action Movies Italy (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2209,10 +2223,10 @@
     "url": "https://87f2e2e5e7624e3bad85da1ca2ed31a7.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6067/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4511636
+    "bandwidth": 4424450
   },
   {
-    "id": 5679,
+    "id": 6069,
     "name": "Rakuten TV Action Movies Spain (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2223,10 +2237,10 @@
     "url": "https://a9c57ec7ec5e4b7daeacc6316a0bb404.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6069/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4563701
+    "bandwidth": 4539165
   },
   {
-    "id": 5680,
+    "id": 6070,
     "name": "Rakuten TV Action Movies UK (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2237,10 +2251,10 @@
     "url": "https://54045f0c40fd442c8b06df076aaf1e85.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6065/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4587298
+    "bandwidth": 4633243
   },
   {
-    "id": 5681,
+    "id": 6071,
     "name": "Rakuten TV Comedy Movies Finland (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2251,10 +2265,10 @@
     "url": "https://a300af98e00746e2acf2346f43e47bd1.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6191/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4504227
+    "bandwidth": 4569352
   },
   {
-    "id": 5682,
+    "id": 6072,
     "name": "Rakuten TV Comedy Movies Germany (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2265,10 +2279,10 @@
     "url": "https://ecac08c9e2214375b907d6825aaf9a01.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6182/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4619143
+    "bandwidth": 4555550
   },
   {
-    "id": 5683,
+    "id": 6073,
     "name": "Rakuten TV Comedy Movies Italy (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2279,10 +2293,10 @@
     "url": "https://b8bc6c4b9be64bd6aeb3b92aa8521ed4.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6184/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4581036
+    "bandwidth": 4609622
   },
   {
-    "id": 5684,
+    "id": 6074,
     "name": "Rakuten TV Comedy Movies Spain (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2296,7 +2310,7 @@
     "bandwidth": 4505135
   },
   {
-    "id": 5685,
+    "id": 6075,
     "name": "Rakuten TV Comedy Movies UK (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2307,10 +2321,10 @@
     "url": "https://9be783d652cd4b099cf63e1dc134c4a3.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6181/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4605703
+    "bandwidth": 4558068
   },
   {
-    "id": 5686,
+    "id": 6076,
     "name": "Rakuten TV Drama Movies Finland (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2321,10 +2335,10 @@
     "url": "https://d7e8ee3c924d4305a0c1840fe94c5d36.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6102/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4526376
+    "bandwidth": 4575783
   },
   {
-    "id": 5687,
+    "id": 6077,
     "name": "Rakuten TV Drama Movies Germany (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2335,10 +2349,10 @@
     "url": "https://968754c2483045c1a9a7f677caec35b6.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6096/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4545463
+    "bandwidth": 4509565
   },
   {
-    "id": 5688,
+    "id": 6078,
     "name": "Rakuten TV Drama Movies Italy (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2349,10 +2363,10 @@
     "url": "https://f84e0b1628464fab846160df957f269e.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6094/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4573860
+    "bandwidth": 4593666
   },
   {
-    "id": 5689,
+    "id": 6079,
     "name": "Rakuten TV Drama Movies Spain (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2363,10 +2377,10 @@
     "url": "https://a7089c89d85f453d850c4a1518b43076.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6092/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4527184
+    "bandwidth": 4370508
   },
   {
-    "id": 5690,
+    "id": 6080,
     "name": "Rakuten TV Drama Movies UK (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2377,10 +2391,10 @@
     "url": "https://fee09fd665814f51b939b6d106cf5f66.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6093/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4533669
+    "bandwidth": 4541327
   },
   {
-    "id": 5691,
+    "id": 6081,
     "name": "Rakuten TV Family Movies Finland (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2391,10 +2405,10 @@
     "url": "https://758ee983d61e400381dea6fa8154f4e0.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6227/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4500000
+    "bandwidth": 4564385
   },
   {
-    "id": 5692,
+    "id": 6082,
     "name": "Rakuten TV Family Movies Germany (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2405,10 +2419,10 @@
     "url": "https://af230031eeac45f3b78d4f8a13265105.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6209/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4532295
+    "bandwidth": 4619186
   },
   {
-    "id": 5693,
+    "id": 6083,
     "name": "Rakuten TV Family Movies Italy (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2419,10 +2433,10 @@
     "url": "https://3315fc3e7276420f895e19cf807dbee1.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6215/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4558418
+    "bandwidth": 4550639
   },
   {
-    "id": 5694,
+    "id": 6084,
     "name": "Rakuten TV Family Movies Spain (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2433,10 +2447,10 @@
     "url": "https://b0d59c8c98974e708e5ccb9a27cdfdfc.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6205/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4611054
+    "bandwidth": 4609839
   },
   {
-    "id": 5695,
+    "id": 6085,
     "name": "Rakuten TV Family Movies UK (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2447,10 +2461,10 @@
     "url": "https://e3207568b726401995c25670faaf32e4.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6203/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4410322
+    "bandwidth": 4548907
   },
   {
-    "id": 5696,
+    "id": 6086,
     "name": "Rakuten TV Nordic Films (1080p)",
     "logo": "https://images-3.rakuten.tv/storage/global-live-channel/translation/artwork/ff79e878-3eea-45fc-b0cd-55d6acce9b18-width200-quality90.jpeg",
     "country": "ES",
@@ -2461,10 +2475,10 @@
     "url": "https://4aa9ef08b70d4b0c8f3519c5950b1930.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6303/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4624594
+    "bandwidth": 4577267
   },
   {
-    "id": 5697,
+    "id": 6087,
     "name": "Rakuten TV Top Movies Finland (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2475,10 +2489,10 @@
     "url": "https://1d1b0d4cb6ae4c31985d13221795695b.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6057/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4565670
+    "bandwidth": 4507002
   },
   {
-    "id": 5698,
+    "id": 6088,
     "name": "Rakuten TV Top Movies Germany (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2489,10 +2503,10 @@
     "url": "https://cbb622b29f5d43b598991f3fa19de291.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-5985/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4655010
+    "bandwidth": 4617310
   },
   {
-    "id": 5699,
+    "id": 6089,
     "name": "Rakuten TV Top Movies Italy (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2503,10 +2517,10 @@
     "url": "https://d4a4999341764c67a67e9ec9eb3790ab.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-5984/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4356858
+    "bandwidth": 4539090
   },
   {
-    "id": 5700,
+    "id": 6090,
     "name": "Rakuten TV Top Movies Spain (1080p)",
     "logo": "https://i.imgur.com/Meew6eX.png",
     "country": "ES",
@@ -2517,10 +2531,10 @@
     "url": "https://ff335120300e4742a2b135ee9a9e7df8.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-5983/master.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4531406
+    "bandwidth": 4497523
   },
   {
-    "id": 5701,
+    "id": 6091,
     "name": "Revry Her (720p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/DISTROTV/LIVECHANNEL/66698907bac4421ebc533646/images/logo_20231219_221435_68.png",
     "country": "US",
@@ -2534,7 +2548,7 @@
     "bandwidth": 3075600
   },
   {
-    "id": 5702,
+    "id": 6092,
     "name": "Roja Movies (1080p)",
     "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/rojamovies.png",
     "country": "IN",
@@ -2545,10 +2559,10 @@
     "url": "https://stream.rojatv.cloud/rojatv/rojatv/index.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4580000
+    "bandwidth": 4650000
   },
   {
-    "id": 5703,
+    "id": 6093,
     "name": "Roya Drama (1080p)",
     "logo": "https://i.imgur.com/V7I0MVf.png",
     "country": "JO",
@@ -2559,12 +2573,12 @@
     "url": "https://playlist.fasttvcdn.com/pl/a2le4pbpa6rpzv147haf4w/drama/playlist.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 2313373
+    "bandwidth": 2307854
   },
   {
-    "id": 5704,
+    "id": 6094,
     "name": "RTL Crime HD (1080p)",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/RTL_CRIME_Logo_2021_united_orange_rot_blau.svg/512px-RTL_CRIME_Logo_2021_united_orange_rot_blau.svg.png",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5c/RTL_Crime_%28Netherlands%29_%282023%2C_stacked%29.svg",
     "country": "DE",
     "countryName": "Germany",
     "flag": "🇩🇪",
@@ -2576,7 +2590,7 @@
     "bandwidth": null
   },
   {
-    "id": 5705,
+    "id": 6095,
     "name": "Runtime Espanol (720p)",
     "logo": "https://i.imgur.com/OMQq19N.png",
     "country": "US",
@@ -2590,7 +2604,7 @@
     "bandwidth": 3071200
   },
   {
-    "id": 5706,
+    "id": 6096,
     "name": "ServusTV HD [Geo-Blocked]",
     "logo": "https://i.imgur.com/6W637Gn.png",
     "country": "AT",
@@ -2604,7 +2618,7 @@
     "bandwidth": 7697315
   },
   {
-    "id": 5707,
+    "id": 6097,
     "name": "Shemaroo Josh (720p)",
     "logo": "https://dtil.tmsimg.com/assets/GNLZZGG00297P3E.png?lock=720x540",
     "country": "IN",
@@ -2618,7 +2632,7 @@
     "bandwidth": 1628000
   },
   {
-    "id": 5708,
+    "id": 6098,
     "name": "Shubh Cinema TV (720p)",
     "logo": "https://i.imgur.com/RQhorAG.png",
     "country": "IN",
@@ -2632,7 +2646,7 @@
     "bandwidth": 2079642
   },
   {
-    "id": 5709,
+    "id": 6099,
     "name": "SL 1",
     "logo": "https://i.imgur.com/n9cuM2W.jpg",
     "country": "IR",
@@ -2646,7 +2660,7 @@
     "bandwidth": null
   },
   {
-    "id": 5710,
+    "id": 6100,
     "name": "SL 2",
     "logo": "https://i.imgur.com/BVuUx5R.jpg",
     "country": "IR",
@@ -2660,7 +2674,7 @@
     "bandwidth": null
   },
   {
-    "id": 5711,
+    "id": 6101,
     "name": "Sony One Blacklist (1080p)",
     "logo": "https://i.imgur.com/uJC8rXr.png",
     "country": "FR",
@@ -2674,7 +2688,7 @@
     "bandwidth": 4725981
   },
   {
-    "id": 5712,
+    "id": 6102,
     "name": "Sony One Favoris (1080p)",
     "logo": "https://i.imgur.com/RO4AM4b.png",
     "country": "FR",
@@ -2688,7 +2702,7 @@
     "bandwidth": 4725600
   },
   {
-    "id": 5713,
+    "id": 6103,
     "name": "Sony One Hits Action (1080p)",
     "logo": "https://i.imgur.com/pXsZEsR.png",
     "country": "FR",
@@ -2702,7 +2716,7 @@
     "bandwidth": 4725829
   },
   {
-    "id": 5714,
+    "id": 6104,
     "name": "Sony One Hits Comedie (1080p)",
     "logo": "https://i.imgur.com/8sHuxxS.png",
     "country": "FR",
@@ -2716,7 +2730,7 @@
     "bandwidth": 4726231
   },
   {
-    "id": 5715,
+    "id": 6105,
     "name": "Sony One Series Comedie (1080p)",
     "logo": "https://i.ibb.co/ns4Md77B/FR-FAST-Plex-Comedy-TV-logo-dark.png",
     "country": "FR",
@@ -2730,7 +2744,7 @@
     "bandwidth": 4726100
   },
   {
-    "id": 5716,
+    "id": 6106,
     "name": "Sony One Series Thriller (1080p)",
     "logo": "https://i.imgur.com/RVS8LDj.png",
     "country": "FR",
@@ -2744,7 +2758,7 @@
     "bandwidth": 4725600
   },
   {
-    "id": 5717,
+    "id": 6107,
     "name": "Sony Pix HD (1080p)",
     "logo": "https://i.postimg.cc/Z5G8j67L/PIX-HD-WHITE.png",
     "country": "IN",
@@ -2755,10 +2769,10 @@
     "url": "http://103.229.254.25:7001/play/a0ed/index.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 6702000
+    "bandwidth": 4246000
   },
   {
-    "id": 5718,
+    "id": 6108,
     "name": "Spooky Nights (1080p)",
     "logo": "https://shahid.mbc.net/mediaObject/b0016b19-b35b-4ea6-afb9-5b74a0aac825?height=auto&width=512&croppingPoint=&version=1&type=png",
     "country": "SA",
@@ -2772,7 +2786,7 @@
     "bandwidth": 8913251
   },
   {
-    "id": 5719,
+    "id": 6109,
     "name": "Sportoutdoor.tv",
     "logo": "https://i.imgur.com/fwOuEBl.png",
     "country": "XX",
@@ -2786,7 +2800,7 @@
     "bandwidth": 3072000
   },
   {
-    "id": 5720,
+    "id": 6110,
     "name": "Squirrel (1080p)",
     "logo": "https://i.imgur.com/9y8VcBr.png",
     "country": "ES",
@@ -2800,7 +2814,7 @@
     "bandwidth": null
   },
   {
-    "id": 5721,
+    "id": 6111,
     "name": "Squirrel Dos (1080p)",
     "logo": "https://i.imgur.com/BDv4ubA.png",
     "country": "ES",
@@ -2814,7 +2828,7 @@
     "bandwidth": null
   },
   {
-    "id": 5722,
+    "id": 6112,
     "name": "Star Gold 2 HD (1080p)",
     "logo": "https://i.imgur.com/G0ZfzZr.png",
     "country": "IN",
@@ -2825,10 +2839,10 @@
     "url": "http://103.229.254.25:7001/play/a0d0/index.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 3539000
+    "bandwidth": 3221000
   },
   {
-    "id": 5723,
+    "id": 6113,
     "name": "Star Gold HD (1080p)",
     "logo": "https://i.imgur.com/xC460sj.png",
     "country": "IN",
@@ -2839,10 +2853,10 @@
     "url": "http://103.229.254.25:7001/play/a0dd/index.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 3967000
+    "bandwidth": 4685000
   },
   {
-    "id": 5724,
+    "id": 6114,
     "name": "Star Gold Select HD (1080p)",
     "logo": "https://i.imgur.com/U7eiuqv.png",
     "country": "IN",
@@ -2853,10 +2867,10 @@
     "url": "http://103.229.254.25:7001/play/a032/index.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 4700000
+    "bandwidth": 3304000
   },
   {
-    "id": 5725,
+    "id": 6115,
     "name": "START Air",
     "logo": "https://i.imgur.com/4bACa7x.png",
     "country": "RU",
@@ -2870,7 +2884,7 @@
     "bandwidth": 5500000
   },
   {
-    "id": 5726,
+    "id": 6116,
     "name": "START World",
     "logo": "https://i.imgur.com/TXtY5eM.png",
     "country": "RU",
@@ -2884,7 +2898,7 @@
     "bandwidth": 5500000
   },
   {
-    "id": 5727,
+    "id": 6117,
     "name": "Sundance TV",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/SundanceTV_2014.svg/960px-SundanceTV_2014.svg.png",
     "country": "PL",
@@ -2895,10 +2909,10 @@
     "url": "https://liveovh010.cda.pl/zkr7GNESGht4_0Wk12c78A/17538736/2782059/enc108/sundancehdraw/sundancehdraw.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 3654113
+    "bandwidth": 3657371
   },
   {
-    "id": 5728,
+    "id": 6118,
     "name": "Super TV (720p)",
     "logo": "https://i.imgur.com/hxF3yhw.png",
     "country": "IT",
@@ -2909,10 +2923,10 @@
     "url": "http://wms.shared.streamshow.it/supertv/mp4:supertv/playlist.m3u8",
     "premium": false,
     "resolution": "720p",
-    "bandwidth": 1628832
+    "bandwidth": 1653046
   },
   {
-    "id": 5729,
+    "id": 6119,
     "name": "Survivor (1080p)",
     "logo": "https://i.imgur.com/Zz9SgY8.png",
     "country": "US",
@@ -2926,7 +2940,21 @@
     "bandwidth": 6046040
   },
   {
-    "id": 5730,
+    "id": 6120,
+    "name": "Televisa Telenovelas",
+    "logo": "https://i.imgur.com/GaJIRN3.jpg",
+    "country": "XX",
+    "countryName": "International",
+    "flag": "🇽🇽",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "https://televisa-televisa-1-it.samsung.wurl.tv/playlist.m3u8",
+    "premium": false,
+    "resolution": "720p",
+    "bandwidth": 3072000
+  },
+  {
+    "id": 6121,
     "name": "TF1 Series Films (1080p) [Geo-Blocked]",
     "logo": "https://i.imgur.com/4CJIDKQ.png",
     "country": "FR",
@@ -2940,7 +2968,7 @@
     "bandwidth": 4806207
   },
   {
-    "id": 5731,
+    "id": 6122,
     "name": "Thalaa TV (1080p)",
     "logo": "https://d229kpbsb5jevy.cloudfront.net/yuppfast/content/common/channel/logos/thalaa-tv.png",
     "country": "IN",
@@ -2954,7 +2982,7 @@
     "bandwidth": 3299136
   },
   {
-    "id": 5732,
+    "id": 6123,
     "name": "The Asylum (1080p)",
     "logo": "https://i.imgur.com/dx9tt1B.png",
     "country": "US",
@@ -2968,7 +2996,7 @@
     "bandwidth": 6709560
   },
   {
-    "id": 5733,
+    "id": 6124,
     "name": "The Film Detective (720p)",
     "logo": "https://i.imgur.com/yfOwmsP.png",
     "country": "XX",
@@ -2982,7 +3010,7 @@
     "bandwidth": 3072000
   },
   {
-    "id": 5734,
+    "id": 6125,
     "name": "The Johnny Carson Show (720p)",
     "logo": "https://i.imgur.com/KBTqpJ7.png",
     "country": "US",
@@ -2996,7 +3024,7 @@
     "bandwidth": 6137560
   },
   {
-    "id": 5735,
+    "id": 6126,
     "name": "The Walking Dead Universe (720p) [Geo-blocked]",
     "logo": "https://i.imgur.com/IwJ5Pnc.png",
     "country": "US",
@@ -3010,7 +3038,7 @@
     "bandwidth": 3072000
   },
   {
-    "id": 5736,
+    "id": 6127,
     "name": "This Old House (1080p)",
     "logo": "https://i.imgur.com/nrVLyE6.png",
     "country": "US",
@@ -3024,7 +3052,7 @@
     "bandwidth": 4403200
   },
   {
-    "id": 5737,
+    "id": 6128,
     "name": "Tolly TV (1080p)",
     "logo": "https://d229kpbsb5jevy.cloudfront.net/yuppfast/content/common/channel/logos/aumnrs.png",
     "country": "IN",
@@ -3038,7 +3066,7 @@
     "bandwidth": 3299136
   },
   {
-    "id": 5738,
+    "id": 6129,
     "name": "True Crime Network+ (1080p) [Geo-blocked]",
     "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/True_Crime_Network_logo.svg/960px-True_Crime_Network_logo.svg.png",
     "country": "US",
@@ -3052,7 +3080,7 @@
     "bandwidth": 5702400
   },
   {
-    "id": 5739,
+    "id": 6130,
     "name": "TV Series 1 As Panteras (480p)",
     "logo": "https://i.imgur.com/Ff5mj0o.png",
     "country": "BR",
@@ -3066,7 +3094,7 @@
     "bandwidth": null
   },
   {
-    "id": 5740,
+    "id": 6131,
     "name": "TVCARiB Cinema (720p) [Not 24/7]",
     "logo": "https://i.imgur.com/fvGlwKo.png",
     "country": "SX",
@@ -3080,7 +3108,7 @@
     "bandwidth": 1790800
   },
   {
-    "id": 5741,
+    "id": 6132,
     "name": "TVE Star (576p)",
     "logo": "https://i.ibb.co/j98NY8Mr/starcolor.png",
     "country": "ES",
@@ -3094,7 +3122,7 @@
     "bandwidth": null
   },
   {
-    "id": 5742,
+    "id": 6133,
     "name": "TVE Star HD (1080p)",
     "logo": "https://i.ibb.co/j98NY8Mr/starcolor.png",
     "country": "ES",
@@ -3108,7 +3136,7 @@
     "bandwidth": null
   },
   {
-    "id": 5743,
+    "id": 6134,
     "name": "TVI Ficção (720p)",
     "logo": "https://cdn.iol.pt/img/logostvi/branco/tvificcao.png",
     "country": "PT",
@@ -3119,10 +3147,10 @@
     "url": "https://video-auth2.iol.pt/live_tvi_ficcao/live_tvi_ficcao/edge_servers/tvificcao-720p/playlist.m3u8",
     "premium": false,
     "resolution": "720p",
-    "bandwidth": 2550407
+    "bandwidth": 2274321
   },
   {
-    "id": 5744,
+    "id": 6135,
     "name": "Unsolved Mysteries (720p)",
     "logo": "https://i.imgur.com/De3khrX.png",
     "country": "US",
@@ -3136,7 +3164,7 @@
     "bandwidth": 5000000
   },
   {
-    "id": 5745,
+    "id": 6136,
     "name": "Veo7 (1080p)",
     "logo": "https://i.imgur.com/kklTIMm.png",
     "country": "ES",
@@ -3150,7 +3178,7 @@
     "bandwidth": null
   },
   {
-    "id": 5746,
+    "id": 6137,
     "name": "WOWOW Cinema (544p)",
     "logo": "https://i.imgur.com/Wx9fkCW.png",
     "country": "JP",
@@ -3161,10 +3189,10 @@
     "url": "http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=bs07",
     "premium": false,
     "resolution": "Unknown",
-    "bandwidth": 1129557
+    "bandwidth": 1179559
   },
   {
-    "id": 5747,
+    "id": 6138,
     "name": "XPTV US (720p)",
     "logo": "https://i.imgur.com/1m7kDmc.png",
     "country": "ES",
@@ -3178,7 +3206,7 @@
     "bandwidth": 2500000
   },
   {
-    "id": 5748,
+    "id": 6139,
     "name": "Xtrema Accion",
     "logo": "https://i.imgur.com/z5NwizH.png",
     "country": "AR",
@@ -3192,7 +3220,7 @@
     "bandwidth": 1
   },
   {
-    "id": 5749,
+    "id": 6140,
     "name": "Xtrema Cine Clasico",
     "logo": "https://i.imgur.com/j91M4Yf.png",
     "country": "AR",
@@ -3206,7 +3234,7 @@
     "bandwidth": 1
   },
   {
-    "id": 5750,
+    "id": 6141,
     "name": "Xtrema Terror",
     "logo": "https://i.imgur.com/FcaTUym.png",
     "country": "AR",
@@ -3220,7 +3248,7 @@
     "bandwidth": 1
   },
   {
-    "id": 5751,
+    "id": 6142,
     "name": "ZB Cinema (720p)",
     "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/ZBCINEMA.png",
     "country": "IN",
@@ -3234,7 +3262,7 @@
     "bandwidth": 2850000
   },
   {
-    "id": 5752,
+    "id": 6143,
     "name": "Zee Bollywood (576p)",
     "logo": "https://dtil.tmsimg.com/assets/GNLZZGG0022T6DM.png?lock=720x540",
     "country": "IN",
@@ -3245,10 +3273,10 @@
     "url": "http://103.229.254.25:7001/play/a0dk/index.m3u8",
     "premium": false,
     "resolution": "Unknown",
-    "bandwidth": 1281000
+    "bandwidth": 1816000
   },
   {
-    "id": 5753,
+    "id": 6144,
     "name": "Zee Cafe HD (1080p)",
     "logo": "https://xstreamcp-assets-msp.streamready.in/assets/LIVETV/LIVECHANNEL/LIVETV_LIVETVCHANNEL_ZEE_CAFE_HD/images/LOGO_HD/LOGO_HD_image.png",
     "country": "IN",
@@ -3259,10 +3287,10 @@
     "url": "http://103.229.254.25:7001/play/a0cx/index.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 3198000
+    "bandwidth": 3155000
   },
   {
-    "id": 5754,
+    "id": 6145,
     "name": "Zylo Cine Friki (1080p)",
     "logo": "https://i.imgur.com/b3Ospym.png",
     "country": "ES",
@@ -3273,10 +3301,10 @@
     "url": "https://d2mr4fu91mjx9m.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-rb0tx75ojbc5u/CineFriki_ES.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 5038648
+    "bandwidth": 5030488
   },
   {
-    "id": 5755,
+    "id": 6146,
     "name": "Zylo Ciné Nanar",
     "logo": "https://i.imgur.com/YnUZd3W.png",
     "country": "FR",
@@ -3290,7 +3318,7 @@
     "bandwidth": 4716800
   },
   {
-    "id": 5756,
+    "id": 6147,
     "name": "Zylo Cine Western (1080p)",
     "logo": "https://i.imgur.com/2UROzSc.png",
     "country": "ES",
@@ -3304,7 +3332,7 @@
     "bandwidth": 5046840
   },
   {
-    "id": 5757,
+    "id": 6148,
     "name": "Zylo Emotion' L",
     "logo": "https://i.imgur.com/MP34aaj.png",
     "country": "FR",
@@ -3318,7 +3346,7 @@
     "bandwidth": 4716800
   },
   {
-    "id": 5758,
+    "id": 6149,
     "name": "Zylo Fréquence Novelas",
     "logo": "https://i.imgur.com/fEjNAps.png",
     "country": "FR",
@@ -3332,7 +3360,7 @@
     "bandwidth": 4716800
   },
   {
-    "id": 5759,
+    "id": 6150,
     "name": "Zylo ScreamIN",
     "logo": "https://i.imgur.com/tGmKbil.png",
     "country": "FR",
@@ -3346,7 +3374,7 @@
     "bandwidth": 4716800
   },
   {
-    "id": 5760,
+    "id": 6151,
     "name": "Zylo Todo Novelas (1080p)",
     "logo": "https://i.imgur.com/NuYwGok.png",
     "country": "ES",
@@ -3360,7 +3388,35 @@
     "bandwidth": 5046840
   },
   {
-    "id": 5761,
+    "id": 6152,
+    "name": "Детское кино International [Not 24/7]",
+    "logo": "https://i.imgur.com/dJqFRhQ.png",
+    "country": "RU",
+    "countryName": "Russia",
+    "flag": "🇷🇺",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "https://autopilot.catcast.tv/content/38720/index.m3u8",
+    "premium": false,
+    "resolution": "Unknown",
+    "bandwidth": null
+  },
+  {
+    "id": 6153,
+    "name": "Дом Кино Премиум HD",
+    "logo": "https://i.imgur.com/rJpQtvK.png",
+    "country": "RU",
+    "countryName": "Russia",
+    "flag": "🇷🇺",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "http://31.148.48.15/Dom_Kino_Premium_HD/index.m3u8",
+    "premium": false,
+    "resolution": "1080p",
+    "bandwidth": 7660000
+  },
+  {
+    "id": 6154,
     "name": "Кинеко",
     "logo": "https://i.imgur.com/Otfvlmf.png",
     "country": "RU",
@@ -3371,10 +3427,206 @@
     "url": "http://31.148.48.15/Kineko_HD/index.m3u8",
     "premium": false,
     "resolution": "1080p",
-    "bandwidth": 5740000
+    "bandwidth": 5430000
   },
   {
-    "id": 5762,
+    "id": 6155,
+    "name": "Кино 1 International [Not 24/7]",
+    "logo": "https://i.imgur.com/zsCPLs4.png",
+    "country": "RU",
+    "countryName": "Russia",
+    "flag": "🇷🇺",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "http://kino-1.catcast.tv/content/38617/index.m3u8",
+    "premium": false,
+    "resolution": "Unknown",
+    "bandwidth": null
+  },
+  {
+    "id": 6156,
+    "name": "Новый Русский (720p)",
+    "logo": "https://i.imgur.com/iuRSScH.png",
+    "country": "RU",
+    "countryName": "Russia",
+    "flag": "🇷🇺",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "https://live.15plusmg.ru/memfs/f983b507-a170-41a9-85a9-d9afc6cba9c1.m3u8",
+    "premium": false,
+    "resolution": "1080p",
+    "bandwidth": 5285068
+  },
+  {
+    "id": 6157,
+    "name": "Сити Эдем КиноАзия [Not 24/7]",
+    "logo": "https://i.imgur.com/gaket4B.png",
+    "country": "RU",
+    "countryName": "Russia",
+    "flag": "🇷🇺",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "https://cityeden.catcast.tv/content/34393/index.m3u8",
+    "premium": false,
+    "resolution": "Unknown",
+    "bandwidth": null
+  },
+  {
+    "id": 6158,
+    "name": "Сити Эдем КиноАрт [Not 24/7]",
+    "logo": "https://i.imgur.com/67CWCtz.png",
+    "country": "RU",
+    "countryName": "Russia",
+    "flag": "🇷🇺",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "https://cityeden.catcast.tv/content/38398/index.m3u8",
+    "premium": false,
+    "resolution": "Unknown",
+    "bandwidth": null
+  },
+  {
+    "id": 6159,
+    "name": "Сити Эдем КиноДетектив [Not 24/7]",
+    "logo": "https://i.imgur.com/9rKHwBV.png",
+    "country": "RU",
+    "countryName": "Russia",
+    "flag": "🇷🇺",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "https://cityeden.catcast.tv/content/41327/index.m3u8",
+    "premium": false,
+    "resolution": "Unknown",
+    "bandwidth": null
+  },
+  {
+    "id": 6160,
+    "name": "Сити Эдем КиноДок [Not 24/7]",
+    "logo": "https://i.imgur.com/itRbMX3.png",
+    "country": "RU",
+    "countryName": "Russia",
+    "flag": "🇷🇺",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "https://cityeden.catcast.tv/content/38354/index.m3u8",
+    "premium": false,
+    "resolution": "Unknown",
+    "bandwidth": null
+  },
+  {
+    "id": 6161,
+    "name": "Сити Эдем КиноДрама [Not 24/7]",
+    "logo": "https://i.imgur.com/29ddffh.png",
+    "country": "RU",
+    "countryName": "Russia",
+    "flag": "🇷🇺",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "https://cityeden.catcast.tv/content/45269/index.m3u8",
+    "premium": false,
+    "resolution": "Unknown",
+    "bandwidth": null
+  },
+  {
+    "id": 6162,
+    "name": "Сити Эдем КиноКлассика [Not 24/7]",
+    "logo": "https://i.imgur.com/0qGCS1S.png",
+    "country": "RU",
+    "countryName": "Russia",
+    "flag": "🇷🇺",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "https://cityeden.catcast.tv/content/34185/index.m3u8",
+    "premium": false,
+    "resolution": "Unknown",
+    "bandwidth": null
+  },
+  {
+    "id": 6163,
+    "name": "Сити Эдем КиноКомедия [Not 24/7]",
+    "logo": "https://i.imgur.com/Aga2XVA.png",
+    "country": "RU",
+    "countryName": "Russia",
+    "flag": "🇷🇺",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "https://cityeden.catcast.tv/content/41331/index.m3u8",
+    "premium": false,
+    "resolution": "Unknown",
+    "bandwidth": null
+  },
+  {
+    "id": 6164,
+    "name": "Сити Эдем КиноМистика [Not 24/7]",
+    "logo": "https://i.imgur.com/s1Pid0K.png",
+    "country": "RU",
+    "countryName": "Russia",
+    "flag": "🇷🇺",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "https://cityeden.catcast.tv/content/40783/index.m3u8",
+    "premium": false,
+    "resolution": "Unknown",
+    "bandwidth": null
+  },
+  {
+    "id": 6165,
+    "name": "Сити Эдем КиноФантастика [Not 24/7]",
+    "logo": "https://i.imgur.com/I64FeIO.png",
+    "country": "RU",
+    "countryName": "Russia",
+    "flag": "🇷🇺",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "https://cityeden.catcast.tv/content/45268/index.m3u8",
+    "premium": false,
+    "resolution": "Unknown",
+    "bandwidth": null
+  },
+  {
+    "id": 6166,
+    "name": "Сити Эдем КиноЭкшен [Not 24/7]",
+    "logo": "https://i.imgur.com/uuzuvD0.png",
+    "country": "RU",
+    "countryName": "Russia",
+    "flag": "🇷🇺",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "https://cityeden.catcast.tv/content/41333/index.m3u8",
+    "premium": false,
+    "resolution": "Unknown",
+    "bandwidth": null
+  },
+  {
+    "id": 6167,
+    "name": "Сити Эдем ТелеНовелла [Not 24/7]",
+    "logo": "https://i.imgur.com/mT5liTh.png",
+    "country": "RU",
+    "countryName": "Russia",
+    "flag": "🇷🇺",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "https://cityeden.catcast.tv/content/46209/index.m3u8",
+    "premium": false,
+    "resolution": "Unknown",
+    "bandwidth": null
+  },
+  {
+    "id": 6168,
+    "name": "Смотрим Честный Детектив",
+    "logo": "https://cdn-st3.smotrim.ru/vh/pictures/svg/444/241/8.svg",
+    "country": "RU",
+    "countryName": "Russia",
+    "flag": "🇷🇺",
+    "language": "Unknown",
+    "category": "Movies",
+    "url": "https://live-vgtrksmotrim.cdnvideo.ru/vgtrksmotrim/smotrim-live-01.smil/playlist.m3u8",
+    "premium": false,
+    "resolution": "1080p",
+    "bandwidth": 12140000
+  },
+  {
+    "id": 6169,
     "name": "People Are Awesome",
     "logo": "https://i.imgur.com/xwz9zKk.jpeg",
     "country": "XX",
@@ -3388,7 +3640,7 @@
     "bandwidth": 3072000
   },
   {
-    "id": 5763,
+    "id": 6170,
     "name": "Radio Italia Trend",
     "logo": "https://i.imgur.com/ecpfn3e.png",
     "country": "XX",
@@ -3402,7 +3654,7 @@
     "bandwidth": 3572800
   },
   {
-    "id": 5764,
+    "id": 6171,
     "name": "Trace Latina Ⓖ",
     "logo": "https://i.imgur.com/GHbz8wd.png",
     "country": "XX",
@@ -3416,7 +3668,7 @@
     "bandwidth": 4716800
   },
   {
-    "id": 5765,
+    "id": 6172,
     "name": "Trace Urban Ⓖ",
     "logo": "https://i.imgur.com/PAx9qj8.png",
     "country": "XX",
@@ -3430,7 +3682,7 @@
     "bandwidth": 5288800
   },
   {
-    "id": 5766,
+    "id": 6173,
     "name": "VH1+ Girl Power! – Pluto TV",
     "logo": "https://i.imgur.com/Z4t6fdU.png",
     "country": "XX",
@@ -3444,7 +3696,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5767,
+    "id": 6174,
     "name": "Car Chase – Pluto TV",
     "logo": "https://i.imgur.com/F1jXkhK.png",
     "country": "XX",
@@ -3458,7 +3710,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5768,
+    "id": 6175,
     "name": "Monster Jam – Pluto TV",
     "logo": "https://i.imgur.com/jxGhINd.png",
     "country": "XX",
@@ -3472,7 +3724,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5769,
+    "id": 6176,
     "name": "MacGyver – Pluto TV",
     "logo": "https://i.imgur.com/bz9IwWU.png",
     "country": "XX",
@@ -3486,7 +3738,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5770,
+    "id": 6177,
     "name": "Settimo Cielo – Pluto TV",
     "logo": "https://i.imgur.com/TC5lo6r.png",
     "country": "XX",
@@ -3500,7 +3752,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5771,
+    "id": 6178,
     "name": "BBC Drama – Pluto TV",
     "logo": "https://i.imgur.com/CrAqXHJ.png",
     "country": "XX",
@@ -3514,7 +3766,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5772,
+    "id": 6179,
     "name": "Le sorelle mcleod – Pluto TV",
     "logo": "https://i.imgur.com/P310ryf.png",
     "country": "XX",
@@ -3528,7 +3780,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5773,
+    "id": 6180,
     "name": "Autostop per il cielo – Pluto TV",
     "logo": "https://i.imgur.com/rpC1qk7.png",
     "country": "XX",
@@ -3542,7 +3794,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5774,
+    "id": 6181,
     "name": "Renegade – Pluto TV",
     "logo": "https://i.imgur.com/Qsd9wuS.png",
     "country": "XX",
@@ -3556,7 +3808,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5775,
+    "id": 6182,
     "name": "Serie – Pluto TV",
     "logo": "https://i.imgur.com/CHBhRZr.png",
     "country": "XX",
@@ -3570,7 +3822,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5776,
+    "id": 6183,
     "name": "Film – Pluto TV",
     "logo": "https://i.imgur.com/QeFc7F3.png",
     "country": "XX",
@@ -3584,7 +3836,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5777,
+    "id": 6184,
     "name": "Film Azione – Pluto TV",
     "logo": "https://i.imgur.com/ZmAuf3H.png",
     "country": "XX",
@@ -3598,7 +3850,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5778,
+    "id": 6185,
     "name": "Film Thriller – Pluto TV",
     "logo": "https://i.imgur.com/hIWMGRW.png",
     "country": "XX",
@@ -3612,7 +3864,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5779,
+    "id": 6186,
     "name": "Horror – Pluto TV",
     "logo": "https://i.imgur.com/zhoHRSE.png",
     "country": "XX",
@@ -3626,7 +3878,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5780,
+    "id": 6187,
     "name": "Western – Pluto TV",
     "logo": "https://i.imgur.com/6vmgQBl.png",
     "country": "XX",
@@ -3640,7 +3892,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5781,
+    "id": 6188,
     "name": "Film Classici – Pluto TV",
     "logo": "https://i.imgur.com/jNyZPLV.png",
     "country": "XX",
@@ -3654,7 +3906,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5782,
+    "id": 6189,
     "name": "Cinema Italiano – Pluto TV",
     "logo": "https://i.imgur.com/drDX5DC.png",
     "country": "XX",
@@ -3668,7 +3920,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5783,
+    "id": 6190,
     "name": "Totò – Pluto TV",
     "logo": "https://i.imgur.com/wLDteJZ.png",
     "country": "XX",
@@ -3682,7 +3934,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5784,
+    "id": 6191,
     "name": "Film Romantici – Pluto TV",
     "logo": "https://i.imgur.com/KxPsLG3.png",
     "country": "XX",
@@ -3696,7 +3948,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5785,
+    "id": 6192,
     "name": "Christmas – Pluto TV",
     "logo": "https://i.imgur.com/tQ8lN30.png",
     "country": "XX",
@@ -3710,7 +3962,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5786,
+    "id": 6193,
     "name": "Film Drama – Pluto TV",
     "logo": "https://i.imgur.com/X8jimKP.png",
     "country": "XX",
@@ -3724,7 +3976,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5787,
+    "id": 6194,
     "name": "Film Commedia – Pluto TV",
     "logo": "https://i.imgur.com/cSKaVHW.png",
     "country": "XX",
@@ -3738,7 +3990,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5788,
+    "id": 6195,
     "name": "East is East – Pluto TV",
     "logo": "https://i.imgur.com/iPGv82f.png",
     "country": "XX",
@@ -3752,7 +4004,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5789,
+    "id": 6196,
     "name": "The Asylum – Pluto TV",
     "logo": "https://i.imgur.com/S2jlaiJ.png",
     "country": "XX",
@@ -3766,7 +4018,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5790,
+    "id": 6197,
     "name": "Star Trek: The Original Series – Pluto TV",
     "logo": "https://i.imgur.com/VnUrFqB.png",
     "country": "XX",
@@ -3780,7 +4032,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5791,
+    "id": 6198,
     "name": "Doctor Who – Pluto TV",
     "logo": "https://i.imgur.com/oewPc3b.png",
     "country": "XX",
@@ -3794,7 +4046,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5792,
+    "id": 6199,
     "name": "Sci-Fi – Pluto TV",
     "logo": "https://i.imgur.com/5B94N8g.png",
     "country": "XX",
@@ -3808,7 +4060,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5793,
+    "id": 6200,
     "name": "Mutant X – Pluto TV",
     "logo": "https://i.imgur.com/SptYKFI.png",
     "country": "XX",
@@ -3822,7 +4074,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5794,
+    "id": 6201,
     "name": "Andromeda – Pluto TV",
     "logo": "https://i.imgur.com/2HFhwX9.png",
     "country": "XX",
@@ -3836,7 +4088,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5795,
+    "id": 6202,
     "name": "Sanctuary – Pluto TV",
     "logo": "https://i.imgur.com/iYyijeJ.png",
     "country": "XX",
@@ -3850,7 +4102,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5796,
+    "id": 6203,
     "name": "Forensic Files – Pluto TV",
     "logo": "https://i.imgur.com/hF5maH7.png",
     "country": "XX",
@@ -3864,7 +4116,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5797,
+    "id": 6204,
     "name": "Squadra Speciale Cobra 11 – Pluto TV",
     "logo": "https://i.imgur.com/HtDoAF2.png",
     "country": "XX",
@@ -3878,7 +4130,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5798,
+    "id": 6205,
     "name": "Crime – Pluto TV",
     "logo": "https://i.imgur.com/WRMGIdb.png",
     "country": "XX",
@@ -3892,7 +4144,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5799,
+    "id": 6206,
     "name": "Mai dire sì – Pluto TV",
     "logo": "https://i.imgur.com/yIMyhSN.png",
     "country": "XX",
@@ -3906,7 +4158,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5800,
+    "id": 6207,
     "name": "Consulenze illegali – Pluto TV",
     "logo": "https://i.imgur.com/AoOiYJX.png",
     "country": "XX",
@@ -3920,7 +4172,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5801,
+    "id": 6208,
     "name": "Il banco dei pugni – Pluto TV",
     "logo": "https://i.imgur.com/2Lj1sdf.png",
     "country": "XX",
@@ -3934,7 +4186,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5802,
+    "id": 6209,
     "name": "Affare Fatto – Pluto TV",
     "logo": "https://i.imgur.com/BuGkGsL.png",
     "country": "XX",
@@ -3948,7 +4200,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5803,
+    "id": 6210,
     "name": "Catfish – Pluto TV",
     "logo": "https://i.imgur.com/KajHKoP.png",
     "country": "XX",
@@ -3962,7 +4214,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5804,
+    "id": 6211,
     "name": "Il Testimone – Pluto TV",
     "logo": "https://i.imgur.com/9NXL9kY.png",
     "country": "XX",
@@ -3976,7 +4228,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5805,
+    "id": 6212,
     "name": "Case Pazzesche – Pluto TV",
     "logo": "https://i.imgur.com/v8IDWwX.png",
     "country": "XX",
@@ -3990,7 +4242,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5806,
+    "id": 6213,
     "name": "Geordie Shore – Pluto TV",
     "logo": "https://i.imgur.com/y0fkHVi.png",
     "country": "XX",
@@ -4004,7 +4256,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5807,
+    "id": 6214,
     "name": "Ex on the beach – Pluto TV",
     "logo": "https://i.imgur.com/IONkdyk.png",
     "country": "XX",
@@ -4018,7 +4270,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5808,
+    "id": 6215,
     "name": "#Riccanza – Pluto TV",
     "logo": "https://i.imgur.com/oBpcWEm.png",
     "country": "XX",
@@ -4032,7 +4284,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5809,
+    "id": 6216,
     "name": "The Hills – Pluto TV",
     "logo": "https://i.imgur.com/9SRojGx.png",
     "country": "XX",
@@ -4046,7 +4298,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5810,
+    "id": 6217,
     "name": "Reality – Pluto TV",
     "logo": "https://i.imgur.com/tPEOeTk.png",
     "country": "XX",
@@ -4060,7 +4312,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5811,
+    "id": 6218,
     "name": "Made – Pluto TV",
     "logo": "https://i.imgur.com/dguQsJ7.png",
     "country": "XX",
@@ -4074,7 +4326,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5812,
+    "id": 6219,
     "name": "16 anni e incinta – Pluto TV",
     "logo": "https://i.imgur.com/4BHrbP7.png",
     "country": "XX",
@@ -4088,7 +4340,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5813,
+    "id": 6220,
     "name": "Teen Mom – Pluto TV",
     "logo": "https://i.imgur.com/LdiTgeW.png",
     "country": "XX",
@@ -4102,7 +4354,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5814,
+    "id": 6221,
     "name": "Jersey Shore – Pluto TV",
     "logo": "https://i.imgur.com/HIlmQEy.png",
     "country": "XX",
@@ -4116,7 +4368,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5815,
+    "id": 6222,
     "name": "Top Gear – Pluto TV",
     "logo": "https://i.imgur.com/ZZo7DXQ.png",
     "country": "XX",
@@ -4130,7 +4382,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5816,
+    "id": 6223,
     "name": "Pimp My Ride – Pluto TV",
     "logo": "https://i.imgur.com/GC2wj2K.png",
     "country": "XX",
@@ -4144,7 +4396,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5817,
+    "id": 6224,
     "name": "World poker tour – Pluto TV",
     "logo": "https://i.imgur.com/AF1ON8u.png",
     "country": "XX",
@@ -4158,7 +4410,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5818,
+    "id": 6225,
     "name": "PFL MMA – Pluto TV",
     "logo": "https://i.imgur.com/zScgLTv.png",
     "country": "XX",
@@ -4172,7 +4424,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5819,
+    "id": 6226,
     "name": "Robot Wars by MECH+ – Pluto TV",
     "logo": "https://i.imgur.com/vGqha3k.png",
     "country": "XX",
@@ -4186,7 +4438,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5820,
+    "id": 6227,
     "name": "Ultimate Classic Wrestling – Pluto TV",
     "logo": "https://i.imgur.com/QVN5qv3.png",
     "country": "XX",
@@ -4200,7 +4452,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5821,
+    "id": 6228,
     "name": "The Boat Show – Pluto TV",
     "logo": "https://i.imgur.com/aDcwRvj.png",
     "country": "XX",
@@ -4214,7 +4466,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5822,
+    "id": 6229,
     "name": "Unbeaten Sports – Pluto TV",
     "logo": "https://i.imgur.com/UAiv612.png",
     "country": "XX",
@@ -4228,7 +4480,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5823,
+    "id": 6230,
     "name": "Sport – Pluto TV",
     "logo": "https://i.imgur.com/o2psAYW.png",
     "country": "XX",
@@ -4242,7 +4494,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5824,
+    "id": 6231,
     "name": "Ridiculousness – Pluto TV",
     "logo": "https://i.imgur.com/Yyj3Dm6.png",
     "country": "XX",
@@ -4256,7 +4508,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5825,
+    "id": 6232,
     "name": "Scherzi e risate – Pluto TV",
     "logo": "https://i.imgur.com/kPxGzPI.png",
     "country": "XX",
@@ -4270,7 +4522,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5826,
+    "id": 6233,
     "name": "Fail army – Pluto TV",
     "logo": "https://i.imgur.com/SqRDd2U.png",
     "country": "XX",
@@ -4284,7 +4536,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5827,
+    "id": 6234,
     "name": "People are awesome – Pluto TV",
     "logo": "https://i.imgur.com/jn0OeWv.png",
     "country": "XX",
@@ -4298,7 +4550,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5828,
+    "id": 6235,
     "name": "The pet collective – Pluto TV",
     "logo": "https://i.imgur.com/034PrSz.png",
     "country": "XX",
@@ -4312,7 +4564,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5829,
+    "id": 6236,
     "name": "Just for laughs – Pluto TV",
     "logo": "https://i.imgur.com/VvEz0XX.png",
     "country": "XX",
@@ -4326,7 +4578,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5830,
+    "id": 6237,
     "name": "South Park – Pluto TV",
     "logo": "https://i.imgur.com/06wIdRV.png",
     "country": "XX",
@@ -4340,7 +4592,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5831,
+    "id": 6238,
     "name": "Super! Spongebob – Pluto TV",
     "logo": "https://i.imgur.com/vFiwODM.png",
     "country": "XX",
@@ -4354,7 +4606,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5832,
+    "id": 6239,
     "name": "Due Fantagenitori – Pluto TV",
     "logo": "https://i.imgur.com/HOvLgGK.png",
     "country": "XX",
@@ -4368,7 +4620,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5833,
+    "id": 6240,
     "name": "Yu-Gi-Oh! – Pluto TV",
     "logo": "https://i.imgur.com/rmzSC1C.png",
     "country": "XX",
@@ -4382,7 +4634,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5834,
+    "id": 6241,
     "name": "Anime – Pluto TV",
     "logo": "https://i.imgur.com/rhVF0eC.png",
     "country": "XX",
@@ -4396,7 +4648,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5835,
+    "id": 6242,
     "name": "Avatar – Pluto TV",
     "logo": "https://i.imgur.com/KDSStnJ.png",
     "country": "XX",
@@ -4410,7 +4662,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5836,
+    "id": 6243,
     "name": "Inazuma Eleven – Pluto TV",
     "logo": "https://i.imgur.com/2u1ic6X.png",
     "country": "XX",
@@ -4424,7 +4676,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5837,
+    "id": 6244,
     "name": "Super! Rugrats – Pluto TV",
     "logo": "https://i.imgur.com/QqMQZte.png",
     "country": "XX",
@@ -4438,7 +4690,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5838,
+    "id": 6245,
     "name": "Teenage Mutant Ninja Turtles – Pluto TV",
     "logo": "https://i.imgur.com/bAnyjH7.png",
     "country": "XX",
@@ -4452,7 +4704,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5839,
+    "id": 6246,
     "name": "Super! Icarly – Pluto TV",
     "logo": "https://i.imgur.com/Mhl252U.png",
     "country": "XX",
@@ -4466,7 +4718,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5840,
+    "id": 6247,
     "name": "Super! Victorious – Pluto TV",
     "logo": "https://i.imgur.com/ArXLm5R.png",
     "country": "XX",
@@ -4480,7 +4732,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5841,
+    "id": 6248,
     "name": "Super! Zoey 101 – Pluto TV",
     "logo": "https://i.imgur.com/7FCQb1G.png",
     "country": "XX",
@@ -4494,7 +4746,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5842,
+    "id": 6249,
     "name": "Super! POP – Pluto TV",
     "logo": "https://i.imgur.com/jlz31HP.png",
     "country": "XX",
@@ -4508,7 +4760,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5843,
+    "id": 6250,
     "name": "Super! Gaming – Pluto TV",
     "logo": "https://i.imgur.com/UB7xHRQ.png",
     "country": "XX",
@@ -4522,7 +4774,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5844,
+    "id": 6251,
     "name": "Super! Girl Power – Pluto TV",
     "logo": "https://i.imgur.com/lzgp9GM.png",
     "country": "XX",
@@ -4536,7 +4788,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5845,
+    "id": 6252,
     "name": "Super! Intervallo – Pluto TV",
     "logo": "https://i.imgur.com/jl7ZvE5.png",
     "country": "XX",
@@ -4550,7 +4802,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5846,
+    "id": 6253,
     "name": "Super! Spyders – Pluto TV",
     "logo": "https://i.imgur.com/n89yuZh.png",
     "country": "XX",
@@ -4564,7 +4816,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5847,
+    "id": 6254,
     "name": "Kids – Pluto TV",
     "logo": "https://i.imgur.com/ybd7A0r.png",
     "country": "XX",
@@ -4578,7 +4830,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5848,
+    "id": 6255,
     "name": "Kids Ukraine – Pluto TV",
     "logo": "https://i.imgur.com/MrIlypV.png",
     "country": "XX",
@@ -4592,7 +4844,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5849,
+    "id": 6256,
     "name": "Super! Star – Pluto TV",
     "logo": "https://i.imgur.com/YLtqPkF.png",
     "country": "XX",
@@ -4606,7 +4858,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5850,
+    "id": 6257,
     "name": "Super! Risate – Pluto TV",
     "logo": "https://i.imgur.com/ALCbqZt.png",
     "country": "XX",
@@ -4620,7 +4872,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5851,
+    "id": 6258,
     "name": "Super! Brothers and Sisters – Pluto TV",
     "logo": "https://i.imgur.com/KSQvVye.png",
     "country": "XX",
@@ -4634,7 +4886,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5852,
+    "id": 6259,
     "name": "VH1+ Music Legends – Pluto TV",
     "logo": "https://i.imgur.com/kJ1MDVi.png",
     "country": "XX",
@@ -4648,7 +4900,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5853,
+    "id": 6260,
     "name": "VH1+ Back to 90's – Pluto TV",
     "logo": "https://i.imgur.com/vGgh3cs.png",
     "country": "XX",
@@ -4662,7 +4914,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5854,
+    "id": 6261,
     "name": "VH1+ Rock! – Pluto TV",
     "logo": "https://i.imgur.com/P1OCuFl.png",
     "country": "XX",
@@ -4676,7 +4928,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5855,
+    "id": 6262,
     "name": "VH1+ Canzoni Italiane – Pluto TV",
     "logo": "https://i.imgur.com/fpQBKP2.png",
     "country": "XX",
@@ -4690,7 +4942,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5856,
+    "id": 6263,
     "name": "VH1+ Hip Hop & Rap – Pluto TV",
     "logo": "https://i.imgur.com/k1zQpiO.png",
     "country": "XX",
@@ -4704,7 +4956,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5857,
+    "id": 6264,
     "name": "Deluxe Lounge HD – Pluto TV",
     "logo": "https://i.imgur.com/mTXgaKl.png",
     "country": "XX",
@@ -4718,7 +4970,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5858,
+    "id": 6265,
     "name": "K-Pop – Pluto TV",
     "logo": "https://i.imgur.com/9Vp4rx2.png",
     "country": "XX",
@@ -4732,7 +4984,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5859,
+    "id": 6266,
     "name": "Fireplace – Pluto TV",
     "logo": "https://i.imgur.com/csk1e76.png",
     "country": "XX",
@@ -4746,7 +4998,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5860,
+    "id": 6267,
     "name": "Euronews – Pluto TV",
     "logo": "https://i.imgur.com/Zpf2ykM.png",
     "country": "XX",
@@ -4760,7 +5012,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5861,
+    "id": 6268,
     "name": "CBS News – Pluto TV",
     "logo": "https://i.imgur.com/ApsK6Eq.png",
     "country": "XX",
@@ -4774,7 +5026,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5862,
+    "id": 6269,
     "name": "Cucina – Pluto TV",
     "logo": "https://i.imgur.com/KsOhaOn.png",
     "country": "XX",
@@ -4788,7 +5040,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5863,
+    "id": 6270,
     "name": "Real life – Pluto TV",
     "logo": "https://i.imgur.com/FpwqJYw.png",
     "country": "XX",
@@ -4802,7 +5054,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5864,
+    "id": 6271,
     "name": "Naturescape – Pluto TV",
     "logo": "https://i.imgur.com/CGB6qiV.png",
     "country": "XX",
@@ -4816,7 +5068,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5865,
+    "id": 6272,
     "name": "Natura – Pluto TV",
     "logo": "https://i.imgur.com/Pc4gx12.png",
     "country": "XX",
@@ -4830,7 +5082,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5866,
+    "id": 6273,
     "name": "Storia – Pluto TV",
     "logo": "https://i.imgur.com/w5BYvsz.png",
     "country": "XX",
@@ -4844,7 +5096,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5867,
+    "id": 6274,
     "name": "Documentari – Pluto TV",
     "logo": "https://i.imgur.com/0jYrODf.png",
     "country": "XX",
@@ -4858,7 +5110,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5868,
+    "id": 6275,
     "name": "Viaggi – Pluto TV",
     "logo": "https://i.imgur.com/3GJg0uy.png",
     "country": "XX",
@@ -4872,7 +5124,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5869,
+    "id": 6276,
     "name": "House of Docs – Pluto TV",
     "logo": "https://i.imgur.com/pFLQ18m.png",
     "country": "XX",
@@ -4886,7 +5138,7 @@
     "bandwidth": 3321280
   },
   {
-    "id": 5870,
+    "id": 6277,
     "name": "Le vite degli altri – Pluto TV",
     "logo": "https://i.imgur.com/nngMFi5.png",
     "country": "XX",
