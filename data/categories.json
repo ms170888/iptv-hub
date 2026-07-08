@@ -1,27 +1,27 @@
 [
   {
     "name": "General",
-    "count": 3316
+    "count": 3264
   },
   {
     "name": "News",
-    "count": 559
+    "count": 553
   },
   {
     "name": "Music",
-    "count": 487
+    "count": 481
   },
   {
     "name": "Religious",
-    "count": 474
+    "count": 463
   },
   {
     "name": "Entertainment",
-    "count": 442
+    "count": 455
   },
   {
     "name": "Sports",
-    "count": 216
+    "count": 224
   },
   {
     "name": "Kids",
@@ -29,114 +29,90 @@
   },
   {
     "name": "Italy",
-    "count": 175
+    "count": 116
   },
   {
     "name": "Legislative",
-    "count": 101
-  },
-  {
-    "name": "Education",
-    "count": 93
+    "count": 105
   },
   {
     "name": "Documentary",
-    "count": 90
+    "count": 97
+  },
+  {
+    "name": "Education",
+    "count": 92
   },
   {
     "name": "Culture",
-    "count": 73
+    "count": 72
   },
   {
     "name": "Business",
-    "count": 51
+    "count": 50
   },
   {
     "name": "Shop",
-    "count": 48
-  },
-  {
-    "name": "Outdoor",
-    "count": 31
+    "count": 47
   },
   {
     "name": "Greece",
-    "count": 31
+    "count": 33
   },
   {
     "name": "Travel",
-    "count": 28
+    "count": 29
   },
   {
-    "name": "Czech Republic",
-    "count": 26
+    "name": "Outdoor",
+    "count": 27
   },
   {
     "name": "Cooking",
-    "count": 20
-  },
-  {
-    "name": "Ukraine",
-    "count": 20
-  },
-  {
-    "name": "Slovakia",
-    "count": 18
+    "count": 23
   },
   {
     "name": "Classic",
-    "count": 17
+    "count": 16
   },
   {
     "name": "Finland",
     "count": 16
   },
   {
-    "name": "Hungary",
-    "count": 13
-  },
-  {
     "name": "Weather",
     "count": 12
   },
   {
-    "name": "Netherlands",
+    "name": "Russia",
     "count": 12
+  },
+  {
+    "name": "Hungary",
+    "count": 11
   },
   {
     "name": "Germany",
     "count": 11
   },
   {
-    "name": "Russia",
+    "name": "Slovakia",
     "count": 11
   },
   {
-    "name": "Portugal",
-    "count": 9
+    "name": "Netherlands",
+    "count": 10
   },
   {
-    "name": "Belarus",
-    "count": 9
-  },
-  {
-    "name": "Ireland",
-    "count": 9
+    "name": "Czech Republic",
+    "count": 10
   },
   {
     "name": "Auto",
-    "count": 8
-  },
-  {
-    "name": "UK",
-    "count": 8
+    "count": 9
   },
   {
     "name": "Spain",
-    "count": 7
-  },
-  {
-    "name": "Culture;Education",
     "count": 7
   },
   {
@@ -144,24 +120,24 @@
     "count": 7
   },
   {
+    "name": "Belarus",
+    "count": 7
+  },
+  {
     "name": "Qatar",
     "count": 6
   },
   {
-    "name": "Chile",
+    "name": "Culture;Education",
     "count": 6
   },
   {
-    "name": "Iraq",
+    "name": "Chile",
     "count": 5
   },
   {
-    "name": "Bosnia And Herzegovina",
-    "count": 5
-  },
-  {
-    "name": "USA",
-    "count": 5
+    "name": "UK",
+    "count": 4
   },
   {
     "name": "Turkey",
@@ -169,6 +145,10 @@
   },
   {
     "name": "Estonia",
+    "count": 4
+  },
+  {
+    "name": "Portugal",
     "count": 4
   },
   {
@@ -188,15 +168,11 @@
     "count": 3
   },
   {
-    "name": "Austria",
-    "count": 3
-  },
-  {
-    "name": "Luxembourg",
-    "count": 3
-  },
-  {
     "name": "Korea",
+    "count": 3
+  },
+  {
+    "name": "Bosnia And Herzegovina",
     "count": 3
   },
   {
@@ -204,7 +180,7 @@
     "count": 3
   },
   {
-    "name": "United Arab Emirates",
+    "name": "Education;Outdoor",
     "count": 2
   },
   {
@@ -216,11 +192,11 @@
     "count": 2
   },
   {
-    "name": "Relax",
+    "name": "Ukraine",
     "count": 2
   },
   {
-    "name": "Venezuela",
+    "name": "Relax",
     "count": 2
   },
   {
@@ -233,14 +209,6 @@
   },
   {
     "name": "Latvia",
-    "count": 2
-  },
-  {
-    "name": "India",
-    "count": 2
-  },
-  {
-    "name": "Indonesia",
     "count": 2
   },
   {
@@ -260,6 +228,14 @@
     "count": 1
   },
   {
+    "name": "United Arab Emirates",
+    "count": 1
+  },
+  {
+    "name": "Iraq",
+    "count": 1
+  },
+  {
     "name": "Belgium",
     "count": 1
   },
@@ -269,10 +245,6 @@
   },
   {
     "name": "China",
-    "count": 1
-  },
-  {
-    "name": "Education;Outdoor",
     "count": 1
   },
   {
@@ -304,11 +276,19 @@
     "count": 1
   },
   {
+    "name": "Venezuela",
+    "count": 1
+  },
+  {
     "name": "Israel",
     "count": 1
   },
   {
     "name": "Hong Kong",
+    "count": 1
+  },
+  {
+    "name": "Austria",
     "count": 1
   },
   {
@@ -361,6 +341,10 @@
   },
   {
     "name": "日本 / Japan",
+    "count": 1
+  },
+  {
+    "name": "Luxembourg",
     "count": 1
   },
   {
