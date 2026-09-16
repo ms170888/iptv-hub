@@ -1,39 +1,39 @@
 [
   {
     "name": "General",
-    "count": 2386
+    "count": 2366
   },
   {
     "name": "News",
-    "count": 588
+    "count": 586
   },
   {
     "name": "Music",
-    "count": 510
-  },
-  {
-    "name": "Entertainment",
-    "count": 482
+    "count": 505
   },
   {
     "name": "Religious",
-    "count": 480
+    "count": 490
+  },
+  {
+    "name": "Entertainment",
+    "count": 477
   },
   {
     "name": "Italy",
-    "count": 229
+    "count": 230
   },
   {
     "name": "Sports",
-    "count": 210
+    "count": 216
   },
   {
     "name": "Kids",
-    "count": 202
+    "count": 209
   },
   {
     "name": "Documentary",
-    "count": 111
+    "count": 110
   },
   {
     "name": "Legislative",
@@ -41,11 +41,11 @@
   },
   {
     "name": "Education",
-    "count": 92
+    "count": 95
   },
   {
     "name": "Culture",
-    "count": 67
+    "count": 65
   },
   {
     "name": "Business",
@@ -53,18 +53,18 @@
   },
   {
     "name": "Shop",
-    "count": 47
-  },
-  {
-    "name": "Outdoor",
-    "count": 38
-  },
-  {
-    "name": "Greece",
-    "count": 34
+    "count": 46
   },
   {
     "name": "Mongolia",
+    "count": 36
+  },
+  {
+    "name": "Outdoor",
+    "count": 34
+  },
+  {
+    "name": "Greece",
     "count": 34
   },
   {
@@ -73,23 +73,27 @@
   },
   {
     "name": "Travel",
-    "count": 28
-  },
-  {
-    "name": "Hungary",
-    "count": 21
+    "count": 29
   },
   {
     "name": "Spain",
-    "count": 21
+    "count": 22
   },
   {
     "name": "Cooking",
+    "count": 21
+  },
+  {
+    "name": "Hungary",
     "count": 20
   },
   {
     "name": "Ireland",
     "count": 17
+  },
+  {
+    "name": "Finland",
+    "count": 16
   },
   {
     "name": "USA",
@@ -124,15 +128,15 @@
     "count": 12
   },
   {
-    "name": "Russia",
-    "count": 12
-  },
-  {
     "name": "Portugal",
     "count": 12
   },
   {
     "name": "Czech Republic",
+    "count": 11
+  },
+  {
+    "name": "Chile",
     "count": 11
   },
   {
@@ -144,11 +148,11 @@
     "count": 9
   },
   {
-    "name": "Belarus",
+    "name": "Russia",
     "count": 9
   },
   {
-    "name": "Chile",
+    "name": "Belarus",
     "count": 9
   },
   {
@@ -156,19 +160,15 @@
     "count": 8
   },
   {
-    "name": "Bosnia And Herzegovina",
+    "name": "North Macedonia",
     "count": 8
   },
   {
+    "name": "Denmark",
+    "count": 7
+  },
+  {
     "name": "Argentina",
-    "count": 7
-  },
-  {
-    "name": "North Macedonia",
-    "count": 7
-  },
-  {
-    "name": "Qatar",
     "count": 6
   },
   {
@@ -180,11 +180,11 @@
     "count": 6
   },
   {
-    "name": "Albania",
+    "name": "Bosnia And Herzegovina",
     "count": 6
   },
   {
-    "name": "Denmark",
+    "name": "Korea",
     "count": 6
   },
   {
@@ -193,6 +193,10 @@
   },
   {
     "name": "Georgia",
+    "count": 5
+  },
+  {
+    "name": "Qatar",
     "count": 5
   },
   {
@@ -208,11 +212,19 @@
     "count": 5
   },
   {
+    "name": "Moldova",
+    "count": 5
+  },
+  {
     "name": "Austria",
     "count": 5
   },
   {
     "name": "Cyprus",
+    "count": 5
+  },
+  {
+    "name": "Albania",
     "count": 5
   },
   {
@@ -237,10 +249,6 @@
   },
   {
     "name": "Relax",
-    "count": 4
-  },
-  {
-    "name": "Moldova",
     "count": 4
   },
   {
@@ -280,11 +288,7 @@
     "count": 3
   },
   {
-    "name": "Korea",
-    "count": 3
-  },
-  {
-    "name": "Finland",
+    "name": "Nigeria",
     "count": 3
   },
   {
@@ -312,6 +316,10 @@
     "count": 2
   },
   {
+    "name": "Faroe Islands",
+    "count": 2
+  },
+  {
     "name": "Lebanon",
     "count": 2
   },
@@ -336,15 +344,7 @@
     "count": 2
   },
   {
-    "name": "Nigeria",
-    "count": 2
-  },
-  {
     "name": "Sweden",
-    "count": 2
-  },
-  {
-    "name": "Switzerland",
     "count": 2
   },
   {
@@ -396,10 +396,6 @@
     "count": 1
   },
   {
-    "name": "Faroe Islands",
-    "count": 1
-  },
-  {
     "name": "Cooking;Education",
     "count": 1
   },
@@ -433,6 +429,10 @@
   },
   {
     "name": "Kazakhstan",
+    "count": 1
+  },
+  {
+    "name": "Switzerland",
     "count": 1
   }
 ]
