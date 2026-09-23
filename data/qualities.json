@@ -7,16 +7,16 @@
   {
     "label": "1080p / Full HD",
     "value": "1080p",
-    "count": 2929
+    "count": 2917
   },
   {
     "label": "720p / HD",
     "value": "720p",
-    "count": 2218
+    "count": 2235
   },
   {
     "label": "Unknown Quality",
     "value": "Unknown",
-    "count": 1011
+    "count": 1035
   }
 ]
