@@ -3,37 +3,37 @@
     "code": "US",
     "name": "United States",
     "flag": "🇺🇸",
-    "count": 1009
+    "count": 994
   },
   {
     "code": "IN",
     "name": "India",
     "flag": "🇮🇳",
-    "count": 479
+    "count": 471
   },
   {
     "code": "IT",
     "name": "Italy",
     "flag": "🇮🇹",
-    "count": 328
+    "count": 310
   },
   {
     "code": "RU",
     "name": "Russia",
     "flag": "🇷🇺",
-    "count": 250
+    "count": 249
   },
   {
     "code": "CL",
     "name": "Chile",
     "flag": "🇨🇱",
-    "count": 180
+    "count": 175
   },
   {
     "code": "DO",
     "name": "Dominican Republic",
     "flag": "🇩🇴",
-    "count": 174
+    "count": 173
   },
   {
     "code": "ES",
@@ -45,13 +45,13 @@
     "code": "BR",
     "name": "Brazil",
     "flag": "🇧🇷",
-    "count": 146
+    "count": 147
   },
   {
     "code": "DE",
     "name": "Germany",
     "flag": "🇩🇪",
-    "count": 142
+    "count": 140
   },
   {
     "code": "NL",
@@ -60,34 +60,34 @@
     "count": 139
   },
   {
-    "code": "AR",
-    "name": "Argentina",
-    "flag": "🇦🇷",
-    "count": 130
-  },
-  {
-    "code": "UA",
-    "name": "Ukraine",
-    "flag": "🇺🇦",
-    "count": 124
-  },
-  {
     "code": "TR",
     "name": "Turkey",
     "flag": "🇹🇷",
-    "count": 123
+    "count": 129
+  },
+  {
+    "code": "AR",
+    "name": "Argentina",
+    "flag": "🇦🇷",
+    "count": 122
   },
   {
     "code": "PE",
     "name": "Peru",
     "flag": "🇵🇪",
-    "count": 123
+    "count": 122
+  },
+  {
+    "code": "UA",
+    "name": "Ukraine",
+    "flag": "🇺🇦",
+    "count": 117
   },
   {
     "code": "FR",
     "name": "France",
     "flag": "🇫🇷",
-    "count": 108
+    "count": 106
   },
   {
     "code": "CA",
@@ -99,19 +99,19 @@
     "code": "ID",
     "name": "Indonesia",
     "flag": "🇮🇩",
-    "count": 104
+    "count": 103
   },
   {
     "code": "UK",
     "name": "UK",
     "flag": "🇺🇰",
-    "count": 100
+    "count": 98
   },
   {
     "code": "MX",
     "name": "Mexico",
     "flag": "🇲🇽",
-    "count": 89
+    "count": 91
   },
   {
     "code": "RO",
@@ -123,7 +123,7 @@
     "code": "HU",
     "name": "Hungary",
     "flag": "🇭🇺",
-    "count": 81
+    "count": 82
   },
   {
     "code": "MN",
@@ -144,52 +144,52 @@
     "count": 65
   },
   {
-    "code": "CZ",
-    "name": "Czech Republic",
-    "flag": "🇨🇿",
-    "count": 63
-  },
-  {
     "code": "CN",
     "name": "China",
     "flag": "🇨🇳",
-    "count": 62
+    "count": 64
+  },
+  {
+    "code": "CZ",
+    "name": "Czech Republic",
+    "flag": "🇨🇿",
+    "count": 61
   },
   {
     "code": "PY",
     "name": "Paraguay",
     "flag": "🇵🇾",
-    "count": 56
+    "count": 57
   },
   {
     "code": "PL",
     "name": "Poland",
     "flag": "🇵🇱",
-    "count": 54
-  },
-  {
-    "code": "IQ",
-    "name": "Iraq",
-    "flag": "🇮🇶",
     "count": 52
   },
   {
     "code": "CR",
     "name": "Costa Rica",
     "flag": "🇨🇷",
-    "count": 49
+    "count": 51
+  },
+  {
+    "code": "IQ",
+    "name": "Iraq",
+    "flag": "🇮🇶",
+    "count": 51
+  },
+  {
+    "code": "VE",
+    "name": "Venezuela",
+    "flag": "🇻🇪",
+    "count": 46
   },
   {
     "code": "EC",
     "name": "Ecuador",
     "flag": "🇪🇨",
-    "count": 48
-  },
-  {
-    "code": "SK",
-    "name": "Slovakia",
-    "flag": "🇸🇰",
-    "count": 44
+    "count": 45
   },
   {
     "code": "TH",
@@ -201,25 +201,7 @@
     "code": "VN",
     "name": "Vietnam",
     "flag": "🇻🇳",
-    "count": 42
-  },
-  {
-    "code": "VE",
-    "name": "Venezuela",
-    "flag": "🇻🇪",
-    "count": 42
-  },
-  {
-    "code": "HN",
-    "name": "Honduras",
-    "flag": "🇭🇳",
-    "count": 41
-  },
-  {
-    "code": "PK",
-    "name": "Pakistan",
-    "flag": "🇵🇰",
-    "count": 39
+    "count": 40
   },
   {
     "code": "KR",
@@ -234,6 +216,18 @@
     "count": 39
   },
   {
+    "code": "HN",
+    "name": "Honduras",
+    "flag": "🇭🇳",
+    "count": 39
+  },
+  {
+    "code": "PK",
+    "name": "Pakistan",
+    "flag": "🇵🇰",
+    "count": 37
+  },
+  {
     "code": "AE",
     "name": "UAE",
     "flag": "🇦🇪",
@@ -243,13 +237,13 @@
     "code": "IL",
     "name": "Israel",
     "flag": "🇮🇱",
-    "count": 33
+    "count": 34
   },
   {
-    "code": "BO",
-    "name": "Bolivia",
-    "flag": "🇧🇴",
-    "count": 33
+    "code": "SK",
+    "name": "Slovakia",
+    "flag": "🇸🇰",
+    "count": 32
   },
   {
     "code": "FI",
@@ -258,16 +252,22 @@
     "count": 32
   },
   {
-    "code": "SA",
-    "name": "Saudi Arabia",
-    "flag": "🇸🇦",
-    "count": 31
-  },
-  {
     "code": "AT",
     "name": "Austria",
     "flag": "🇦🇹",
     "count": 31
+  },
+  {
+    "code": "SA",
+    "name": "Saudi Arabia",
+    "flag": "🇸🇦",
+    "count": 30
+  },
+  {
+    "code": "BO",
+    "name": "Bolivia",
+    "flag": "🇧🇴",
+    "count": 30
   },
   {
     "code": "UZ",
@@ -282,22 +282,16 @@
     "count": 24
   },
   {
+    "code": "CH",
+    "name": "Switzerland",
+    "flag": "🇨🇭",
+    "count": 23
+  },
+  {
     "code": "IE",
     "name": "Ireland",
     "flag": "🇮🇪",
     "count": 23
-  },
-  {
-    "code": "GT",
-    "name": "Guatemala",
-    "flag": "🇬🇹",
-    "count": 22
-  },
-  {
-    "code": "CH",
-    "name": "Switzerland",
-    "flag": "🇨🇭",
-    "count": 22
   },
   {
     "code": "IR",
@@ -318,22 +312,16 @@
     "count": 20
   },
   {
+    "code": "PR",
+    "name": "Puerto Rico",
+    "flag": "🇵🇷",
+    "count": 20
+  },
+  {
     "code": "EE",
     "name": "Estonia",
     "flag": "🇪🇪",
     "count": 20
-  },
-  {
-    "code": "AU",
-    "name": "Australia",
-    "flag": "🇦🇺",
-    "count": 19
-  },
-  {
-    "code": "JO",
-    "name": "Jordan",
-    "flag": "🇯🇴",
-    "count": 19
   },
   {
     "code": "MD",
@@ -342,9 +330,15 @@
     "count": 19
   },
   {
-    "code": "PR",
-    "name": "Puerto Rico",
-    "flag": "🇵🇷",
+    "code": "JO",
+    "name": "Jordan",
+    "flag": "🇯🇴",
+    "count": 18
+  },
+  {
+    "code": "GT",
+    "name": "Guatemala",
+    "flag": "🇬🇹",
     "count": 18
   },
   {
@@ -357,18 +351,12 @@
     "code": "RS",
     "name": "Serbia",
     "flag": "🇷🇸",
-    "count": 17
+    "count": 18
   },
   {
-    "code": "NG",
-    "name": "Nigeria",
-    "flag": "🇳🇬",
-    "count": 16
-  },
-  {
-    "code": "SV",
-    "name": "El Salvador",
-    "flag": "🇸🇻",
+    "code": "AU",
+    "name": "Australia",
+    "flag": "🇦🇺",
     "count": 16
   },
   {
@@ -384,10 +372,22 @@
     "count": 16
   },
   {
-    "code": "JP",
-    "name": "Japan",
-    "flag": "🇯🇵",
-    "count": 16
+    "code": "PA",
+    "name": "Panama",
+    "flag": "🇵🇦",
+    "count": 15
+  },
+  {
+    "code": "NG",
+    "name": "Nigeria",
+    "flag": "🇳🇬",
+    "count": 15
+  },
+  {
+    "code": "SV",
+    "name": "El Salvador",
+    "flag": "🇸🇻",
+    "count": 15
   },
   {
     "code": "BE",
@@ -396,9 +396,15 @@
     "count": 15
   },
   {
-    "code": "CY",
-    "name": "Cyprus",
-    "flag": "🇨🇾",
+    "code": "JP",
+    "name": "Japan",
+    "flag": "🇯🇵",
+    "count": 15
+  },
+  {
+    "code": "AL",
+    "name": "Albania",
+    "flag": "🇦🇱",
     "count": 14
   },
   {
@@ -414,24 +420,6 @@
     "count": 14
   },
   {
-    "code": "PA",
-    "name": "Panama",
-    "flag": "🇵🇦",
-    "count": 13
-  },
-  {
-    "code": "PS",
-    "name": "Palestine",
-    "flag": "🇵🇸",
-    "count": 13
-  },
-  {
-    "code": "AL",
-    "name": "Albania",
-    "flag": "🇦🇱",
-    "count": 13
-  },
-  {
     "code": "UG",
     "name": "UG",
     "flag": "🇺🇬",
@@ -444,9 +432,27 @@
     "count": 13
   },
   {
+    "code": "CY",
+    "name": "Cyprus",
+    "flag": "🇨🇾",
+    "count": 12
+  },
+  {
+    "code": "MK",
+    "name": "North Macedonia",
+    "flag": "🇲🇰",
+    "count": 12
+  },
+  {
     "code": "DK",
     "name": "Denmark",
     "flag": "🇩🇰",
+    "count": 12
+  },
+  {
+    "code": "MM",
+    "name": "Myanmar",
+    "flag": "🇲🇲",
     "count": 12
   },
   {
@@ -462,15 +468,21 @@
     "count": 11
   },
   {
-    "code": "SE",
-    "name": "Sweden",
-    "flag": "🇸🇪",
+    "code": "PH",
+    "name": "Philippines",
+    "flag": "🇵🇭",
     "count": 11
   },
   {
-    "code": "MK",
-    "name": "North Macedonia",
-    "flag": "🇲🇰",
+    "code": "PS",
+    "name": "Palestine",
+    "flag": "🇵🇸",
+    "count": 11
+  },
+  {
+    "code": "SE",
+    "name": "Sweden",
+    "flag": "🇸🇪",
     "count": 11
   },
   {
@@ -478,12 +490,6 @@
     "name": "Lithuania",
     "flag": "🇱🇹",
     "count": 11
-  },
-  {
-    "code": "PH",
-    "name": "Philippines",
-    "flag": "🇵🇭",
-    "count": 10
   },
   {
     "code": "EG",
@@ -495,18 +501,6 @@
     "code": "SG",
     "name": "Singapore",
     "flag": "🇸🇬",
-    "count": 10
-  },
-  {
-    "code": "NP",
-    "name": "Nepal",
-    "flag": "🇳🇵",
-    "count": 10
-  },
-  {
-    "code": "BA",
-    "name": "Bosnia",
-    "flag": "🇧🇦",
     "count": 10
   },
   {
@@ -540,6 +534,12 @@
     "count": 9
   },
   {
+    "code": "NP",
+    "name": "Nepal",
+    "flag": "🇳🇵",
+    "count": 9
+  },
+  {
     "code": "KW",
     "name": "Kuwait",
     "flag": "🇰🇼",
@@ -550,6 +550,12 @@
     "name": "Afghanistan",
     "flag": "🇦🇫",
     "count": 9
+  },
+  {
+    "code": "KE",
+    "name": "Kenya",
+    "flag": "🇰🇪",
+    "count": 8
   },
   {
     "code": "TM",
@@ -564,9 +570,9 @@
     "count": 8
   },
   {
-    "code": "CM",
-    "name": "Cameroon",
-    "flag": "🇨🇲",
+    "code": "BA",
+    "name": "Bosnia",
+    "flag": "🇧🇦",
     "count": 8
   },
   {
@@ -576,15 +582,21 @@
     "count": 7
   },
   {
-    "code": "KE",
-    "name": "Kenya",
-    "flag": "🇰🇪",
-    "count": 7
-  },
-  {
     "code": "AW",
     "name": "AW",
     "flag": "🇦🇼",
+    "count": 7
+  },
+  {
+    "code": "CM",
+    "name": "Cameroon",
+    "flag": "🇨🇲",
+    "count": 7
+  },
+  {
+    "code": "HT",
+    "name": "HT",
+    "flag": "🇭🇹",
     "count": 7
   },
   {
@@ -618,12 +630,6 @@
     "count": 6
   },
   {
-    "code": "HT",
-    "name": "HT",
-    "flag": "🇭🇹",
-    "count": 6
-  },
-  {
     "code": "BH",
     "name": "Bahrain",
     "flag": "🇧🇭",
@@ -648,27 +654,9 @@
     "count": 5
   },
   {
-    "code": "MM",
-    "name": "Myanmar",
-    "flag": "🇲🇲",
-    "count": 5
-  },
-  {
     "code": "NI",
     "name": "Nicaragua",
     "flag": "🇳🇮",
-    "count": 5
-  },
-  {
-    "code": "GP",
-    "name": "GP",
-    "flag": "🇬🇵",
-    "count": 5
-  },
-  {
-    "code": "SI",
-    "name": "Slovenia",
-    "flag": "🇸🇮",
     "count": 5
   },
   {
@@ -702,21 +690,15 @@
     "count": 4
   },
   {
-    "code": "BQ",
-    "name": "BQ",
-    "flag": "🇧🇶",
-    "count": 4
-  },
-  {
     "code": "RW",
     "name": "Rwanda",
     "flag": "🇷🇼",
     "count": 4
   },
   {
-    "code": "JM",
-    "name": "Jamaica",
-    "flag": "🇯🇲",
+    "code": "GP",
+    "name": "GP",
+    "flag": "🇬🇵",
     "count": 4
   },
   {
@@ -750,9 +732,21 @@
     "count": 3
   },
   {
+    "code": "BQ",
+    "name": "BQ",
+    "flag": "🇧🇶",
+    "count": 3
+  },
+  {
     "code": "NO",
     "name": "Norway",
     "flag": "🇳🇴",
+    "count": 3
+  },
+  {
+    "code": "JM",
+    "name": "Jamaica",
+    "flag": "🇯🇲",
     "count": 3
   },
   {
@@ -783,6 +777,12 @@
     "code": "AO",
     "name": "Angola",
     "flag": "🇦🇴",
+    "count": 3
+  },
+  {
+    "code": "MZ",
+    "name": "Mozambique",
+    "flag": "🇲🇿",
     "count": 3
   },
   {
@@ -840,15 +840,21 @@
     "count": 2
   },
   {
+    "code": "GY",
+    "name": "GY",
+    "flag": "🇬🇾",
+    "count": 2
+  },
+  {
     "code": "KP",
     "name": "KP",
     "flag": "🇰🇵",
     "count": 2
   },
   {
-    "code": "MZ",
-    "name": "Mozambique",
-    "flag": "🇲🇿",
+    "code": "MT",
+    "name": "Malta",
+    "flag": "🇲🇹",
     "count": 2
   },
   {
@@ -876,6 +882,18 @@
     "count": 1
   },
   {
+    "code": "BB",
+    "name": "BB",
+    "flag": "🇧🇧",
+    "count": 1
+  },
+  {
+    "code": "ML",
+    "name": "Mali",
+    "flag": "🇲🇱",
+    "count": 1
+  },
+  {
     "code": "LC",
     "name": "LC",
     "flag": "🇱🇨",
@@ -891,12 +909,6 @@
     "code": "BZ",
     "name": "BZ",
     "flag": "🇧🇿",
-    "count": 1
-  },
-  {
-    "code": "GY",
-    "name": "GY",
-    "flag": "🇬🇾",
     "count": 1
   },
   {
@@ -984,15 +996,15 @@
     "count": 1
   },
   {
-    "code": "UY",
-    "name": "Uruguay",
-    "flag": "🇺🇾",
+    "code": "SI",
+    "name": "Slovenia",
+    "flag": "🇸🇮",
     "count": 1
   },
   {
-    "code": "MT",
-    "name": "Malta",
-    "flag": "🇲🇹",
+    "code": "UY",
+    "name": "Uruguay",
+    "flag": "🇺🇾",
     "count": 1
   }
 ]
