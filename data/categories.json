@@ -1,59 +1,59 @@
 [
   {
     "name": "General",
-    "count": 2383
+    "count": 2364
   },
   {
     "name": "News",
-    "count": 603
+    "count": 582
   },
   {
     "name": "Religious",
-    "count": 488
+    "count": 487
   },
   {
     "name": "Music",
-    "count": 483
+    "count": 486
   },
   {
     "name": "Entertainment",
-    "count": 477
+    "count": 478
   },
   {
     "name": "Italy",
-    "count": 231
+    "count": 228
   },
   {
     "name": "Sports",
-    "count": 220
+    "count": 218
   },
   {
     "name": "Kids",
-    "count": 203
+    "count": 205
   },
   {
     "name": "Documentary",
-    "count": 107
+    "count": 108
   },
   {
     "name": "Legislative",
-    "count": 88
+    "count": 90
   },
   {
     "name": "Education",
-    "count": 87
+    "count": 86
   },
   {
     "name": "Culture",
-    "count": 70
+    "count": 69
   },
   {
     "name": "Business",
-    "count": 46
+    "count": 44
   },
   {
     "name": "Shop",
-    "count": 46
+    "count": 44
   },
   {
     "name": "Outdoor",
@@ -65,23 +65,15 @@
   },
   {
     "name": "Greece",
-    "count": 34
-  },
-  {
-    "name": "Travel",
-    "count": 28
+    "count": 32
   },
   {
     "name": "Ukraine",
+    "count": 29
+  },
+  {
+    "name": "Travel",
     "count": 27
-  },
-  {
-    "name": "Czech Republic",
-    "count": 24
-  },
-  {
-    "name": "Hungary",
-    "count": 21
   },
   {
     "name": "Spain",
@@ -92,8 +84,20 @@
     "count": 20
   },
   {
+    "name": "Hungary",
+    "count": 19
+  },
+  {
     "name": "Ireland",
     "count": 17
+  },
+  {
+    "name": "Finland",
+    "count": 16
+  },
+  {
+    "name": "Russia",
+    "count": 15
   },
   {
     "name": "USA",
@@ -104,15 +108,11 @@
     "count": 13
   },
   {
-    "name": "UK",
-    "count": 13
-  },
-  {
     "name": "Germany",
     "count": 12
   },
   {
-    "name": "Russia",
+    "name": "UK",
     "count": 12
   },
   {
@@ -120,11 +120,19 @@
     "count": 11
   },
   {
-    "name": "Portugal",
+    "name": "Czech Republic",
     "count": 11
   },
   {
+    "name": "Auto",
+    "count": 10
+  },
+  {
     "name": "Weather",
+    "count": 10
+  },
+  {
+    "name": "Portugal",
     "count": 10
   },
   {
@@ -140,10 +148,6 @@
     "count": 9
   },
   {
-    "name": "Auto",
-    "count": 9
-  },
-  {
     "name": "China",
     "count": 9
   },
@@ -153,10 +157,6 @@
   },
   {
     "name": "Culture;Education",
-    "count": 8
-  },
-  {
-    "name": "North Macedonia",
     "count": 7
   },
   {
@@ -173,6 +173,10 @@
   },
   {
     "name": "Argentina",
+    "count": 6
+  },
+  {
+    "name": "North Macedonia",
     "count": 6
   },
   {
@@ -204,16 +208,20 @@
     "count": 5
   },
   {
-    "name": "Venezuela",
+    "name": "Moldova",
     "count": 5
   },
   {
-    "name": "Moldova",
+    "name": "Austria",
     "count": 5
   },
   {
     "name": "Turkey",
     "count": 5
+  },
+  {
+    "name": "Turkmenistan",
+    "count": 4
   },
   {
     "name": "Azerbaijan",
@@ -240,10 +248,6 @@
     "count": 4
   },
   {
-    "name": "Brazil",
-    "count": 4
-  },
-  {
     "name": "Estonia",
     "count": 4
   },
@@ -260,15 +264,15 @@
     "count": 3
   },
   {
-    "name": "Turkmenistan",
-    "count": 3
-  },
-  {
     "name": "Slovakia",
     "count": 3
   },
   {
     "name": "Denmark",
+    "count": 3
+  },
+  {
+    "name": "Venezuela",
     "count": 3
   },
   {
@@ -284,15 +288,7 @@
     "count": 3
   },
   {
-    "name": "Nigeria",
-    "count": 3
-  },
-  {
-    "name": "Finland",
-    "count": 3
-  },
-  {
-    "name": "Serbia",
+    "name": "Brazil",
     "count": 3
   },
   {
@@ -320,10 +316,6 @@
     "count": 2
   },
   {
-    "name": "Austria",
-    "count": 2
-  },
-  {
     "name": "Iceland",
     "count": 2
   },
@@ -336,7 +328,15 @@
     "count": 2
   },
   {
+    "name": "Nigeria",
+    "count": 2
+  },
+  {
     "name": "Faroe Islands",
+    "count": 2
+  },
+  {
+    "name": "Serbia",
     "count": 2
   },
   {
@@ -413,6 +413,10 @@
   },
   {
     "name": "Monaco",
+    "count": 1
+  },
+  {
+    "name": "Culture;Education;Public",
     "count": 1
   },
   {
