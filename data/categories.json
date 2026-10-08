@@ -1,11 +1,11 @@
 [
   {
     "name": "General",
-    "count": 2492
+    "count": 2482
   },
   {
     "name": "News",
-    "count": 621
+    "count": 612
   },
   {
     "name": "Entertainment",
@@ -17,15 +17,15 @@
   },
   {
     "name": "Religious",
-    "count": 495
+    "count": 500
   },
   {
     "name": "Sports",
-    "count": 240
+    "count": 243
   },
   {
     "name": "Italy",
-    "count": 227
+    "count": 226
   },
   {
     "name": "Kids",
@@ -37,7 +37,7 @@
   },
   {
     "name": "Legislative",
-    "count": 90
+    "count": 92
   },
   {
     "name": "Education",
@@ -45,7 +45,7 @@
   },
   {
     "name": "Culture",
-    "count": 74
+    "count": 77
   },
   {
     "name": "Shop",
@@ -57,7 +57,7 @@
   },
   {
     "name": "Outdoor",
-    "count": 42
+    "count": 40
   },
   {
     "name": "Mongolia",
@@ -73,7 +73,7 @@
   },
   {
     "name": "Travel",
-    "count": 29
+    "count": 28
   },
   {
     "name": "Spain",
@@ -85,10 +85,6 @@
   },
   {
     "name": "Cooking",
-    "count": 21
-  },
-  {
-    "name": "Czech Republic",
     "count": 20
   },
   {
@@ -100,6 +96,10 @@
     "count": 16
   },
   {
+    "name": "Slovakia",
+    "count": 15
+  },
+  {
     "name": "USA",
     "count": 15
   },
@@ -108,8 +108,8 @@
     "count": 14
   },
   {
-    "name": "Slovakia",
-    "count": 14
+    "name": "Russia",
+    "count": 13
   },
   {
     "name": "Netherlands",
@@ -120,11 +120,11 @@
     "count": 13
   },
   {
-    "name": "Germany",
+    "name": "Auto",
     "count": 12
   },
   {
-    "name": "Russia",
+    "name": "Germany",
     "count": 12
   },
   {
@@ -132,11 +132,11 @@
     "count": 12
   },
   {
-    "name": "Auto",
+    "name": "Weather",
     "count": 11
   },
   {
-    "name": "Weather",
+    "name": "Czech Republic",
     "count": 11
   },
   {
@@ -146,6 +146,10 @@
   {
     "name": "Romania",
     "count": 10
+  },
+  {
+    "name": "Culture;Education",
+    "count": 9
   },
   {
     "name": "Chile",
@@ -160,20 +164,12 @@
     "count": 9
   },
   {
-    "name": "Bosnia And Herzegovina",
-    "count": 8
-  },
-  {
-    "name": "Culture;Education",
-    "count": 7
-  },
-  {
     "name": "Denmark",
     "count": 7
   },
   {
-    "name": "Cyprus",
-    "count": 6
+    "name": "Bosnia And Herzegovina",
+    "count": 7
   },
   {
     "name": "United Arab Emirates",
@@ -204,7 +200,11 @@
     "count": 5
   },
   {
-    "name": "Croatia",
+    "name": "Cyprus",
+    "count": 5
+  },
+  {
+    "name": "Lithuania",
     "count": 5
   },
   {
@@ -236,10 +236,6 @@
     "count": 4
   },
   {
-    "name": "Lithuania",
-    "count": 4
-  },
-  {
     "name": "France",
     "count": 4
   },
@@ -249,6 +245,10 @@
   },
   {
     "name": "Canada",
+    "count": 4
+  },
+  {
+    "name": "Croatia",
     "count": 4
   },
   {
@@ -293,10 +293,6 @@
   },
   {
     "name": "Education;Outdoor",
-    "count": 2
-  },
-  {
-    "name": "Culture;Travel",
     "count": 2
   },
   {
@@ -349,6 +345,10 @@
   },
   {
     "name": "Andorra",
+    "count": 1
+  },
+  {
+    "name": "Culture;Travel",
     "count": 1
   },
   {
