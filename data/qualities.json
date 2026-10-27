@@ -2,21 +2,21 @@
   {
     "label": "4K / Ultra HD",
     "value": "4K",
-    "count": 8
+    "count": 9
   },
   {
     "label": "1080p / Full HD",
     "value": "1080p",
-    "count": 3034
+    "count": 3078
   },
   {
     "label": "720p / HD",
     "value": "720p",
-    "count": 2463
+    "count": 2473
   },
   {
     "label": "Unknown Quality",
     "value": "Unknown",
-    "count": 1090
+    "count": 1074
   }
 ]
