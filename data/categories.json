@@ -1,43 +1,43 @@
 [
   {
     "name": "General",
-    "count": 2766
+    "count": 2724
   },
   {
     "name": "News",
-    "count": 686
+    "count": 688
   },
   {
     "name": "Entertainment",
-    "count": 551
+    "count": 545
   },
   {
     "name": "Music",
-    "count": 536
+    "count": 531
   },
   {
     "name": "Religious",
-    "count": 519
+    "count": 522
   },
   {
     "name": "Sports",
-    "count": 252
+    "count": 246
   },
   {
     "name": "Kids",
-    "count": 229
+    "count": 230
   },
   {
     "name": "Italy",
-    "count": 216
+    "count": 172
   },
   {
     "name": "Documentary",
-    "count": 120
+    "count": 122
   },
   {
     "name": "Legislative",
-    "count": 93
+    "count": 91
   },
   {
     "name": "Education",
@@ -45,23 +45,23 @@
   },
   {
     "name": "Culture",
-    "count": 72
-  },
-  {
-    "name": "Shop",
-    "count": 48
+    "count": 71
   },
   {
     "name": "Hungary",
-    "count": 46
+    "count": 47
   },
   {
     "name": "Business",
+    "count": 46
+  },
+  {
+    "name": "Shop",
     "count": 45
   },
   {
     "name": "Outdoor",
-    "count": 43
+    "count": 44
   },
   {
     "name": "Mongolia",
@@ -73,14 +73,14 @@
   },
   {
     "name": "Travel",
-    "count": 32
-  },
-  {
-    "name": "Ukraine",
-    "count": 29
+    "count": 33
   },
   {
     "name": "Cooking",
+    "count": 30
+  },
+  {
+    "name": "Ukraine",
     "count": 29
   },
   {
@@ -96,12 +96,8 @@
     "count": 17
   },
   {
-    "name": "Classic",
+    "name": "Finland",
     "count": 15
-  },
-  {
-    "name": "Czech Republic",
-    "count": 14
   },
   {
     "name": "USA",
@@ -116,11 +112,19 @@
     "count": 13
   },
   {
+    "name": "Czech Republic",
+    "count": 13
+  },
+  {
     "name": "Germany",
     "count": 12
   },
   {
-    "name": "Russia",
+    "name": "Classic",
+    "count": 12
+  },
+  {
+    "name": "Portugal",
     "count": 12
   },
   {
@@ -128,20 +132,8 @@
     "count": 11
   },
   {
-    "name": "Portugal",
-    "count": 10
-  },
-  {
-    "name": "Finland",
-    "count": 10
-  },
-  {
     "name": "Culture;Education",
-    "count": 9
-  },
-  {
-    "name": "Chile",
-    "count": 9
+    "count": 10
   },
   {
     "name": "UK",
@@ -149,6 +141,10 @@
   },
   {
     "name": "China",
+    "count": 8
+  },
+  {
+    "name": "Chile",
     "count": 8
   },
   {
@@ -164,19 +160,19 @@
     "count": 7
   },
   {
+    "name": "Bosnia And Herzegovina",
+    "count": 7
+  },
+  {
+    "name": "Slovakia",
+    "count": 7
+  },
+  {
     "name": "Qatar",
     "count": 6
   },
   {
-    "name": "Argentina",
-    "count": 6
-  },
-  {
     "name": "Korea",
-    "count": 6
-  },
-  {
-    "name": "Bosnia And Herzegovina",
     "count": 6
   },
   {
@@ -192,6 +188,10 @@
     "count": 5
   },
   {
+    "name": "Argentina",
+    "count": 5
+  },
+  {
     "name": "Lithuania",
     "count": 5
   },
@@ -200,7 +200,7 @@
     "count": 5
   },
   {
-    "name": "Albania",
+    "name": "Austria",
     "count": 5
   },
   {
@@ -224,6 +224,10 @@
     "count": 4
   },
   {
+    "name": "France",
+    "count": 4
+  },
+  {
     "name": "Relax",
     "count": 4
   },
@@ -236,11 +240,7 @@
     "count": 4
   },
   {
-    "name": "Austria",
-    "count": 4
-  },
-  {
-    "name": "Brazil",
+    "name": "Albania",
     "count": 4
   },
   {
@@ -260,11 +260,11 @@
     "count": 3
   },
   {
-    "name": "France",
+    "name": "Egypt",
     "count": 3
   },
   {
-    "name": "Egypt",
+    "name": "Russia",
     "count": 3
   },
   {
@@ -273,6 +273,10 @@
   },
   {
     "name": "Outdoor;Travel",
+    "count": 3
+  },
+  {
+    "name": "Brazil",
     "count": 3
   },
   {
@@ -289,10 +293,6 @@
   },
   {
     "name": "Costa Rica",
-    "count": 2
-  },
-  {
-    "name": "Israel",
     "count": 2
   },
   {
@@ -324,7 +324,7 @@
     "count": 2
   },
   {
-    "name": "Slovakia",
+    "name": "Faroe Islands",
     "count": 2
   },
   {
@@ -388,6 +388,10 @@
     "count": 1
   },
   {
+    "name": "Hong Kong",
+    "count": 1
+  },
+  {
     "name": "Kosovo",
     "count": 1
   },
@@ -412,7 +416,7 @@
     "count": 1
   },
   {
-    "name": "Faroe Islands",
+    "name": "Israel",
     "count": 1
   },
   {
